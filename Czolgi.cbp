@@ -57,12 +57,16 @@
 		<Unit filename="bonus.cpp" />
 		<Unit filename="bonus.hpp" />
 		<Unit filename="config.hpp" />
+		<Unit filename="explosion.cpp" />
+		<Unit filename="explosion.hpp" />
 		<Unit filename="main.cpp" />
 		<Unit filename="main.hpp" />
 		<Unit filename="menu.cpp" />
 		<Unit filename="menu.hpp" />
 		<Unit filename="player.cpp" />
 		<Unit filename="player.hpp" />
+		<Unit filename="rocket.cpp" />
+		<Unit filename="rocket.hpp" />
 		<Unit filename="wall.cpp" />
 		<Unit filename="wall.hpp" />
 		<Extensions>
