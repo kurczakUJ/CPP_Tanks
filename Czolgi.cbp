@@ -57,6 +57,8 @@
 		<Unit filename="bonus.cpp" />
 		<Unit filename="bonus.hpp" />
 		<Unit filename="config.hpp" />
+		<Unit filename="enemy.cpp" />
+		<Unit filename="enemy.hpp" />
 		<Unit filename="explosion.cpp" />
 		<Unit filename="explosion.hpp" />
 		<Unit filename="main.cpp" />
