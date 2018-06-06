@@ -2,12 +2,17 @@
 #define CONFIG_H_INCLUDED
 
 #define DEBUG 0
-#define VERSION "Tanks 1.0"
+#define VERSION "Tanks 1.1"
 
 #define FRAMERATE 60
 
 #define SCREEN_HEIGHT 720
 #define SCREEN_WIDTH 1280
+
+#define BATTLEFIELD_WIDTH 900
+#define BATTLEFIELD_HEIGHT 650
+#define REAL_BATTLEFIELD_WIDTH BATTLEFIELD_WIDTH + TANK_SIZE
+#define REAL_BATTLEFIELD_HEIGHT BATTLEFIELD_HEIGHT + TANK_SIZE
 
 #define XSIZE 19 //x possibilities
 #define YSIZE 14 //y possibilities
@@ -53,8 +58,40 @@
 #define HUD_FONT "hudFont.ttf"
 #define CAMPAIGN_FONT "campaign.otf"
 
+#define HIGHSCORE "highscore.cfg"
+
 #define SOUNDS 5
 
+#define OBSTACLES 60
+#define BONUSES 10
+#define OBSTACLE_SIZE 50
+#define FREE_SPACE 100
+#define MARGIN_SIZE 5
+#define VIEW_RANGE 25
+#define BLIND_RANGE 100
+
+#define ROCKET_X 20
+#define ROCKET_Y 7
+#define ROCKET_SIZE 20
+
+#define ROCKETS 25
+#define ENEMY_MAX_SHOOTS ROCKETS-15
+#define ENEMIES 4
+#define ENEMY_SIMULTANEOUSLY 3
+#define EXPLOSIONS 20
+
+#define SMALL_EXPLOSION_TIME 31
+#define BIG_EXPLOSION_TIME 63
+#define POINTS_FOR_KILL 10
+
+#define BONUS_CHANCE 15
+#define HUD_COLOR al_map_rgb(0,0,0)
+#define HIGHSCORE_COLOR al_map_rgb(0,255,0)
+
+#define BIG_ANIMATION_SIZE 50
+#define SMALL_ANIMATION_SIZE 25
+
+#define RESPAWN_TIMER FRAMERATE*4
 
 #pragma GCC diagnostic ignored "-Wwrite-strings" //to ignore showError warning which is correct
 #endif
