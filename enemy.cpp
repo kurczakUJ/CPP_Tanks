@@ -16,295 +16,292 @@ extern bool start;
 extern bool gameover;
 extern unsigned short gameMode;
 
-short Enemy::getX()
+short Enemy::GetX()
 {
     return x;
 };
 
-void Enemy::setX(short _x)
+void Enemy::SetX(short _x)
 {
     x = _x;
 };
 
-short Enemy::getTempX()
+short Enemy::GetTempX()
 {
     return tempX;
 };
 
-void Enemy::setTempX( short _tempX)
+void Enemy::SetTempX( short _tempX)
 {
     tempX = _tempX;
 };
 
-short Enemy::getY()
+short Enemy::GetY()
 {
     return y;
 };
 
-void Enemy::setY( short _Y)
+void Enemy::SetY( short _Y)
 {
     y = _Y;
 };
 
-short Enemy::getTempY()
+short Enemy::GetTempY()
 {
     return tempY;
 };
 
-void Enemy::setTempY( short _tempY)
+void Enemy::SetTempY( short _tempY)
 {
     tempY = _tempY;
 };
 
-bool Enemy::getColision()
+bool Enemy::GetColision()
 {
     return colision;
 };
 
-void Enemy::setColision( bool _colision)
+void Enemy::SetColision( bool _colision)
 {
     colision = _colision;
 };
 
-short Enemy::getDirection()
+short Enemy::GetDirection()
 {
     return direction;
 };
 
-void Enemy::setDirection( short _direction)
+void Enemy::SetDirection( short _direction)
 {
     direction = _direction;
 };
 
-short Enemy::getLife()
+short Enemy::GetLife()
 {
     return life;
 };
 
-void Enemy::setLife(short _life)
+void Enemy::SetLife(short _life)
 {
     life = _life;
 };
 
-bool Enemy::getDead()
+bool Enemy::GetDead()
 {
     return dead;
 };
 
-void Enemy::setDead( bool _dead)
+void Enemy::SetDead( bool _dead)
 {
     dead = _dead;
 };
 
-bool Enemy::getCanShoot()
+bool Enemy::GetCanShoot()
 {
     return canShoot;
 };
 
-void Enemy::setCanShoot( bool _canShoot)
+void Enemy::SetCanShoot( bool _canShoot)
 {
     canShoot = _canShoot;
 };
 
-short Enemy::getAmmoSpeed()
+short Enemy::GetAmmoSpeed()
 {
     return ammoSpeed;
 };
 
-void Enemy::setAmmoSpeed( short _ammoSpeed)
+void Enemy::SetAmmoSpeed( short _ammoSpeed)
 {
     ammoSpeed = _ammoSpeed;
 };
 
-short Enemy::getTempDirection()
+short Enemy::GetTempDirection()
 {
     return tempDirection;
 };
 
-void Enemy::setTempDirection( short _tempDirection)
+void Enemy::SetTempDirection( short _tempDirection)
 {
     tempDirection = _tempDirection;
 };
 
-short Enemy::getDirectionCounter()
+short Enemy::GetDirectionCounter()
 {
     return directionCounter;
 };
 
-void Enemy::setDirectionCounter( short _directionCounter)
+void Enemy::SetDirectionCounter( short _directionCounter)
 {
     directionCounter = _directionCounter;
 };
 
-short Enemy::getDestinationX()
+short Enemy::GetDestinationX()
 {
     return destinationX;
 };
 
-void Enemy::setDestinationX(short _destinationX)
+void Enemy::SetDestinationX(short _destinationX)
 {
     destinationX = _destinationX;
 };
 
-short Enemy::getDestinationY()
+short Enemy::GetDestinationY()
 {
     return destinationY;
 };
 
-void Enemy::setDestinationY(short _destinationY)
+void Enemy::SetDestinationY(short _destinationY)
 {
     destinationY = _destinationY;
 };
 
-bool Enemy::getTargetAhead()
+bool Enemy::GetTarGetAhead()
 {
-    return targetAhead;
+    return tarGetAhead;
 };
 
-void Enemy::setTargetAhead(bool _targetAhead)
+void Enemy::SetTarGetAhead(bool _tarGetAhead)
 {
-    targetAhead = _targetAhead;
+    tarGetAhead = _tarGetAhead;
 };
 
-short Enemy::getAmmoTimer()
+short Enemy::GetAmmoTimer()
 {
     return ammoTimer;
 };
 
-void Enemy::setAmmoTimer( short _ammoTimer)
+void Enemy::SetAmmoTimer( short _ammoTimer)
 {
     ammoTimer = _ammoTimer;
 };
 
-short Enemy::getAmmoDelay()
+short Enemy::GetAmmoDelay()
 {
     return ammoDelay;
 };
 
-void Enemy::setAmmoDelay( short _ammoDelay)
+void Enemy::SetAmmoDelay( short _ammoDelay)
 {
     ammoDelay = _ammoDelay;
 };
 
-short Enemy::getRespawnDelayTimer()
+short Enemy::GetRespawnDelayTimer()
 {
     return respawnDelayTimer;
 };
 
-void Enemy::setRespawnDelayTimer( short _respawnDelayTimer)
+void Enemy::SetRespawnDelayTimer( short _respawnDelayTimer)
 {
     respawnDelayTimer = _respawnDelayTimer;
 };
 
-short Enemy::getDifficulty()
+short Enemy::GetDifficulty()
 {
     return difficulty;
 };
 
-void Enemy::setDifficulty( short _difficulty)
+void Enemy::SetDifficulty( short _difficulty)
 {
     difficulty = _difficulty;
 };
 
-bool Enemy::getStop()
+bool Enemy::GetStop()
 {
     return stop;
 }
 
-void Enemy::setStop( bool _stop)
+void Enemy::SetStop( bool _stop)
 {
     stop = _stop;
 }
 
-short Enemy::getTempDestinationX()
+short Enemy::GetTempDestinationX()
 {
     return tempDestinationX;
 }
 
-void Enemy::setTempDestinationX(short _tempDestinationX)
+void Enemy::SetTempDestinationX(short _tempDestinationX)
 {
     tempDestinationX = _tempDestinationX;
 }
 
-short Enemy::getTempDestinationY()
+short Enemy::GetTempDestinationY()
 {
     return tempDestinationY;
 }
 
-void Enemy::setTempDestinationY( short _tempDestinationY)
+void Enemy::SetTempDestinationY( short _tempDestinationY)
 {
     tempDestinationY = _tempDestinationY;
 }
 
-short Enemy::getWallID()
+short Enemy::GetWallID()
 {
     return wallID;
 }
 
-void Enemy::setWallID( short _wallID)
+void Enemy::SetWallID( short _wallID)
 {
     wallID = _wallID;
 }
 
-bool Enemy::getWallAtPath()
+bool Enemy::GetWallAtPath()
 {
     return wallAtPath;
 }
 
-void Enemy::setWallAtPath( bool _wallAtPath)
+void Enemy::SetWallAtPath( bool _wallAtPath)
 {
     wallAtPath = _wallAtPath;
 }
 
-bool Enemy::getFirstmovement()
+bool Enemy::GetFirstmovement()
 {
     return firstmovement;
 }
 
-void Enemy::setFirstmovement( bool _firstmovement)
+void Enemy::SetFirstmovement( bool _firstmovement)
 {
     firstmovement = _firstmovement;
 }
 
-bool Enemy::getAttack()
+bool Enemy::GetAttack()
 {
     return attack;
 }
 
-void Enemy::setAttack( bool _attack)
+void Enemy::SetAttack( bool _attack)
 {
     attack = _attack;
 }
 
 short GiveEnemyID(Enemy **enemy)
 {
-    short temp = 0;
     for(short i=0; i<  ENEMIES; i++)
     {
-        if(enemy[i] -> getDead())
-        {
-            temp = i;
-            break;
-        }
+        if(enemy[i] -> GetDead())
+            return i;
     }
-    return temp;
+
+    return 0;
 };
 
-void Enemy::setPlayerCoord(Enemy **enemy, Player * player)
+void Enemy::SetPlayerCoord(Enemy **enemy, Player * player)
 {
-    short playerX = player -> getX();
-    short playerY = player -> getY();
+    short playerX = player -> GetX();
+    short playerY = player -> GetY();
 
-    Enemy::playerDirection = player -> getDirection();
+    Enemy::playerDirection = player -> GetDirection();
 
     for(short g = 0; g < ENEMIES; g++)
     {
-        if(!enemy[g] -> getDead())
+        if(!enemy[g] -> GetDead())
         {
-            if(!enemy[g] -> getAttack() || (Enemy::attackBase[g] == 0 && Wall::baseExist == true))
+            if(!enemy[g] -> GetAttack() || (Enemy::attackBase[g] == 0 && Wall::baseExist == true))
             {
-                enemy[g] -> setDestinationX(playerX);
-                enemy[g] -> setDestinationY(playerY);
+                enemy[g] -> SetDestinationX(playerX);
+                enemy[g] -> SetDestinationY(playerY);
             }
         }
     }
@@ -312,20 +309,20 @@ void Enemy::setPlayerCoord(Enemy **enemy, Player * player)
 
 void SetBaseCoord(Enemy ** enemy, Wall **wall, short choice)
 {
-    short baseX = wall[Wall::baseID] -> getX();
-    short baseY = wall[Wall::baseID] -> getY();
+    short baseX = wall[Wall::baseID] -> GetX();
+    short baseY = wall[Wall::baseID] -> GetY();
 
     Enemy::baseCoord[0] = baseX;
     Enemy::baseCoord[1] = baseY;
 
     for(short g = 0; g < ENEMIES; g++)
     {
-        if(!enemy[g] -> getDead())
+        if(!enemy[g] -> GetDead())
         {
-            if(!enemy[g] -> getAttack() && Enemy::attackBase[g] == 1 && Wall::baseExist == true)
+            if(!enemy[g] -> GetAttack() && Enemy::attackBase[g] == 1 && Wall::baseExist == true)
             {
-                enemy[choice] -> setDestinationX(baseX);
-                enemy[choice] -> setDestinationY(baseY);
+                enemy[choice] -> SetDestinationX(baseX);
+                enemy[choice] -> SetDestinationY(baseY);
             }
         }
     }
@@ -335,32 +332,32 @@ void ClearEnemy(Enemy **enemy)
 {
     for(short g = 0; g < ENEMIES; g++)
     {
-        enemy[g] -> setTempX(0);
-        enemy[g] -> setTempY(0);
-        enemy[g] -> setDirection(0);
-        enemy[g] -> setLife(0);
-        enemy[g] -> setColision(false);
-        enemy[g] -> setX(0);
-        enemy[g] -> setY(0);
-        enemy[g] -> setAmmoSpeed(0);
-        enemy[g] -> setDead(true);
-        enemy[g] -> setAmmoTimer(0);
-        enemy[g] -> setAmmoDelay(0);
-        enemy[g] -> setRespawnDelayTimer(0);
-        enemy[g] -> setDifficulty(0);
-        enemy[g] -> setTempDirection(0);
-        enemy[g] -> setDirectionCounter(0);
-        enemy[g] -> setCanShoot(true);
-        enemy[g] -> setTargetAhead(false);
-        enemy[g] -> setStop(false);
-        enemy[g] -> setTempDestinationY(0);
-        enemy[g] -> setTempDestinationX(0);
-        enemy[g] -> setWallAtPath(false);
-        enemy[g] -> setFirstmovement(false);
-        enemy[g] -> setAttack(false);
-        enemy[g] -> setDestinationX(0);
-        enemy[g] -> setDestinationY(0);
-        enemy[g] -> setWallID(0);
+        enemy[g] -> SetTempX(0);
+        enemy[g] -> SetTempY(0);
+        enemy[g] -> SetDirection(0);
+        enemy[g] -> SetLife(0);
+        enemy[g] -> SetColision(false);
+        enemy[g] -> SetX(0);
+        enemy[g] -> SetY(0);
+        enemy[g] -> SetAmmoSpeed(0);
+        enemy[g] -> SetDead(true);
+        enemy[g] -> SetAmmoTimer(0);
+        enemy[g] -> SetAmmoDelay(0);
+        enemy[g] -> SetRespawnDelayTimer(0);
+        enemy[g] -> SetDifficulty(0);
+        enemy[g] -> SetTempDirection(0);
+        enemy[g] -> SetDirectionCounter(0);
+        enemy[g] -> SetCanShoot(true);
+        enemy[g] -> SetTarGetAhead(false);
+        enemy[g] -> SetStop(false);
+        enemy[g] -> SetTempDestinationY(0);
+        enemy[g] -> SetTempDestinationX(0);
+        enemy[g] -> SetWallAtPath(false);
+        enemy[g] -> SetFirstmovement(false);
+        enemy[g] -> SetAttack(false);
+        enemy[g] -> SetDestinationX(0);
+        enemy[g] -> SetDestinationY(0);
+        enemy[g] -> SetWallID(0);
     }
 
     Enemy::playerTimer = 0;
@@ -405,46 +402,47 @@ void EnemycampaingInitialize(Enemy ** enemy, short currentLevel, Wall **wall, Pl
     {
         sprintf(message, "enemyNR%i", g);
         choice = GiveEnemyID(enemy);
-        enemy[choice] -> setDirection(atoi(al_get_config_value(iniFile, message, "direction")));
-        enemy[choice] -> setLife(atoi(al_get_config_value(iniFile, message, "life")));
-        enemy[choice] -> setColision(true);
-        enemy[choice] -> setStop(false);
-        enemy[choice] -> setX(atoi(al_get_config_value(iniFile, message, "x"))/TANK_SIZE * TANK_SIZE);
-        enemy[choice] -> setY(atoi(al_get_config_value(iniFile, message, "y"))/TANK_SIZE * TANK_SIZE);
-        enemy[choice] -> setAmmoSpeed(atoi(al_get_config_value(iniFile, message, "ammoSpeed")));
-        enemy[choice] -> setAmmoDelay(atoi(al_get_config_value(iniFile, message, "ammoDelay")));
-        enemy[choice] -> setDifficulty(atoi(al_get_config_value(iniFile, message, "difficulty")));
-        enemy[choice] -> setTempDestinationY(0);
-        enemy[choice] -> setTempDestinationX(0);
-        enemy[choice] -> setWallAtPath(false);
-        enemy[choice] -> setFirstmovement(false);
-        enemy[choice] -> setAmmoTimer(0);
-        enemy[choice] -> setTempDirection(0);
-        enemy[choice] -> setDirectionCounter(0);
-        enemy[choice] -> setCanShoot(true);
-        enemy[choice] -> setTargetAhead(false);
-        enemy[choice] -> setAttack(false);
-        enemy[choice] -> setDestinationX(0);
-        enemy[choice] -> setDestinationY(0);
-        enemy[choice] -> setWallID(0);
-        enemy[choice] -> setRespawnDelayTimer(0);
+        enemy[choice] -> SetDirection(atoi(al_get_config_value(iniFile, message, "direction")));
+        enemy[choice] -> SetLife(atoi(al_get_config_value(iniFile, message, "life")));
+        enemy[choice] -> SetColision(true);
+        enemy[choice] -> SetStop(false);
+        enemy[choice] -> SetX(atoi(al_get_config_value(iniFile, message, "x"))/TANK_SIZE * TANK_SIZE);
+        enemy[choice] -> SetY(atoi(al_get_config_value(iniFile, message, "y"))/TANK_SIZE * TANK_SIZE);
+        enemy[choice] -> SetAmmoSpeed(atoi(al_get_config_value(iniFile, message, "ammoSpeed")));
+        enemy[choice] -> SetAmmoDelay(atoi(al_get_config_value(iniFile, message, "ammoDelay")));
+        enemy[choice] -> SetDifficulty(atoi(al_get_config_value(iniFile, message, "difficulty")));
+        enemy[choice] -> SetTempDestinationY(0);
+        enemy[choice] -> SetTempDestinationX(0);
+        enemy[choice] -> SetWallAtPath(false);
+        enemy[choice] -> SetFirstmovement(false);
+        enemy[choice] -> SetAmmoTimer(0);
+        enemy[choice] -> SetTempDirection(0);
+        enemy[choice] -> SetDirectionCounter(0);
+        enemy[choice] -> SetCanShoot(true);
+        enemy[choice] -> SetTarGetAhead(false);
+        enemy[choice] -> SetAttack(false);
+        enemy[choice] -> SetDestinationX(0);
+        enemy[choice] -> SetDestinationY(0);
+        enemy[choice] -> SetWallID(0);
+        enemy[choice] -> SetRespawnDelayTimer(0);
 
-        while(enemy[choice] -> getColision())
+        while(enemy[choice] -> GetColision())
         {
-            enemy[choice] -> checkPlace(wall, player, enemy);
+            enemy[choice] -> CheckPlace(wall, player, enemy);
 
-            if(!enemy[choice] -> getColision())
+            if(!enemy[choice] -> GetColision())
                 break;
 
-            enemy[choice] -> setX(rand()%(BATTLEFIELD_WIDTH)/TANK_SIZE * TANK_SIZE);
-            enemy[choice] -> setY(rand()%(BATTLEFIELD_HEIGHT)/TANK_SIZE * TANK_SIZE);
+            enemy[choice] -> SetX(rand()%(BATTLEFIELD_WIDTH)/TANK_SIZE * TANK_SIZE);
+            enemy[choice] -> SetY(rand()%(BATTLEFIELD_HEIGHT)/TANK_SIZE * TANK_SIZE);
         }
 
-        enemy[choice] -> setTempX(enemy[choice] -> getX());
-        enemy[choice] -> setTempY(enemy[choice] -> getY());
-        enemy[choice] -> setDead(false);
+        enemy[choice] -> SetTempX(enemy[choice] -> GetX());
+        enemy[choice] -> SetTempY(enemy[choice] -> GetY());
+        enemy[choice] -> SetDead(false);
     }
-    SetTarget(enemy, player);
+
+    SetTarGet(enemy, player);
     al_destroy_config(iniFile);
 }
 
@@ -466,52 +464,52 @@ void EnemyCampaignDrop(Enemy ** enemy, short currentLevel, Wall **wall, Player *
         {
             sprintf(message, "enemyNR%i", g + 1);
             choice = GiveEnemyID(enemy);
-            enemy[choice] -> setDirection(atoi(al_get_config_value(iniFile, message, "direction")));
-            enemy[choice] -> setLife(atoi(al_get_config_value(iniFile, message, "life")));
-            enemy[choice] -> setColision(true);
-            enemy[choice] -> setStop(false);
-            enemy[choice] -> setX(atoi(al_get_config_value(iniFile, message, "x"))/TANK_SIZE * TANK_SIZE);
-            enemy[choice] -> setY(atoi(al_get_config_value(iniFile, message, "y"))/TANK_SIZE * TANK_SIZE);
-            enemy[choice] -> setAmmoSpeed(atoi(al_get_config_value(iniFile, message, "ammoSpeed")));
-            enemy[choice] -> setAmmoDelay(atoi(al_get_config_value(iniFile, message, "ammoDelay")));
-            enemy[choice] -> setDifficulty(atoi(al_get_config_value(iniFile, message, "difficulty")));
-            enemy[choice] -> setTempDestinationY(0);
-            enemy[choice] -> setTempDestinationX(0);
-            enemy[choice] -> setWallAtPath(false);
-            enemy[choice] -> setFirstmovement(false);
-            enemy[choice] -> setAmmoTimer(0);
-            enemy[choice] -> setTempDirection(0);
-            enemy[choice] -> setDirectionCounter(0);
-            enemy[choice] -> setCanShoot(true);
-            enemy[choice] -> setTargetAhead(false);
-            enemy[choice] -> setAttack(false);
-            enemy[choice] -> setDestinationX(0);
-            enemy[choice] -> setDestinationY(0);
-            enemy[choice] -> setWallID(0);
-            enemy[choice] -> setRespawnDelayTimer(0);
+            enemy[choice] -> SetDirection(atoi(al_get_config_value(iniFile, message, "direction")));
+            enemy[choice] -> SetLife(atoi(al_get_config_value(iniFile, message, "life")));
+            enemy[choice] -> SetColision(true);
+            enemy[choice] -> SetStop(false);
+            enemy[choice] -> SetX(atoi(al_get_config_value(iniFile, message, "x"))/TANK_SIZE * TANK_SIZE);
+            enemy[choice] -> SetY(atoi(al_get_config_value(iniFile, message, "y"))/TANK_SIZE * TANK_SIZE);
+            enemy[choice] -> SetAmmoSpeed(atoi(al_get_config_value(iniFile, message, "ammoSpeed")));
+            enemy[choice] -> SetAmmoDelay(atoi(al_get_config_value(iniFile, message, "ammoDelay")));
+            enemy[choice] -> SetDifficulty(atoi(al_get_config_value(iniFile, message, "difficulty")));
+            enemy[choice] -> SetTempDestinationY(0);
+            enemy[choice] -> SetTempDestinationX(0);
+            enemy[choice] -> SetWallAtPath(false);
+            enemy[choice] -> SetFirstmovement(false);
+            enemy[choice] -> SetAmmoTimer(0);
+            enemy[choice] -> SetTempDirection(0);
+            enemy[choice] -> SetDirectionCounter(0);
+            enemy[choice] -> SetCanShoot(true);
+            enemy[choice] -> SetTarGetAhead(false);
+            enemy[choice] -> SetAttack(false);
+            enemy[choice] -> SetDestinationX(0);
+            enemy[choice] -> SetDestinationY(0);
+            enemy[choice] -> SetWallID(0);
+            enemy[choice] -> SetRespawnDelayTimer(0);
 
-            while(enemy[choice] -> getColision())
+            while(enemy[choice] -> GetColision())
             {
-                enemy[choice] -> checkPlace(wall, player, enemy);
+                enemy[choice] -> CheckPlace(wall, player, enemy);
 
-                if(!enemy[choice] -> getColision())
+                if(!enemy[choice] -> GetColision())
                     break;
 
-                enemy[choice] -> setX(rand()%(BATTLEFIELD_WIDTH)/TANK_SIZE * TANK_SIZE);
-                enemy[choice] -> setY(rand()%(BATTLEFIELD_HEIGHT)/TANK_SIZE * TANK_SIZE);
+                enemy[choice] -> SetX(rand()%(BATTLEFIELD_WIDTH)/TANK_SIZE * TANK_SIZE);
+                enemy[choice] -> SetY(rand()%(BATTLEFIELD_HEIGHT)/TANK_SIZE * TANK_SIZE);
             }
 
-            enemy[choice] -> setTempX(enemy[choice] -> getX());
-            enemy[choice] -> setTempY(enemy[choice] -> getY());
-            enemy[choice] -> setDead(false);
+            enemy[choice] -> SetTempX(enemy[choice] -> GetX());
+            enemy[choice] -> SetTempY(enemy[choice] -> GetY());
+            enemy[choice] -> SetDead(false);
         }
     }
-    SetTarget(enemy, player);
+    SetTarGet(enemy, player);
 
     al_destroy_config(iniFile);
 }
 
-void Enemy::spawn(short _x, short _y, short _life, short _ammoSpeed, short _direction, short _ammoDelay, short _difficulty, Wall **wall, Player * player, Enemy **enemy)
+void Enemy::Spawn(short _x, short _y, short _life, short _ammoSpeed, short _direction, short _ammoDelay, short _difficulty, Wall **wall, Player * player, Enemy **enemy)
 {
     direction = _direction;
     life = _life;
@@ -527,7 +525,7 @@ void Enemy::spawn(short _x, short _y, short _life, short _ammoSpeed, short _dire
     directionCounter = 0;
     destinationX = 0;
     destinationY = 0;
-    targetAhead = false;
+    tarGetAhead = false;
     wallAtPath = false;
     firstmovement = false;
     ammoTimer = 0;
@@ -539,7 +537,7 @@ void Enemy::spawn(short _x, short _y, short _life, short _ammoSpeed, short _dire
 
     while(colision == true)
     {
-        this -> checkPlace(wall, player, enemy);
+        this -> CheckPlace(wall, player, enemy);
 
         if(!colision)
             break;
@@ -551,79 +549,78 @@ void Enemy::spawn(short _x, short _y, short _life, short _ammoSpeed, short _dire
     tempX = x;
     tempY = y;
     dead = false;
-    SetTarget(enemy, player);
+    SetTarGet(enemy, player);
 };
 
-void Enemy::checkPlace(Wall **wall, Player * player, Enemy **enemy)
+void Enemy::CheckPlace(Wall **wall, Player * player, Enemy **enemy)
 {
-    bool kolizja=false;
     for (short i=0; i<OBSTACLES ; i++)
     {
-        if(wall[i] -> getVisible())
+        if(wall[i] -> GetVisible())
         {
-            if(wall[i] -> getBase())//more space when it is base
+            if(wall[i] -> GetBase())//more space when it is base
             {
-                if(x > wall[i] -> getX() - (3*FREE_SPACE) && x < wall[i] -> getX() + OBSTACLE_SIZE + (3*FREE_SPACE))
-                    if(y + OBSTACLE_SIZE > wall[i] -> getY() - (3*FREE_SPACE) && y < wall[i] -> getY() + OBSTACLE_SIZE + (3*FREE_SPACE))
+                if(x > wall[i] -> GetX() - (3*FREE_SPACE) && x < wall[i] -> GetX() + OBSTACLE_SIZE + (3*FREE_SPACE))
+                    if(y + OBSTACLE_SIZE > wall[i] -> GetY() - (3*FREE_SPACE) && y < wall[i] -> GetY() + OBSTACLE_SIZE + (3*FREE_SPACE))
                     {
-                        kolizja = true;
-                        break;
+                        colision = true;
+                        return;
                     }
             }
             else
             {
-                if(x > wall[i] -> getX() - OBSTACLE_SIZE && x < wall[i] -> getX() + OBSTACLE_SIZE )
-                    if(y + OBSTACLE_SIZE > wall[i] -> getY() && y < wall[i] -> getY() + OBSTACLE_SIZE )
+                if(x > wall[i] -> GetX() - OBSTACLE_SIZE && x < wall[i] -> GetX() + OBSTACLE_SIZE )
+                    if(y + OBSTACLE_SIZE > wall[i] -> GetY() && y < wall[i] -> GetY() + OBSTACLE_SIZE )
                     {
-                        kolizja = true;
-                        break;
+                        colision = true;
+                        return;
                     }
             }
         }
     }
 
-    if(player->getActive() && !kolizja)
+    if(player->GetActive())
     {
-        if(x > player -> getX() - FREE_SPACE && x < player -> getX() + TANK_SIZE + FREE_SPACE)
-            if(y + TANK_SIZE > player -> getY() - FREE_SPACE && y < player -> getY() + TANK_SIZE + FREE_SPACE)
-                kolizja = true;
+        if(x > player -> GetX() - FREE_SPACE && x < player -> GetX() + TANK_SIZE + FREE_SPACE)
+            if(y + TANK_SIZE > player -> GetY() - FREE_SPACE && y < player -> GetY() + TANK_SIZE + FREE_SPACE)
+            {
+                colision = true;
+                return;
+            }
     }
 
-    for(short j=0; j < ENEMIES && !kolizja; j++)
+    for(short j=0; j < ENEMIES; j++)
     {
-        if(!enemy[j] -> getDead() && this != enemy[j])
+        if(!enemy[j] -> GetDead() && this != enemy[j])
         {
-            if(x > enemy[j] -> getX() - FREE_SPACE && x < enemy[j] -> getX() + TANK_SIZE + FREE_SPACE)
-                if(y + TANK_SIZE > enemy[j] -> getY() - FREE_SPACE && y < enemy[j] -> getY() + TANK_SIZE + FREE_SPACE)
+            if(x > enemy[j] -> GetX() - FREE_SPACE && x < enemy[j] -> GetX() + TANK_SIZE + FREE_SPACE)
+                if(y + TANK_SIZE > enemy[j] -> GetY() - FREE_SPACE && y < enemy[j] -> GetY() + TANK_SIZE + FREE_SPACE)
                 {
-                    kolizja = true;
-                    break;
+                    colision = true;
+                    return;
                 }
         }
     }
 
-    if (kolizja)
-        colision = true;
-    else
-        colision = false;
+    colision = false;
 };
 
-short Enemy::checkCollision(Wall **wall, Player * player, Enemy **enemy, Bonus **bonus)
+short Enemy::CheckCollision(Wall **wall, Player * player, Enemy **enemy, Bonus **bonus)
 {
     if(!dead)
     {
         for (short i=0; i<OBSTACLES ; i++)
         {
-            if(wall[i]->getVisible())
+            if(wall[i]->GetVisible())
             {
-                if(x >= wall[i]->getX()-OBSTACLE_SIZE+MARGIN_SIZE && x<=wall[i]->getX()+OBSTACLE_SIZE-MARGIN_SIZE && y >= wall[i]->getY()-OBSTACLE_SIZE+MARGIN_SIZE && y<= wall[i]->getY()+OBSTACLE_SIZE-MARGIN_SIZE)
+                if(x >= wall[i]->GetX()-OBSTACLE_SIZE+MARGIN_SIZE && x<=wall[i]->GetX()+OBSTACLE_SIZE-MARGIN_SIZE && y >= wall[i]->GetY()-OBSTACLE_SIZE+MARGIN_SIZE && y<= wall[i]->GetY()+OBSTACLE_SIZE-MARGIN_SIZE)
                 {
                     x = tempX;
                     y = tempY;
 
-                    if(wall[i]->getDestroyable())
+                    if(wall[i]->GetDestroyable())
                     {
-                        if(wall[i]->getBase())
+                        if(wall[i]->GetBase())
                         {
                             stop = true;
                             return 5; //base
@@ -637,9 +634,9 @@ short Enemy::checkCollision(Wall **wall, Player * player, Enemy **enemy, Bonus *
             }
         }
 
-        if(player->getActive())
+        if(player->GetActive())
         {
-            if(x >= player -> getX()-OBSTACLE_SIZE+MARGIN_SIZE && x<=player -> getX()+OBSTACLE_SIZE-MARGIN_SIZE && y >= player -> getY()-OBSTACLE_SIZE+MARGIN_SIZE && y<= player -> getY()+OBSTACLE_SIZE-MARGIN_SIZE)
+            if(x >= player -> GetX()-OBSTACLE_SIZE+MARGIN_SIZE && x<=player -> GetX()+OBSTACLE_SIZE-MARGIN_SIZE && y >= player -> GetY()-OBSTACLE_SIZE+MARGIN_SIZE && y<= player -> GetY()+OBSTACLE_SIZE-MARGIN_SIZE)
             {
                 x = tempX;
                 y = tempY;
@@ -650,9 +647,9 @@ short Enemy::checkCollision(Wall **wall, Player * player, Enemy **enemy, Bonus *
 
         for(short j=0; j<ENEMIES; j++)
         {
-            if(!enemy[j] -> getDead() && this!=enemy[j])
+            if(!enemy[j] -> GetDead() && this!=enemy[j])
             {
-                if(x >= enemy[j] -> getX()-OBSTACLE_SIZE+MARGIN_SIZE && x<=enemy[j] -> getX()+OBSTACLE_SIZE-MARGIN_SIZE && y >= enemy[j] -> getY()-OBSTACLE_SIZE+MARGIN_SIZE && y<= enemy[j] -> getY()+OBSTACLE_SIZE-MARGIN_SIZE)
+                if(x >= enemy[j] -> GetX()-OBSTACLE_SIZE+MARGIN_SIZE && x<=enemy[j] -> GetX()+OBSTACLE_SIZE-MARGIN_SIZE && y >= enemy[j] -> GetY()-OBSTACLE_SIZE+MARGIN_SIZE && y<= enemy[j] -> GetY()+OBSTACLE_SIZE-MARGIN_SIZE)
                 {
                     x = tempX;
                     y = tempY;
@@ -663,10 +660,10 @@ short Enemy::checkCollision(Wall **wall, Player * player, Enemy **enemy, Bonus *
 
         for (short i=0; i<BONUSES ; i++)
         {
-            if(bonus[i]->getVisible())
+            if(bonus[i]->GetVisible())
             {
-                if(x >= bonus[i]->getX()-OBSTACLE_SIZE+MARGIN_SIZE && x<=bonus[i]->getX()+OBSTACLE_SIZE-MARGIN_SIZE && y >= bonus[i]->getY()-OBSTACLE_SIZE+MARGIN_SIZE && y<= bonus[i]->getY()+OBSTACLE_SIZE-MARGIN_SIZE)
-                    bonus[i]->setVisible(false);
+                if(x >= bonus[i]->GetX()-OBSTACLE_SIZE+MARGIN_SIZE && x<=bonus[i]->GetX()+OBSTACLE_SIZE-MARGIN_SIZE && y >= bonus[i]->GetY()-OBSTACLE_SIZE+MARGIN_SIZE && y<= bonus[i]->GetY()+OBSTACLE_SIZE-MARGIN_SIZE)
+                    bonus[i]->SetVisible(false);
             }
         }
     }
@@ -679,30 +676,29 @@ short CheckEnemyAlive(Enemy **enemy)
     short temp=0;
     for(short i=0; i<ENEMIES; i++)
     {
-        if(!enemy[i]->getDead())
-        {
+        if(!enemy[i]->GetDead())
             temp++;
-        }
     }
+
     return temp;
 }
 
-bool Enemy::checkAimWall(Wall **wall, Enemy ** enemy)
+bool Enemy::CheckAimWall(Wall **wall, Enemy ** enemy)
 {
     if(!dead)
     {
         for (short i=0; i<OBSTACLES ; i++)
         {
-            if(wall[i]->getVisible() && wall[i] -> getDestroyable() && !wall[i] -> getBase())
+            if(wall[i]->GetVisible() && wall[i] -> GetDestroyable() && !wall[i] -> GetBase())
             {
                 switch(direction)
                 {
                 case 0:
                 {
-                    if(x <= wall[i] -> getX() && y + 21 >= wall[i] -> getY() - ROCKET_Y  && y + 21 <= wall[i] -> getY() + OBSTACLE_SIZE)
+                    if(x <= wall[i] -> GetX() && y + 21 >= wall[i] -> GetY() - ROCKET_Y  && y + 21 <= wall[i] -> GetY() + OBSTACLE_SIZE)
                     {
-                        bool value = this -> checkAimImmortallWall(wall, wall[i] -> getX(), wall[i] -> getY());
-                        bool valueF = this -> checkAimEnemy(enemy, wall[i] -> getX(), wall[i] -> getY());
+                        bool value = this -> CheckAimImmortallWall(wall, wall[i] -> GetX(), wall[i] -> GetY());
+                        bool valueF = this -> CheckAimEnemy(enemy, wall[i] -> GetX(), wall[i] -> GetY());
 
                         if(value == true && valueF == true)
                         {
@@ -714,10 +710,10 @@ bool Enemy::checkAimWall(Wall **wall, Enemy ** enemy)
                 }
                 case 1:
                 {
-                    if(x >= wall[i] -> getX() && y + 21 >= wall[i] -> getY() - ROCKET_Y  && y + 21 <= wall[i] -> getY() + OBSTACLE_SIZE)
+                    if(x >= wall[i] -> GetX() && y + 21 >= wall[i] -> GetY() - ROCKET_Y  && y + 21 <= wall[i] -> GetY() + OBSTACLE_SIZE)
                     {
-                        bool value = this -> checkAimImmortallWall(wall, wall[i] -> getX(), wall[i] -> getY());
-                        bool valueF = this -> checkAimEnemy(enemy, wall[i] -> getX(), wall[i] -> getY());
+                        bool value = this -> CheckAimImmortallWall(wall, wall[i] -> GetX(), wall[i] -> GetY());
+                        bool valueF = this -> CheckAimEnemy(enemy, wall[i] -> GetX(), wall[i] -> GetY());
 
                         if(value == true && valueF == true)
                         {
@@ -729,10 +725,10 @@ bool Enemy::checkAimWall(Wall **wall, Enemy ** enemy)
                 }
                 case 2://dol
                 {
-                    if(x + 21 >= wall[i] -> getX() - ROCKET_Y && x + 21 <= wall[i] -> getX() + OBSTACLE_SIZE && y <= wall[i] -> getY())
+                    if(x + 21 >= wall[i] -> GetX() - ROCKET_Y && x + 21 <= wall[i] -> GetX() + OBSTACLE_SIZE && y <= wall[i] -> GetY())
                     {
-                        bool value = this -> checkAimImmortallWall(wall, wall[i] -> getX(), wall[i] -> getY());
-                        bool valueF = this -> checkAimEnemy(enemy, wall[i] -> getX(), wall[i] -> getY());
+                        bool value = this -> CheckAimImmortallWall(wall, wall[i] -> GetX(), wall[i] -> GetY());
+                        bool valueF = this -> CheckAimEnemy(enemy, wall[i] -> GetX(), wall[i] -> GetY());
 
                         if(value == true && valueF == true)
                         {
@@ -744,10 +740,10 @@ bool Enemy::checkAimWall(Wall **wall, Enemy ** enemy)
                 }
                 case 3:
                 {
-                    if(x + 29 >= wall[i] -> getX() - ROCKET_Y && x + 29 <= wall[i] -> getX() + OBSTACLE_SIZE && y >= wall[i] -> getY())
+                    if(x + 29 >= wall[i] -> GetX() - ROCKET_Y && x + 29 <= wall[i] -> GetX() + OBSTACLE_SIZE && y >= wall[i] -> GetY())
                     {
-                        bool value = this -> checkAimImmortallWall(wall, wall[i] -> getX(), wall[i] -> getY());
-                        bool valueF = this -> checkAimEnemy(enemy, wall[i] -> getX(), wall[i] -> getY());
+                        bool value = this -> CheckAimImmortallWall(wall, wall[i] -> GetX(), wall[i] -> GetY());
+                        bool valueF = this -> CheckAimEnemy(enemy, wall[i] -> GetX(), wall[i] -> GetY());
 
                         if(value == true && valueF == true)
                         {
@@ -764,53 +760,53 @@ bool Enemy::checkAimWall(Wall **wall, Enemy ** enemy)
     return false;
 }
 
-bool Enemy::checkAimImmortallWall(Wall **wall, short _x, short _y)
+bool Enemy::CheckAimImmortallWall(Wall **wall, short _x, short _y)
 {
-    bool clearWay = true; //can shoot?
+//can shoot?
     if(!dead)
     {
-        for (short i=0; i<OBSTACLES && clearWay == true; i++)
+        for (short i=0; i<OBSTACLES; i++)
         {
-            if(wall[i]->getVisible() && !wall[i] -> getDestroyable() && !wall[i] -> getBase())
+            if(wall[i]->GetVisible() && !wall[i] -> GetDestroyable() && !wall[i] -> GetBase())
             {
                 switch(direction)
                 {
                 case 0:
                 {
-                    if(x <= wall[i] -> getX() && y + 21 >= wall[i] -> getY() - ROCKET_Y  && y + 21 <= wall[i] -> getY() + OBSTACLE_SIZE)
+                    if(x <= wall[i] -> GetX() && y + 21 >= wall[i] -> GetY() - ROCKET_Y  && y + 21 <= wall[i] -> GetY() + OBSTACLE_SIZE)
                     {
-                        if(wall[i] -> getX() < _x)
-                            clearWay = false;
+                        if(wall[i] -> GetX() < _x)
+                            return false;
                     }
 
                     break;
                 }
                 case 1:
                 {
-                    if(x >= wall[i] -> getX() && y + 21 >= wall[i] -> getY() - ROCKET_Y  && y + 21 <= wall[i] -> getY() + OBSTACLE_SIZE)
+                    if(x >= wall[i] -> GetX() && y + 21 >= wall[i] -> GetY() - ROCKET_Y  && y + 21 <= wall[i] -> GetY() + OBSTACLE_SIZE)
                     {
-                        if(wall[i] -> getX() > _x)
-                            clearWay = false;
+                        if(wall[i] -> GetX() > _x)
+                            return false;
                     }
 
                     break;
                 }
                 case 2://down
                 {
-                    if(x + 21 >= wall[i] -> getX() - ROCKET_Y && x + 21 <= wall[i] -> getX() + OBSTACLE_SIZE && y <= wall[i] -> getY())
+                    if(x + 21 >= wall[i] -> GetX() - ROCKET_Y && x + 21 <= wall[i] -> GetX() + OBSTACLE_SIZE && y <= wall[i] -> GetY())
                     {
-                        if(wall[i] -> getY() < _y)
-                            clearWay = false;
+                        if(wall[i] -> GetY() < _y)
+                            return false;
                     }
 
                     break;
                 }
                 case 3:
                 {
-                    if(x + 29 >= wall[i] -> getX() - ROCKET_Y && x + 29 <= wall[i] -> getX() + OBSTACLE_SIZE && y >= wall[i] -> getY())
+                    if(x + 29 >= wall[i] -> GetX() - ROCKET_Y && x + 29 <= wall[i] -> GetX() + OBSTACLE_SIZE && y >= wall[i] -> GetY())
                     {
-                        if(wall[i] -> getY() > _y)
-                            clearWay = false;
+                        if(wall[i] -> GetY() > _y)
+                            return false;
                     }
 
                     break;
@@ -819,23 +815,24 @@ bool Enemy::checkAimImmortallWall(Wall **wall, short _x, short _y)
             }
         }
     }
-    return clearWay;
+
+    return true;
 }
 
-bool Enemy::checkAimPlayer(Player *player, Enemy ** enemy, Wall ** wall)
+bool Enemy::CheckAimPlayer(Player *player, Enemy ** enemy, Wall ** wall)
 {
     if(!dead)
     {
-        if(player -> getActive())
+        if(player -> GetActive())
         {
             switch(direction)
             {
             case 0:
             {
-                if(x <= player -> getX() && y + 21 >= player -> getY() - ROCKET_Y  && y + 21 <= player -> getY() + TANK_SIZE)
+                if(x <= player -> GetX() && y + 21 >= player -> GetY() - ROCKET_Y  && y + 21 <= player -> GetY() + TANK_SIZE)
                 {
-                    bool value = this -> checkAimImmortallWall(wall, player -> getX(), player -> getY());
-                    bool valueF = this -> checkAimEnemy(enemy, player -> getX(), player -> getY());
+                    bool value = this -> CheckAimImmortallWall(wall, player -> GetX(), player -> GetY());
+                    bool valueF = this -> CheckAimEnemy(enemy, player -> GetX(), player -> GetY());
 
                     if(value == true && valueF == true)
                         return true;
@@ -845,10 +842,10 @@ bool Enemy::checkAimPlayer(Player *player, Enemy ** enemy, Wall ** wall)
             }
             case 1:
             {
-                if(x >= player -> getX() && y + 21 >= player -> getY() - ROCKET_Y  && y + 21 <= player -> getY() + TANK_SIZE)
+                if(x >= player -> GetX() && y + 21 >= player -> GetY() - ROCKET_Y  && y + 21 <= player -> GetY() + TANK_SIZE)
                 {
-                    bool value = this -> checkAimImmortallWall(wall, player -> getX(), player -> getY());
-                    bool valueF = this -> checkAimEnemy(enemy, player -> getX(), player -> getY());
+                    bool value = this -> CheckAimImmortallWall(wall, player -> GetX(), player -> GetY());
+                    bool valueF = this -> CheckAimEnemy(enemy, player -> GetX(), player -> GetY());
 
                     if(value == true && valueF == true)
                         return true;
@@ -858,10 +855,10 @@ bool Enemy::checkAimPlayer(Player *player, Enemy ** enemy, Wall ** wall)
             }
             case 2://dol
             {
-                if(x + 21 >= player -> getX() - ROCKET_Y && x + 21 <= player -> getX() + TANK_SIZE && y <= player -> getY())
+                if(x + 21 >= player -> GetX() - ROCKET_Y && x + 21 <= player -> GetX() + TANK_SIZE && y <= player -> GetY())
                 {
-                    bool value = this -> checkAimImmortallWall(wall, player -> getX(), player -> getY());
-                    bool valueF = this -> checkAimEnemy(enemy, player -> getX(), player -> getY());
+                    bool value = this -> CheckAimImmortallWall(wall, player -> GetX(), player -> GetY());
+                    bool valueF = this -> CheckAimEnemy(enemy, player -> GetX(), player -> GetY());
 
                     if(value == true && valueF == true)
                         return true;
@@ -871,10 +868,10 @@ bool Enemy::checkAimPlayer(Player *player, Enemy ** enemy, Wall ** wall)
             }
             case 3:
             {
-                if(x + 29 >= player -> getX() - ROCKET_Y && x + 29 <= player -> getX() + TANK_SIZE && y >= player -> getY())
+                if(x + 29 >= player -> GetX() - ROCKET_Y && x + 29 <= player -> GetX() + TANK_SIZE && y >= player -> GetY())
                 {
-                    bool value = this -> checkAimImmortallWall(wall, player -> getX(), player -> getY());
-                    bool valueF = this -> checkAimEnemy(enemy, player -> getX(), player -> getY());
+                    bool value = this -> CheckAimImmortallWall(wall, player -> GetX(), player -> GetY());
+                    bool valueF = this -> CheckAimEnemy(enemy, player -> GetX(), player -> GetY());
 
                     if(value == true && valueF == true)
                         return true;
@@ -888,20 +885,20 @@ bool Enemy::checkAimPlayer(Player *player, Enemy ** enemy, Wall ** wall)
     return false;
 }
 
-bool Enemy::checkAimBase(Wall **wall, short id, Enemy ** enemy)
+bool Enemy::CheckAimBase(Wall **wall, short id, Enemy ** enemy)
 {
     if(!dead)
     {
-        if(wall[id] -> getBase() && wall[id] -> getVisible())
+        if(wall[id] -> GetBase() && wall[id] -> GetVisible())
         {
             switch(direction)
             {
             case 0:
             {
-                if(x <= wall[id] -> getX() && y + 21 >= wall[id] -> getY() - ROCKET_Y  && y + 21 <= wall[id] -> getY() + OBSTACLE_SIZE)
+                if(x <= wall[id] -> GetX() && y + 21 >= wall[id] -> GetY() - ROCKET_Y  && y + 21 <= wall[id] -> GetY() + OBSTACLE_SIZE)
                 {
-                    bool value = this -> checkAimImmortallWall(wall, wall[id] -> getX(), wall[id] -> getY());
-                    bool valueF = this -> checkAimEnemy(enemy, wall[id] -> getX(), wall[id] -> getY());
+                    bool value = this -> CheckAimImmortallWall(wall, wall[id] -> GetX(), wall[id] -> GetY());
+                    bool valueF = this -> CheckAimEnemy(enemy, wall[id] -> GetX(), wall[id] -> GetY());
 
                     if(value == true && valueF == true)
                         return true;
@@ -911,10 +908,10 @@ bool Enemy::checkAimBase(Wall **wall, short id, Enemy ** enemy)
             }
             case 1:
             {
-                if(x >= wall[id] -> getX() && y + 21 >= wall[id] -> getY() - ROCKET_Y  && y + 21 <= wall[id] -> getY() + OBSTACLE_SIZE)
+                if(x >= wall[id] -> GetX() && y + 21 >= wall[id] -> GetY() - ROCKET_Y  && y + 21 <= wall[id] -> GetY() + OBSTACLE_SIZE)
                 {
-                    bool value = this -> checkAimImmortallWall(wall, wall[id] -> getX(), wall[id] -> getY());
-                    bool valueF = this -> checkAimEnemy(enemy, wall[id] -> getX(), wall[id] -> getY());
+                    bool value = this -> CheckAimImmortallWall(wall, wall[id] -> GetX(), wall[id] -> GetY());
+                    bool valueF = this -> CheckAimEnemy(enemy, wall[id] -> GetX(), wall[id] -> GetY());
 
                     if(value == true && valueF == true)
                         return true;
@@ -924,10 +921,10 @@ bool Enemy::checkAimBase(Wall **wall, short id, Enemy ** enemy)
             }
             case 2://dol
             {
-                if(x + 21 >= wall[id] -> getX() - ROCKET_Y && x + 21 <= wall[id] -> getX() + OBSTACLE_SIZE && y <= wall[id] -> getY())
+                if(x + 21 >= wall[id] -> GetX() - ROCKET_Y && x + 21 <= wall[id] -> GetX() + OBSTACLE_SIZE && y <= wall[id] -> GetY())
                 {
-                    bool value = this -> checkAimImmortallWall(wall, wall[id] -> getX(), wall[id] -> getY());
-                    bool valueF = this -> checkAimEnemy(enemy, wall[id] -> getX(), wall[id] -> getY());
+                    bool value = this -> CheckAimImmortallWall(wall, wall[id] -> GetX(), wall[id] -> GetY());
+                    bool valueF = this -> CheckAimEnemy(enemy, wall[id] -> GetX(), wall[id] -> GetY());
 
                     if(value == true && valueF == true)
                         return true;
@@ -937,10 +934,10 @@ bool Enemy::checkAimBase(Wall **wall, short id, Enemy ** enemy)
             }
             case 3:
             {
-                if(x + 29 >= wall[id] -> getX() - ROCKET_Y && x + 29 <= wall[id] -> getX() + OBSTACLE_SIZE && y >= wall[id] -> getY())
+                if(x + 29 >= wall[id] -> GetX() - ROCKET_Y && x + 29 <= wall[id] -> GetX() + OBSTACLE_SIZE && y >= wall[id] -> GetY())
                 {
-                    bool value = this -> checkAimImmortallWall(wall, wall[id] -> getX(), wall[id] -> getY());
-                    bool valueF = this -> checkAimEnemy(enemy, wall[id] -> getX(), wall[id] -> getY());
+                    bool value = this -> CheckAimImmortallWall(wall, wall[id] -> GetX(), wall[id] -> GetY());
+                    bool valueF = this -> CheckAimEnemy(enemy, wall[id] -> GetX(), wall[id] -> GetY());
 
                     if(value == true && valueF == true)
                         return true;
@@ -953,52 +950,52 @@ bool Enemy::checkAimBase(Wall **wall, short id, Enemy ** enemy)
     return false;
 }
 
-bool Enemy::checkAimEnemy(Enemy **enemy, short _x, short _y)
+bool Enemy::CheckAimEnemy(Enemy **enemy, short _x, short _y)
 {
-    bool clearWay = true; //czy mozna strzelac czy nie
+//czy mozna strzelac czy nie
     if(!dead)
     {
         for (short i=0; i<ENEMIES ; i++)
         {
-            if(!enemy[i]->getDead() && enemy[i] != this)
+            if(!enemy[i]->GetDead() && enemy[i] != this)
             {
                 switch(direction)
                 {
                 case 0:
                 {
-                    if(x <= enemy[i] -> getX() && y + 21 >= enemy[i] -> getY() - ROCKET_Y  && y + 21 <= enemy[i] -> getY() + TANK_SIZE)
+                    if(x <= enemy[i] -> GetX() && y + 21 >= enemy[i] -> GetY() - ROCKET_Y  && y + 21 <= enemy[i] -> GetY() + TANK_SIZE)
                     {
-                        if(enemy[i] -> getX() < _x)
-                            clearWay = false;
+                        if(enemy[i] -> GetX() < _x)
+                            return false;
                     }
 
                     break;
                 }
                 case 1:
                 {
-                    if(x >= enemy[i] -> getX() && y + 21 >= enemy[i] -> getY() - ROCKET_Y  && y + 21 <= enemy[i] -> getY() + TANK_SIZE)
+                    if(x >= enemy[i] -> GetX() && y + 21 >= enemy[i] -> GetY() - ROCKET_Y  && y + 21 <= enemy[i] -> GetY() + TANK_SIZE)
                     {
-                        if(enemy[i] -> getX() > _x)
-                            clearWay = false;
+                        if(enemy[i] -> GetX() > _x)
+                            return false;
                     }
 
                     break;
                 }
                 case 2://dol
                 {
-                    if(x + 21 >= enemy[i] -> getX() - ROCKET_Y && x + 21 <= enemy[i] -> getX() + TANK_SIZE && y <= enemy[i] -> getY())
+                    if(x + 21 >= enemy[i] -> GetX() - ROCKET_Y && x + 21 <= enemy[i] -> GetX() + TANK_SIZE && y <= enemy[i] -> GetY())
                     {
-                        if(enemy[i] -> getY() < _y)
-                            clearWay = false;
+                        if(enemy[i] -> GetY() < _y)
+                            return false;
                     }
                     break;
                 }
                 case 3:
                 {
-                    if(x + 29 >= enemy[i] -> getX() - ROCKET_Y && x + 29 <= enemy[i] -> getX() + TANK_SIZE && y >= enemy[i] -> getY())
+                    if(x + 29 >= enemy[i] -> GetX() - ROCKET_Y && x + 29 <= enemy[i] -> GetX() + TANK_SIZE && y >= enemy[i] -> GetY())
                     {
-                        if(enemy[i] -> getY() > _y)
-                            clearWay = false;
+                        if(enemy[i] -> GetY() > _y)
+                            return false;
                     }
 
                     break;
@@ -1007,10 +1004,10 @@ bool Enemy::checkAimEnemy(Enemy **enemy, short _x, short _y)
             }
         }
     }
-    return clearWay;
+    return true;
 }
 
-bool Enemy::searchForDirection()
+bool Enemy::SearchForDirection()
 {
     switch(id % 4)
     {
@@ -1078,20 +1075,20 @@ bool Enemy::searchForDirection()
     return false;
 }
 
-void Enemy::checkForBase(Wall ** wall, Enemy ** enemy)
+void Enemy::CheckForBase(Wall ** wall, Enemy ** enemy)
 {
     if(Enemy::hasBase == false)
     {
         for(short i=0; i < OBSTACLES && Enemy::hasBase == false; i++)
         {
-            if(wall[i] -> getBase() && wall[i] -> getVisible())
+            if(wall[i] -> GetBase() && wall[i] -> GetVisible())
             {
                 for (short k = 0 ; k < 4 && Enemy::hasBase == false; k++)
                 {
                     if(k == 0)
                     {
-                        short j= wall[i] -> getY();
-                        for (short k = wall[i] -> getX() ; k <= wall[i] -> getX() + OBSTACLE_SIZE && Enemy::hasBase == false; k++)
+                        short j= wall[i] -> GetY();
+                        for (short k = wall[i] -> GetX() ; k <= wall[i] -> GetX() + OBSTACLE_SIZE && Enemy::hasBase == false; k++)
                         {
                             if(j < 0 || k < 0)
                                 continue;
@@ -1106,8 +1103,8 @@ void Enemy::checkForBase(Wall ** wall, Enemy ** enemy)
                     }
                     else if(k == 1)
                     {
-                        short j= wall[i] -> getY() + OBSTACLE_SIZE;
-                        for (short k = wall[i] -> getX() ; k <= wall[i] -> getX() + OBSTACLE_SIZE && Enemy::hasBase == false; k++)
+                        short j= wall[i] -> GetY() + OBSTACLE_SIZE;
+                        for (short k = wall[i] -> GetX() ; k <= wall[i] -> GetX() + OBSTACLE_SIZE && Enemy::hasBase == false; k++)
                         {
                             if(j < 0 || k < 0)
                                 continue;
@@ -1122,8 +1119,8 @@ void Enemy::checkForBase(Wall ** wall, Enemy ** enemy)
                     }
                     else if(k == 2)
                     {
-                        short k= wall[i] -> getX();
-                        for (short j = wall[i] -> getY(); j <= wall[i] -> getY() + OBSTACLE_SIZE && Enemy::hasBase == false ; j++)
+                        short k= wall[i] -> GetX();
+                        for (short j = wall[i] -> GetY(); j <= wall[i] -> GetY() + OBSTACLE_SIZE && Enemy::hasBase == false ; j++)
                         {
                             if(j < 0 || k < 0)
                                 continue;
@@ -1138,8 +1135,8 @@ void Enemy::checkForBase(Wall ** wall, Enemy ** enemy)
                     }
                     else if(k == 3)
                     {
-                        short k= wall[i] -> getX() + OBSTACLE_SIZE;
-                        for (short j = wall[i] -> getY(); j <= wall[i] -> getY() + OBSTACLE_SIZE && Enemy::hasBase == false ; j++)
+                        short k= wall[i] -> GetX() + OBSTACLE_SIZE;
+                        for (short j = wall[i] -> GetY(); j <= wall[i] -> GetY() + OBSTACLE_SIZE && Enemy::hasBase == false ; j++)
                         {
                             if(j < 0 || k < 0)
                                 continue;
@@ -1158,15 +1155,14 @@ void Enemy::checkForBase(Wall ** wall, Enemy ** enemy)
     }
 }
 
-void Enemy::checkForPlayer(Player *player, Enemy **enemy)
+void Enemy::CheckForPlayer(Player *player, Enemy **enemy)
 {
-    bool detected = false;
-    for (short k = 0 ; k < 4 && !detected && player -> getActive(); k++)
+    for (short k = 0 ; k < 4 && player -> GetActive(); k++)
     {
         if(k == 0)
         {
-            short j = player -> getY();
-            for(short i = player -> getX() ; i <= player -> getX() + TANK_SIZE && !detected; i++)
+            short j = player -> GetY();
+            for(short i = player -> GetX() ; i <= player -> GetX() + TANK_SIZE; i++)
             {
                 if(j < 0 || i < 0)
                     continue;
@@ -1175,16 +1171,15 @@ void Enemy::checkForPlayer(Player *player, Enemy **enemy)
                 {
                     Enemy::hasPlayer = true;
                     Enemy::playerTimer = 0;
-                    detected = true;
-                    this -> setPlayerCoord(enemy, player);
-                    break;
+                    this -> SetPlayerCoord(enemy, player);
+                    return;
                 }
             }
         }
         else if(k == 1)
         {
-            short j= player -> getY() + TANK_SIZE;
-            for(short i = player -> getX() ; i <= player -> getX() + TANK_SIZE && !detected; i++)
+            short j= player -> GetY() + TANK_SIZE;
+            for(short i = player -> GetX() ; i <= player -> GetX() + TANK_SIZE; i++)
             {
                 if(j < 0 || i < 0)
                     continue;
@@ -1193,16 +1188,15 @@ void Enemy::checkForPlayer(Player *player, Enemy **enemy)
                 {
                     Enemy::hasPlayer = true;
                     Enemy::playerTimer = 0;
-                    detected = true;
-                    this -> setPlayerCoord(enemy, player);
-                    break;
+                    this -> SetPlayerCoord(enemy, player);
+                    return;
                 }
             }
         }
         else if(k == 2)
         {
-            short i= player -> getX();
-            for(short j = player -> getY() ; j <= player -> getY() + TANK_SIZE && !detected; j++)
+            short i= player -> GetX();
+            for(short j = player -> GetY() ; j <= player -> GetY() + TANK_SIZE; j++)
             {
                 if(j < 0 || i < 0)
                     continue;
@@ -1211,16 +1205,15 @@ void Enemy::checkForPlayer(Player *player, Enemy **enemy)
                 {
                     Enemy::hasPlayer = true;
                     Enemy::playerTimer = 0;
-                    detected = true;
-                    this -> setPlayerCoord(enemy, player);
-                    break;
+                    this -> SetPlayerCoord(enemy, player);
+                    return;
                 }
             }
         }
         else if(k == 3)
         {
-            short i= player -> getX() + TANK_SIZE;
-            for(short j = player -> getY() ; j <= player -> getY() + TANK_SIZE && !detected; j++)
+            short i= player -> GetX() + TANK_SIZE;
+            for(short j = player -> GetY() ; j <= player -> GetY() + TANK_SIZE; j++)
             {
                 if(j < 0 || i < 0)
                     continue;
@@ -1229,16 +1222,15 @@ void Enemy::checkForPlayer(Player *player, Enemy **enemy)
                 {
                     Enemy::hasPlayer = true;
                     Enemy::playerTimer = 0;
-                    detected = true;
-                    this -> setPlayerCoord(enemy, player);
-                    break;
+                    this -> SetPlayerCoord(enemy, player);
+                    return;
                 }
             }
         }
     }
 }
 
-bool Enemy::checkDirection(short direction, Wall ** wall, Enemy ** enemy, Player *player, short moves)
+bool Enemy::CheckDirection(short direction, Wall ** wall, Enemy ** enemy, Player *player, short moves)
 {
     switch(direction)
     {
@@ -1249,15 +1241,15 @@ bool Enemy::checkDirection(short direction, Wall ** wall, Enemy ** enemy, Player
 
         for (short i=0; i<OBSTACLES ; i++)
         {
-            if(wall[i]->getVisible())
+            if(wall[i]->GetVisible())
             {
-                if(x + (moves*TANK_SPEED) >= wall[i]->getX()-OBSTACLE_SIZE+MARGIN_SIZE && x + (moves*TANK_SPEED) <=wall[i]->getX()+OBSTACLE_SIZE-MARGIN_SIZE && y >= wall[i]->getY()-OBSTACLE_SIZE+MARGIN_SIZE && y <= wall[i]->getY()+OBSTACLE_SIZE-MARGIN_SIZE)
+                if(x + (moves*TANK_SPEED) >= wall[i]->GetX()-OBSTACLE_SIZE+MARGIN_SIZE && x + (moves*TANK_SPEED) <=wall[i]->GetX()+OBSTACLE_SIZE-MARGIN_SIZE && y >= wall[i]->GetY()-OBSTACLE_SIZE+MARGIN_SIZE && y <= wall[i]->GetY()+OBSTACLE_SIZE-MARGIN_SIZE)
                 {
-                    if(wall[i]->getDestroyable())
+                    if(wall[i]->GetDestroyable())
                     {
-                        if(wall[i]->getBase())
+                        if(wall[i]->GetBase())
                         {
-                            targetAhead = true;
+                            tarGetAhead = true;
                             stop = true;
                             return true; //baza
                         }
@@ -1270,11 +1262,11 @@ bool Enemy::checkDirection(short direction, Wall ** wall, Enemy ** enemy, Player
             }
         }
 
-        if(player->getActive())
+        if(player->GetActive())
         {
-            if(x + (moves*TANK_SPEED) >= player -> getX()-OBSTACLE_SIZE+MARGIN_SIZE && x + (moves*TANK_SPEED) <=player -> getX()+OBSTACLE_SIZE-MARGIN_SIZE && y >= player -> getY()-OBSTACLE_SIZE+MARGIN_SIZE && y<= player -> getY()+OBSTACLE_SIZE-MARGIN_SIZE)
+            if(x + (moves*TANK_SPEED) >= player -> GetX()-OBSTACLE_SIZE+MARGIN_SIZE && x + (moves*TANK_SPEED) <=player -> GetX()+OBSTACLE_SIZE-MARGIN_SIZE && y >= player -> GetY()-OBSTACLE_SIZE+MARGIN_SIZE && y<= player -> GetY()+OBSTACLE_SIZE-MARGIN_SIZE)
             {
-                targetAhead = true;
+                tarGetAhead = true;
                 stop = true;
                 return true;
             }
@@ -1282,9 +1274,9 @@ bool Enemy::checkDirection(short direction, Wall ** wall, Enemy ** enemy, Player
 
         for(short j=0; j<ENEMIES; j++)
         {
-            if(!enemy[j] -> getDead() && this!=enemy[j])
+            if(!enemy[j] -> GetDead() && this!=enemy[j])
             {
-                if(x + (moves*TANK_SPEED) >= enemy[j] -> getX()-OBSTACLE_SIZE+MARGIN_SIZE && x + (moves*TANK_SPEED) <=enemy[j] -> getX()+OBSTACLE_SIZE-MARGIN_SIZE && y >= enemy[j] -> getY()-OBSTACLE_SIZE+MARGIN_SIZE && y<= enemy[j] -> getY()+OBSTACLE_SIZE-MARGIN_SIZE)
+                if(x + (moves*TANK_SPEED) >= enemy[j] -> GetX()-OBSTACLE_SIZE+MARGIN_SIZE && x + (moves*TANK_SPEED) <=enemy[j] -> GetX()+OBSTACLE_SIZE-MARGIN_SIZE && y >= enemy[j] -> GetY()-OBSTACLE_SIZE+MARGIN_SIZE && y<= enemy[j] -> GetY()+OBSTACLE_SIZE-MARGIN_SIZE)
                 {
                     return false;
                 }
@@ -1300,15 +1292,15 @@ bool Enemy::checkDirection(short direction, Wall ** wall, Enemy ** enemy, Player
 
         for (short i=0; i<OBSTACLES ; i++)
         {
-            if(wall[i]->getVisible())
+            if(wall[i]->GetVisible())
             {
-                if(x - (moves*TANK_SPEED) >= wall[i]->getX()-OBSTACLE_SIZE+MARGIN_SIZE && x - (moves*TANK_SPEED) <=wall[i]->getX()+OBSTACLE_SIZE-MARGIN_SIZE && y >= wall[i]->getY()-OBSTACLE_SIZE+MARGIN_SIZE && y <= wall[i]->getY()+OBSTACLE_SIZE-MARGIN_SIZE)
+                if(x - (moves*TANK_SPEED) >= wall[i]->GetX()-OBSTACLE_SIZE+MARGIN_SIZE && x - (moves*TANK_SPEED) <=wall[i]->GetX()+OBSTACLE_SIZE-MARGIN_SIZE && y >= wall[i]->GetY()-OBSTACLE_SIZE+MARGIN_SIZE && y <= wall[i]->GetY()+OBSTACLE_SIZE-MARGIN_SIZE)
                 {
-                    if(wall[i]->getDestroyable())
+                    if(wall[i]->GetDestroyable())
                     {
-                        if(wall[i]->getBase())
+                        if(wall[i]->GetBase())
                         {
-                            targetAhead = true;
+                            tarGetAhead = true;
                             stop = true;
                             return true; //baza
                         }
@@ -1321,11 +1313,11 @@ bool Enemy::checkDirection(short direction, Wall ** wall, Enemy ** enemy, Player
             }
         }
 
-        if(player->getActive())
+        if(player->GetActive())
         {
-            if(x - (moves*TANK_SPEED) >= player -> getX()-OBSTACLE_SIZE+MARGIN_SIZE && x - (moves*TANK_SPEED)<=player -> getX()+OBSTACLE_SIZE-MARGIN_SIZE && y >= player -> getY()-OBSTACLE_SIZE+MARGIN_SIZE && y<= player -> getY()+OBSTACLE_SIZE-MARGIN_SIZE)
+            if(x - (moves*TANK_SPEED) >= player -> GetX()-OBSTACLE_SIZE+MARGIN_SIZE && x - (moves*TANK_SPEED)<=player -> GetX()+OBSTACLE_SIZE-MARGIN_SIZE && y >= player -> GetY()-OBSTACLE_SIZE+MARGIN_SIZE && y<= player -> GetY()+OBSTACLE_SIZE-MARGIN_SIZE)
             {
-                targetAhead = true;
+                tarGetAhead = true;
                 stop = true;
                 return true;
             }
@@ -1333,9 +1325,9 @@ bool Enemy::checkDirection(short direction, Wall ** wall, Enemy ** enemy, Player
 
         for(short j=0; j<ENEMIES; j++)
         {
-            if(!enemy[j] -> getDead() && this!=enemy[j])
+            if(!enemy[j] -> GetDead() && this!=enemy[j])
             {
-                if(x - (moves*TANK_SPEED) >= enemy[j] -> getX()-OBSTACLE_SIZE+MARGIN_SIZE && x - (moves*TANK_SPEED)<=enemy[j] -> getX()+OBSTACLE_SIZE-MARGIN_SIZE && y >= enemy[j] -> getY()-OBSTACLE_SIZE+MARGIN_SIZE && y<= enemy[j] -> getY()+OBSTACLE_SIZE-MARGIN_SIZE)
+                if(x - (moves*TANK_SPEED) >= enemy[j] -> GetX()-OBSTACLE_SIZE+MARGIN_SIZE && x - (moves*TANK_SPEED)<=enemy[j] -> GetX()+OBSTACLE_SIZE-MARGIN_SIZE && y >= enemy[j] -> GetY()-OBSTACLE_SIZE+MARGIN_SIZE && y<= enemy[j] -> GetY()+OBSTACLE_SIZE-MARGIN_SIZE)
                 {
                     return false;
                 }
@@ -1351,15 +1343,15 @@ bool Enemy::checkDirection(short direction, Wall ** wall, Enemy ** enemy, Player
 
         for (short i=0; i<OBSTACLES ; i++)
         {
-            if(wall[i]->getVisible())
+            if(wall[i]->GetVisible())
             {
-                if(x >= wall[i]->getX()-OBSTACLE_SIZE+MARGIN_SIZE && x <=wall[i]->getX()+OBSTACLE_SIZE-MARGIN_SIZE && y + (moves*TANK_SPEED) >= wall[i]->getY()-OBSTACLE_SIZE+MARGIN_SIZE && y + (moves*TANK_SPEED) <= wall[i]->getY()+OBSTACLE_SIZE-MARGIN_SIZE)
+                if(x >= wall[i]->GetX()-OBSTACLE_SIZE+MARGIN_SIZE && x <=wall[i]->GetX()+OBSTACLE_SIZE-MARGIN_SIZE && y + (moves*TANK_SPEED) >= wall[i]->GetY()-OBSTACLE_SIZE+MARGIN_SIZE && y + (moves*TANK_SPEED) <= wall[i]->GetY()+OBSTACLE_SIZE-MARGIN_SIZE)
                 {
-                    if(wall[i]->getDestroyable())
+                    if(wall[i]->GetDestroyable())
                     {
-                        if(wall[i]->getBase())
+                        if(wall[i]->GetBase())
                         {
-                            targetAhead = true;
+                            tarGetAhead = true;
                             stop = true;
                             return true; //baza
                         }
@@ -1372,11 +1364,11 @@ bool Enemy::checkDirection(short direction, Wall ** wall, Enemy ** enemy, Player
             }
         }
 
-        if(player->getActive())
+        if(player->GetActive())
         {
-            if(x >= player -> getX()-OBSTACLE_SIZE+MARGIN_SIZE && x <=player -> getX()+OBSTACLE_SIZE-MARGIN_SIZE && y + (moves*TANK_SPEED) >= player -> getY()-OBSTACLE_SIZE+MARGIN_SIZE && y + (moves*TANK_SPEED)<= player -> getY()+OBSTACLE_SIZE-MARGIN_SIZE)
+            if(x >= player -> GetX()-OBSTACLE_SIZE+MARGIN_SIZE && x <=player -> GetX()+OBSTACLE_SIZE-MARGIN_SIZE && y + (moves*TANK_SPEED) >= player -> GetY()-OBSTACLE_SIZE+MARGIN_SIZE && y + (moves*TANK_SPEED)<= player -> GetY()+OBSTACLE_SIZE-MARGIN_SIZE)
             {
-                targetAhead = true;
+                tarGetAhead = true;
                 stop = true;
                 return true;
             }
@@ -1384,9 +1376,9 @@ bool Enemy::checkDirection(short direction, Wall ** wall, Enemy ** enemy, Player
 
         for(short j=0; j<ENEMIES; j++)
         {
-            if(!enemy[j] -> getDead() && this!=enemy[j])
+            if(!enemy[j] -> GetDead() && this!=enemy[j])
             {
-                if(x >= enemy[j] -> getX()-OBSTACLE_SIZE+MARGIN_SIZE && x <=enemy[j] -> getX()+OBSTACLE_SIZE-MARGIN_SIZE && y + (moves*TANK_SPEED) >= enemy[j] -> getY()-OBSTACLE_SIZE+MARGIN_SIZE && y + (moves*TANK_SPEED)<= enemy[j] -> getY()+OBSTACLE_SIZE-MARGIN_SIZE)
+                if(x >= enemy[j] -> GetX()-OBSTACLE_SIZE+MARGIN_SIZE && x <=enemy[j] -> GetX()+OBSTACLE_SIZE-MARGIN_SIZE && y + (moves*TANK_SPEED) >= enemy[j] -> GetY()-OBSTACLE_SIZE+MARGIN_SIZE && y + (moves*TANK_SPEED)<= enemy[j] -> GetY()+OBSTACLE_SIZE-MARGIN_SIZE)
                 {
                     return false;
                 }
@@ -1402,15 +1394,15 @@ bool Enemy::checkDirection(short direction, Wall ** wall, Enemy ** enemy, Player
 
         for (short i=0; i<OBSTACLES ; i++)
         {
-            if(wall[i]->getVisible())
+            if(wall[i]->GetVisible())
             {
-                if(x >= wall[i]->getX()-OBSTACLE_SIZE+MARGIN_SIZE && x <=wall[i]->getX()+OBSTACLE_SIZE-MARGIN_SIZE && y - (moves*TANK_SPEED) >= wall[i]->getY()-OBSTACLE_SIZE+MARGIN_SIZE && y - (moves*TANK_SPEED) <= wall[i]->getY()+OBSTACLE_SIZE-MARGIN_SIZE)
+                if(x >= wall[i]->GetX()-OBSTACLE_SIZE+MARGIN_SIZE && x <=wall[i]->GetX()+OBSTACLE_SIZE-MARGIN_SIZE && y - (moves*TANK_SPEED) >= wall[i]->GetY()-OBSTACLE_SIZE+MARGIN_SIZE && y - (moves*TANK_SPEED) <= wall[i]->GetY()+OBSTACLE_SIZE-MARGIN_SIZE)
                 {
-                    if(wall[i]->getDestroyable())
+                    if(wall[i]->GetDestroyable())
                     {
-                        if(wall[i]->getBase())
+                        if(wall[i]->GetBase())
                         {
-                            targetAhead = true;
+                            tarGetAhead = true;
                             stop = true;
                             return true; //baza
                         }
@@ -1423,11 +1415,11 @@ bool Enemy::checkDirection(short direction, Wall ** wall, Enemy ** enemy, Player
             }
         }
 
-        if(player->getActive())
+        if(player->GetActive())
         {
-            if(x >= player -> getX()-OBSTACLE_SIZE+MARGIN_SIZE && x <=player -> getX()+OBSTACLE_SIZE-MARGIN_SIZE && y - (moves*TANK_SPEED) >= player -> getY()-OBSTACLE_SIZE+MARGIN_SIZE && y - (moves*TANK_SPEED)<= player -> getY()+OBSTACLE_SIZE-MARGIN_SIZE)
+            if(x >= player -> GetX()-OBSTACLE_SIZE+MARGIN_SIZE && x <=player -> GetX()+OBSTACLE_SIZE-MARGIN_SIZE && y - (moves*TANK_SPEED) >= player -> GetY()-OBSTACLE_SIZE+MARGIN_SIZE && y - (moves*TANK_SPEED)<= player -> GetY()+OBSTACLE_SIZE-MARGIN_SIZE)
             {
-                targetAhead = true;
+                tarGetAhead = true;
                 stop = true;
                 return true;
             }
@@ -1435,9 +1427,9 @@ bool Enemy::checkDirection(short direction, Wall ** wall, Enemy ** enemy, Player
 
         for(short j=0; j<ENEMIES; j++)
         {
-            if(!enemy[j] -> getDead() && this!=enemy[j])
+            if(!enemy[j] -> GetDead() && this!=enemy[j])
             {
-                if(x >= enemy[j] -> getX()-OBSTACLE_SIZE+MARGIN_SIZE && x <=enemy[j] -> getX()+OBSTACLE_SIZE-MARGIN_SIZE && y - (moves*TANK_SPEED) >= enemy[j] -> getY()-OBSTACLE_SIZE+MARGIN_SIZE && y - (moves*TANK_SPEED)<= enemy[j] -> getY()+OBSTACLE_SIZE-MARGIN_SIZE)
+                if(x >= enemy[j] -> GetX()-OBSTACLE_SIZE+MARGIN_SIZE && x <=enemy[j] -> GetX()+OBSTACLE_SIZE-MARGIN_SIZE && y - (moves*TANK_SPEED) >= enemy[j] -> GetY()-OBSTACLE_SIZE+MARGIN_SIZE && y - (moves*TANK_SPEED)<= enemy[j] -> GetY()+OBSTACLE_SIZE-MARGIN_SIZE)
                 {
                     return false;
                 }
@@ -1451,7 +1443,7 @@ bool Enemy::checkDirection(short direction, Wall ** wall, Enemy ** enemy, Player
     return true;
 }
 
-void Enemy::shoot(Rocket ** rocket)
+void Enemy::Shoot(Rocket ** rocket)
 {
     canShoot = false;
     ammoTimer = 1;
@@ -1464,47 +1456,47 @@ void Enemy::shoot(Rocket ** rocket)
         {
         case 0:
         {
-            rocket[choice] -> setDirection(0);
-            rocket[choice] -> setX(x + 51);
-            rocket[choice] -> setY(y + 21);
+            rocket[choice] -> SetDirection(0);
+            rocket[choice] -> SetX(x + 51);
+            rocket[choice] -> SetY(y + 21);
 
             break; //right
         }
         case 1:
         {
-            rocket[choice] -> setDirection(1);
-            rocket[choice] -> setX(x - 16);
-            rocket[choice] -> setY(y + 21);
+            rocket[choice] -> SetDirection(1);
+            rocket[choice] -> SetX(x - 16);
+            rocket[choice] -> SetY(y + 21);
 
             break; //left
         }
         case 2:
         {
-            rocket[choice] -> setDirection(2);
-            rocket[choice] -> setX(x + 21);
-            rocket[choice] -> setY(y + 60);
+            rocket[choice] -> SetDirection(2);
+            rocket[choice] -> SetX(x + 21);
+            rocket[choice] -> SetY(y + 60);
 
             break; //down
         }
         case 3:
         {
-            rocket[choice] -> setDirection(3);
-            rocket[choice] -> setX(x + 29);
-            rocket[choice] -> setY(y - 14);
+            rocket[choice] -> SetDirection(3);
+            rocket[choice] -> SetX(x + 29);
+            rocket[choice] -> SetY(y - 14);
 
             break; //up
         }
         }
         Rocket::rocketsCounter[1]++;
-        rocket[choice] -> setSpeed(ammoSpeed);
-        rocket[choice] -> setVisible(true);
-        rocket[choice] -> setTeam(false);
+        rocket[choice] -> SetSpeed(ammoSpeed);
+        rocket[choice] -> SetVisible(true);
+        rocket[choice] -> SetTeam(false);
 
         al_play_sample(sound[0], 0.7, 0.0,1.0,ALLEGRO_PLAYMODE_ONCE,NULL);
     }
 }
 
-void Enemy::checkNearbyArea(Wall ** wall, Enemy ** enemy, Player * player)
+void Enemy::CheckNearbyArea(Wall ** wall, Enemy ** enemy, Player * player)
 {
     switch(direction)
     {
@@ -1512,26 +1504,26 @@ void Enemy::checkNearbyArea(Wall ** wall, Enemy ** enemy, Player * player)
     {
         for (short i=0; i < OBSTACLES ; i++)
         {
-            if(wall[i] -> getVisible())
+            if(wall[i] -> GetVisible())
             {
-                if( (wall[i] -> getX() + OBSTACLE_SIZE) < x - VIEW_RANGE ) //1 wall is too far behind
+                if( (wall[i] -> GetX() + OBSTACLE_SIZE) < x - VIEW_RANGE ) //1 wall is too far behind
                     continue;
 
-                if(wall[i] -> getY() + OBSTACLE_SIZE <  y - VIEW_RANGE) //2 enemy is under wall
+                if(wall[i] -> GetY() + OBSTACLE_SIZE <  y - VIEW_RANGE) //2 enemy is under wall
                     continue;
 
-                if(wall[i] -> getY() >  y + VIEW_RANGE + TANK_SIZE)                 //3 enemy is up the wall
+                if(wall[i] -> GetY() >  y + VIEW_RANGE + TANK_SIZE)                 //3 enemy is up the wall
                     continue;
 
                 //1 condition wall at left
                 //2 condition complete wall in sight
                 //3 wall at right
 
-                if((wall[i] -> getY() < y - VIEW_RANGE) && (wall[i] -> getY() + OBSTACLE_SIZE > y - VIEW_RANGE) && (wall[i] -> getX() + MARGIN_SIZE >= x + TANK_SIZE)) // 1. z gory wystaje ale widac przed czolgiem
+                if((wall[i] -> GetY() < y - VIEW_RANGE) && (wall[i] -> GetY() + OBSTACLE_SIZE > y - VIEW_RANGE) && (wall[i] -> GetX() + MARGIN_SIZE >= x + TANK_SIZE)) // 1. z gory wystaje ale widac przed czolgiem
                 {
-                    //behind wall we set 1
-                    for(int k = wall[i] -> getX() + OBSTACLE_SIZE - MARGIN_SIZE ; k < REAL_BATTLEFIELD_WIDTH ; k++ )
-                        for(int j = y - VIEW_RANGE ; j <= wall[i] -> getY() + OBSTACLE_SIZE + MARGIN_SIZE ; j++)
+                    //behind wall we Set 1
+                    for(int k = wall[i] -> GetX() + OBSTACLE_SIZE - MARGIN_SIZE ; k < REAL_BATTLEFIELD_WIDTH ; k++ )
+                        for(int j = y - VIEW_RANGE ; j <= wall[i] -> GetY() + OBSTACLE_SIZE + MARGIN_SIZE ; j++)
                         {
                             if(j < 0 || k < 0)
                                 continue;
@@ -1543,12 +1535,12 @@ void Enemy::checkNearbyArea(Wall ** wall, Enemy ** enemy, Player * player)
                         }
                 }
 
-                else if((wall[i] -> getY() > y - VIEW_RANGE) && (wall[i] -> getY() + OBSTACLE_SIZE < y + VIEW_RANGE + TANK_SIZE) && (wall[i] -> getX() + MARGIN_SIZE >= x + OBSTACLE_SIZE)) //2. cala widac
+                else if((wall[i] -> GetY() > y - VIEW_RANGE) && (wall[i] -> GetY() + OBSTACLE_SIZE < y + VIEW_RANGE + TANK_SIZE) && (wall[i] -> GetX() + MARGIN_SIZE >= x + OBSTACLE_SIZE)) //2. cala widac
                 {
-                    if(wall[i] -> getX() < x + TANK_SIZE + BLIND_RANGE)
+                    if(wall[i] -> GetX() < x + TANK_SIZE + BLIND_RANGE)
                     {
-                        for(int k = wall[i] -> getX() + OBSTACLE_SIZE - MARGIN_SIZE ; k < REAL_BATTLEFIELD_WIDTH ; k++ )
-                            for(int j = wall[i] -> getY() - VIEW_RANGE ; j <= wall[i] -> getY() + OBSTACLE_SIZE + VIEW_RANGE ; j++)
+                        for(int k = wall[i] -> GetX() + OBSTACLE_SIZE - MARGIN_SIZE ; k < REAL_BATTLEFIELD_WIDTH ; k++ )
+                            for(int j = wall[i] -> GetY() - VIEW_RANGE ; j <= wall[i] -> GetY() + OBSTACLE_SIZE + VIEW_RANGE ; j++)
                             {
                                 if(j < 0 || k < 0)
                                     continue;
@@ -1561,8 +1553,8 @@ void Enemy::checkNearbyArea(Wall ** wall, Enemy ** enemy, Player * player)
                     }
                     else
                     {
-                        for(int k = wall[i] -> getX() + OBSTACLE_SIZE - MARGIN_SIZE ; k < REAL_BATTLEFIELD_WIDTH ; k++ )
-                            for(int j = wall[i] -> getY() - MARGIN_SIZE ; j <= wall[i] -> getY() + OBSTACLE_SIZE + MARGIN_SIZE ; j++)
+                        for(int k = wall[i] -> GetX() + OBSTACLE_SIZE - MARGIN_SIZE ; k < REAL_BATTLEFIELD_WIDTH ; k++ )
+                            for(int j = wall[i] -> GetY() - MARGIN_SIZE ; j <= wall[i] -> GetY() + OBSTACLE_SIZE + MARGIN_SIZE ; j++)
                             {
                                 if(j < 0 || k < 0)
                                     continue;
@@ -1574,10 +1566,10 @@ void Enemy::checkNearbyArea(Wall ** wall, Enemy ** enemy, Player * player)
                             }
                     }
                 }
-                else if((wall[i] -> getY() < y + VIEW_RANGE + TANK_SIZE) && (wall[i] -> getY() + OBSTACLE_SIZE > y + VIEW_RANGE + TANK_SIZE) && (wall[i] -> getX() + MARGIN_SIZE >= x + OBSTACLE_SIZE))
+                else if((wall[i] -> GetY() < y + VIEW_RANGE + TANK_SIZE) && (wall[i] -> GetY() + OBSTACLE_SIZE > y + VIEW_RANGE + TANK_SIZE) && (wall[i] -> GetX() + MARGIN_SIZE >= x + OBSTACLE_SIZE))
                 {
-                    for(int k = wall[i] -> getX() + OBSTACLE_SIZE - MARGIN_SIZE ; k < REAL_BATTLEFIELD_WIDTH ; k++ )
-                        for(int j = wall[i] -> getY() - MARGIN_SIZE ; j <= y + VIEW_RANGE + TANK_SIZE ; j++)
+                    for(int k = wall[i] -> GetX() + OBSTACLE_SIZE - MARGIN_SIZE ; k < REAL_BATTLEFIELD_WIDTH ; k++ )
+                        for(int j = wall[i] -> GetY() - MARGIN_SIZE ; j <= y + VIEW_RANGE + TANK_SIZE ; j++)
                         {
                             if(j < 0 || k < 0)
                                 continue;
@@ -1603,7 +1595,7 @@ void Enemy::checkNearbyArea(Wall ** wall, Enemy ** enemy, Player * player)
             }
         }
 
-        this -> checkForPlayer(player, enemy);
+        this -> CheckForPlayer(player, enemy);
 
         for (short i= x - VIEW_RANGE ; i < REAL_BATTLEFIELD_WIDTH ; i++)
             for (short j = y - VIEW_RANGE; j <= y + VIEW_RANGE + TANK_SIZE ; j++)
@@ -1622,21 +1614,21 @@ void Enemy::checkNearbyArea(Wall ** wall, Enemy ** enemy, Player * player)
     {
         for (short i=0; i<OBSTACLES ; i++)
         {
-            if(wall[i] -> getVisible())
+            if(wall[i] -> GetVisible())
             {
-                if( wall[i] -> getX() > x + VIEW_RANGE + TANK_SIZE)
+                if( wall[i] -> GetX() > x + VIEW_RANGE + TANK_SIZE)
                     continue;
 
-                if(wall[i] -> getY() + OBSTACLE_SIZE <  y - VIEW_RANGE)
+                if(wall[i] -> GetY() + OBSTACLE_SIZE <  y - VIEW_RANGE)
                     continue;
 
-                if(wall[i] -> getY() >  y + VIEW_RANGE + TANK_SIZE)
+                if(wall[i] -> GetY() >  y + VIEW_RANGE + TANK_SIZE)
                     continue;
 
-                if((wall[i] -> getY() < y - VIEW_RANGE) && (wall[i] -> getY() + OBSTACLE_SIZE > y - VIEW_RANGE) && (wall[i] -> getX() + OBSTACLE_SIZE <= x + MARGIN_SIZE)) // 1. z gory ale widac przed czolgiem
+                if((wall[i] -> GetY() < y - VIEW_RANGE) && (wall[i] -> GetY() + OBSTACLE_SIZE > y - VIEW_RANGE) && (wall[i] -> GetX() + OBSTACLE_SIZE <= x + MARGIN_SIZE)) // 1. z gory ale widac przed czolgiem
                 {
-                    for(int k = wall[i] -> getX() + MARGIN_SIZE ; k > 0 ; k-- )
-                        for(int j = y - VIEW_RANGE ; j <= wall[i] -> getY() + OBSTACLE_SIZE + MARGIN_SIZE ; j++)
+                    for(int k = wall[i] -> GetX() + MARGIN_SIZE ; k > 0 ; k-- )
+                        for(int j = y - VIEW_RANGE ; j <= wall[i] -> GetY() + OBSTACLE_SIZE + MARGIN_SIZE ; j++)
                         {
                             if(j < 0 || k < 0)
                                 continue;
@@ -1648,12 +1640,12 @@ void Enemy::checkNearbyArea(Wall ** wall, Enemy ** enemy, Player * player)
                         }
                 }
 
-                else if((wall[i] -> getY() > y - VIEW_RANGE) && (wall[i] -> getY() + OBSTACLE_SIZE < y + VIEW_RANGE + TANK_SIZE) && (wall[i] -> getX() + OBSTACLE_SIZE <= x + MARGIN_SIZE))
+                else if((wall[i] -> GetY() > y - VIEW_RANGE) && (wall[i] -> GetY() + OBSTACLE_SIZE < y + VIEW_RANGE + TANK_SIZE) && (wall[i] -> GetX() + OBSTACLE_SIZE <= x + MARGIN_SIZE))
                 {
-                    if(wall[i] -> getX() + OBSTACLE_SIZE > x - BLIND_RANGE)
+                    if(wall[i] -> GetX() + OBSTACLE_SIZE > x - BLIND_RANGE)
                     {
-                        for(int k = wall[i] -> getX() + MARGIN_SIZE ; k > 0 ; k-- )
-                            for(int j = wall[i] -> getY() - VIEW_RANGE ; j <= wall[i] -> getY() + OBSTACLE_SIZE + VIEW_RANGE ; j++)
+                        for(int k = wall[i] -> GetX() + MARGIN_SIZE ; k > 0 ; k-- )
+                            for(int j = wall[i] -> GetY() - VIEW_RANGE ; j <= wall[i] -> GetY() + OBSTACLE_SIZE + VIEW_RANGE ; j++)
                             {
                                 if(j < 0 || k < 0)
                                     continue;
@@ -1666,8 +1658,8 @@ void Enemy::checkNearbyArea(Wall ** wall, Enemy ** enemy, Player * player)
                     }
                     else
                     {
-                        for(int k = wall[i] -> getX() + MARGIN_SIZE ; k > 0 ; k-- )
-                            for(int j = wall[i] -> getY() - MARGIN_SIZE ; j <= wall[i] -> getY() + OBSTACLE_SIZE + MARGIN_SIZE ; j++)
+                        for(int k = wall[i] -> GetX() + MARGIN_SIZE ; k > 0 ; k-- )
+                            for(int j = wall[i] -> GetY() - MARGIN_SIZE ; j <= wall[i] -> GetY() + OBSTACLE_SIZE + MARGIN_SIZE ; j++)
                             {
                                 if(j < 0 || k < 0)
                                     continue;
@@ -1679,10 +1671,10 @@ void Enemy::checkNearbyArea(Wall ** wall, Enemy ** enemy, Player * player)
                             }
                     }
                 }
-                else if((wall[i] -> getY() < y + VIEW_RANGE + TANK_SIZE) && (wall[i] -> getY() + OBSTACLE_SIZE > y + VIEW_RANGE + TANK_SIZE) && (wall[i] -> getX() + OBSTACLE_SIZE <= x + MARGIN_SIZE))
+                else if((wall[i] -> GetY() < y + VIEW_RANGE + TANK_SIZE) && (wall[i] -> GetY() + OBSTACLE_SIZE > y + VIEW_RANGE + TANK_SIZE) && (wall[i] -> GetX() + OBSTACLE_SIZE <= x + MARGIN_SIZE))
                 {
-                    for(int k = wall[i] -> getX() + MARGIN_SIZE ; k >= 0 ; k-- )
-                        for(int j = wall[i] -> getY() - MARGIN_SIZE ; j <= y + VIEW_RANGE + TANK_SIZE; j++)
+                    for(int k = wall[i] -> GetX() + MARGIN_SIZE ; k >= 0 ; k-- )
+                        for(int j = wall[i] -> GetY() - MARGIN_SIZE ; j <= y + VIEW_RANGE + TANK_SIZE; j++)
                         {
                             if(j < 0 || k < 0)
                                 continue;
@@ -1708,7 +1700,7 @@ void Enemy::checkNearbyArea(Wall ** wall, Enemy ** enemy, Player * player)
             }
         }
 
-        this -> checkForPlayer(player, enemy);
+        this -> CheckForPlayer(player, enemy);
 
         for (short i = x + TANK_SIZE +VIEW_RANGE ; i >= 0 ; i--)
             for (short j = y - VIEW_RANGE; j <= y + VIEW_RANGE + TANK_SIZE ; j++)
@@ -1727,21 +1719,21 @@ void Enemy::checkNearbyArea(Wall ** wall, Enemy ** enemy, Player * player)
     {
         for (short i=0; i<OBSTACLES ; i++)
         {
-            if(wall[i] -> getVisible())
+            if(wall[i] -> GetVisible())
             {
-                if( wall[i] -> getY() + OBSTACLE_SIZE < y - VIEW_RANGE )
+                if( wall[i] -> GetY() + OBSTACLE_SIZE < y - VIEW_RANGE )
                     continue;
 
-                if(wall[i] -> getX() + OBSTACLE_SIZE <  x - VIEW_RANGE)
+                if(wall[i] -> GetX() + OBSTACLE_SIZE <  x - VIEW_RANGE)
                     continue;
 
-                if(wall[i] -> getX() >  x + VIEW_RANGE + TANK_SIZE)
+                if(wall[i] -> GetX() >  x + VIEW_RANGE + TANK_SIZE)
                     continue;
 
-                if(wall[i] -> getX() < x - VIEW_RANGE && wall[i] -> getX() + OBSTACLE_SIZE > x - VIEW_RANGE && wall[i] -> getY() + MARGIN_SIZE >= y + TANK_SIZE)
+                if(wall[i] -> GetX() < x - VIEW_RANGE && wall[i] -> GetX() + OBSTACLE_SIZE > x - VIEW_RANGE && wall[i] -> GetY() + MARGIN_SIZE >= y + TANK_SIZE)
                 {
-                    for(int k = x - VIEW_RANGE ; k <= wall[i] -> getX() + OBSTACLE_SIZE + MARGIN_SIZE ; k++ )
-                        for(int j = wall[i] -> getY() + OBSTACLE_SIZE - MARGIN_SIZE ; j < REAL_BATTLEFIELD_HEIGHT ; j++)
+                    for(int k = x - VIEW_RANGE ; k <= wall[i] -> GetX() + OBSTACLE_SIZE + MARGIN_SIZE ; k++ )
+                        for(int j = wall[i] -> GetY() + OBSTACLE_SIZE - MARGIN_SIZE ; j < REAL_BATTLEFIELD_HEIGHT ; j++)
                         {
                             if(j < 0 || k < 0)
                                 continue;
@@ -1752,12 +1744,12 @@ void Enemy::checkNearbyArea(Wall ** wall, Enemy ** enemy, Player * player)
                                 Enemy::isPlayer[k][j] = 2;
                         }
                 }
-                else if(wall[i] -> getX() > x - VIEW_RANGE && wall[i] -> getX() + OBSTACLE_SIZE < x + TANK_SIZE + VIEW_RANGE && wall[i] -> getY() + MARGIN_SIZE >= y + TANK_SIZE)
+                else if(wall[i] -> GetX() > x - VIEW_RANGE && wall[i] -> GetX() + OBSTACLE_SIZE < x + TANK_SIZE + VIEW_RANGE && wall[i] -> GetY() + MARGIN_SIZE >= y + TANK_SIZE)
                 {
-                    if(wall[i] -> getY() < y + TANK_SIZE + BLIND_RANGE )
+                    if(wall[i] -> GetY() < y + TANK_SIZE + BLIND_RANGE )
                     {
-                        for(int k = wall[i] -> getX() - VIEW_RANGE ; k <= wall[i] -> getX() + OBSTACLE_SIZE + VIEW_RANGE; k++ )
-                            for(int j = wall[i] -> getY() + OBSTACLE_SIZE - MARGIN_SIZE ; j < REAL_BATTLEFIELD_HEIGHT ; j++)
+                        for(int k = wall[i] -> GetX() - VIEW_RANGE ; k <= wall[i] -> GetX() + OBSTACLE_SIZE + VIEW_RANGE; k++ )
+                            for(int j = wall[i] -> GetY() + OBSTACLE_SIZE - MARGIN_SIZE ; j < REAL_BATTLEFIELD_HEIGHT ; j++)
                             {
                                 if(j < 0 || k < 0)
                                     continue;
@@ -1770,8 +1762,8 @@ void Enemy::checkNearbyArea(Wall ** wall, Enemy ** enemy, Player * player)
                     }
                     else
                     {
-                        for(int k = wall[i] -> getX() - MARGIN_SIZE ; k <= wall[i] -> getX() + OBSTACLE_SIZE + MARGIN_SIZE; k++ )
-                            for(int j = wall[i] -> getY() + OBSTACLE_SIZE - MARGIN_SIZE ; j < REAL_BATTLEFIELD_HEIGHT ; j++)
+                        for(int k = wall[i] -> GetX() - MARGIN_SIZE ; k <= wall[i] -> GetX() + OBSTACLE_SIZE + MARGIN_SIZE; k++ )
+                            for(int j = wall[i] -> GetY() + OBSTACLE_SIZE - MARGIN_SIZE ; j < REAL_BATTLEFIELD_HEIGHT ; j++)
                             {
                                 if(j < 0 || k < 0)
                                     continue;
@@ -1783,10 +1775,10 @@ void Enemy::checkNearbyArea(Wall ** wall, Enemy ** enemy, Player * player)
                             }
                     }
                 }
-                else if(wall[i] -> getX() < x + TANK_SIZE + VIEW_RANGE && wall[i] -> getX() + OBSTACLE_SIZE > x + TANK_SIZE + VIEW_RANGE && wall[i] -> getY() + MARGIN_SIZE >= y + TANK_SIZE)
+                else if(wall[i] -> GetX() < x + TANK_SIZE + VIEW_RANGE && wall[i] -> GetX() + OBSTACLE_SIZE > x + TANK_SIZE + VIEW_RANGE && wall[i] -> GetY() + MARGIN_SIZE >= y + TANK_SIZE)
                 {
-                    for(int k = wall[i] -> getX() - MARGIN_SIZE ; k <= x + TANK_SIZE + VIEW_RANGE; k++ )
-                        for(int j = wall[i] -> getY() + OBSTACLE_SIZE - MARGIN_SIZE ; j < REAL_BATTLEFIELD_HEIGHT ; j++)
+                    for(int k = wall[i] -> GetX() - MARGIN_SIZE ; k <= x + TANK_SIZE + VIEW_RANGE; k++ )
+                        for(int j = wall[i] -> GetY() + OBSTACLE_SIZE - MARGIN_SIZE ; j < REAL_BATTLEFIELD_HEIGHT ; j++)
                         {
                             if(j < 0 || k < 0)
                                 continue;
@@ -1812,7 +1804,7 @@ void Enemy::checkNearbyArea(Wall ** wall, Enemy ** enemy, Player * player)
             }
         }
 
-        this -> checkForPlayer(player, enemy);
+        this -> CheckForPlayer(player, enemy);
 
         for (short i= y - VIEW_RANGE ; i < REAL_BATTLEFIELD_HEIGHT ; i++)
             for (short j = x - VIEW_RANGE; j <= x + VIEW_RANGE + TANK_SIZE ; j++)
@@ -1831,21 +1823,21 @@ void Enemy::checkNearbyArea(Wall ** wall, Enemy ** enemy, Player * player)
     {
         for (short i=0; i<OBSTACLES ; i++)
         {
-            if(wall[i] -> getVisible())
+            if(wall[i] -> GetVisible())
             {
-                if( wall[i] -> getY() > y + VIEW_RANGE + TANK_SIZE)
+                if( wall[i] -> GetY() > y + VIEW_RANGE + TANK_SIZE)
                     continue;
 
-                if(wall[i] -> getX() + OBSTACLE_SIZE <  x - VIEW_RANGE)
+                if(wall[i] -> GetX() + OBSTACLE_SIZE <  x - VIEW_RANGE)
                     continue;
 
-                if(wall[i] -> getX() >  x + VIEW_RANGE + TANK_SIZE)
+                if(wall[i] -> GetX() >  x + VIEW_RANGE + TANK_SIZE)
                     continue;
 
-                if(wall[i] -> getX() < x - VIEW_RANGE && wall[i] -> getX() + OBSTACLE_SIZE > x - VIEW_RANGE && wall[i] -> getY() + OBSTACLE_SIZE <= y + MARGIN_SIZE )
+                if(wall[i] -> GetX() < x - VIEW_RANGE && wall[i] -> GetX() + OBSTACLE_SIZE > x - VIEW_RANGE && wall[i] -> GetY() + OBSTACLE_SIZE <= y + MARGIN_SIZE )
                 {
-                    for(int k = x - VIEW_RANGE ; k <= wall[i] -> getX() + OBSTACLE_SIZE + MARGIN_SIZE ; k++ )
-                        for(int j = wall[i] -> getY() + MARGIN_SIZE ; j >= 0 ; j--)
+                    for(int k = x - VIEW_RANGE ; k <= wall[i] -> GetX() + OBSTACLE_SIZE + MARGIN_SIZE ; k++ )
+                        for(int j = wall[i] -> GetY() + MARGIN_SIZE ; j >= 0 ; j--)
                         {
                             if(j < 0 || k < 0)
                                 continue;
@@ -1856,12 +1848,12 @@ void Enemy::checkNearbyArea(Wall ** wall, Enemy ** enemy, Player * player)
                                 Enemy::isPlayer[k][j] = 2;
                         }
                 }
-                else if(wall[i] -> getX() > x - VIEW_RANGE && wall[i] -> getX() + OBSTACLE_SIZE < x + TANK_SIZE + VIEW_RANGE && wall[i] -> getY() + OBSTACLE_SIZE <= y + MARGIN_SIZE )
+                else if(wall[i] -> GetX() > x - VIEW_RANGE && wall[i] -> GetX() + OBSTACLE_SIZE < x + TANK_SIZE + VIEW_RANGE && wall[i] -> GetY() + OBSTACLE_SIZE <= y + MARGIN_SIZE )
                 {
-                    if(wall[i] -> getY() + OBSTACLE_SIZE > y - BLIND_RANGE )
+                    if(wall[i] -> GetY() + OBSTACLE_SIZE > y - BLIND_RANGE )
                     {
-                        for(int k = wall[i] -> getX() - VIEW_RANGE ; k <= wall[i] -> getX() + OBSTACLE_SIZE + VIEW_RANGE; k++ )
-                            for(int j = wall[i] -> getY() + MARGIN_SIZE ; j >= 0 ; j--)
+                        for(int k = wall[i] -> GetX() - VIEW_RANGE ; k <= wall[i] -> GetX() + OBSTACLE_SIZE + VIEW_RANGE; k++ )
+                            for(int j = wall[i] -> GetY() + MARGIN_SIZE ; j >= 0 ; j--)
                             {
                                 if(j < 0 || k < 0)
                                     continue;
@@ -1874,8 +1866,8 @@ void Enemy::checkNearbyArea(Wall ** wall, Enemy ** enemy, Player * player)
                     }
                     else
                     {
-                        for(int k = wall[i] -> getX() - MARGIN_SIZE ; k <= wall[i] -> getX() + OBSTACLE_SIZE + MARGIN_SIZE; k++ )
-                            for(int j = wall[i] -> getY() + MARGIN_SIZE ; j >= 0 ; j--)
+                        for(int k = wall[i] -> GetX() - MARGIN_SIZE ; k <= wall[i] -> GetX() + OBSTACLE_SIZE + MARGIN_SIZE; k++ )
+                            for(int j = wall[i] -> GetY() + MARGIN_SIZE ; j >= 0 ; j--)
                             {
 
                                 if(j < 0 || k < 0)
@@ -1888,10 +1880,10 @@ void Enemy::checkNearbyArea(Wall ** wall, Enemy ** enemy, Player * player)
                             }
                     }
                 }
-                else if(wall[i] -> getX() < x + TANK_SIZE + VIEW_RANGE && wall[i] -> getX() + OBSTACLE_SIZE > x + TANK_SIZE + VIEW_RANGE && wall[i] -> getY() + OBSTACLE_SIZE <= y + MARGIN_SIZE )
+                else if(wall[i] -> GetX() < x + TANK_SIZE + VIEW_RANGE && wall[i] -> GetX() + OBSTACLE_SIZE > x + TANK_SIZE + VIEW_RANGE && wall[i] -> GetY() + OBSTACLE_SIZE <= y + MARGIN_SIZE )
                 {
-                    for(int k = wall[i] -> getX() - MARGIN_SIZE ; k <= x + TANK_SIZE + VIEW_RANGE; k++ )
-                        for(int j = wall[i] -> getY() + MARGIN_SIZE ; j >= 0 ; j--)
+                    for(int k = wall[i] -> GetX() - MARGIN_SIZE ; k <= x + TANK_SIZE + VIEW_RANGE; k++ )
+                        for(int j = wall[i] -> GetY() + MARGIN_SIZE ; j >= 0 ; j--)
                         {
                             if(j < 0 || k < 0)
                                 continue;
@@ -1917,7 +1909,7 @@ void Enemy::checkNearbyArea(Wall ** wall, Enemy ** enemy, Player * player)
             }
         }
 
-        this -> checkForPlayer(player, enemy);
+        this -> CheckForPlayer(player, enemy);
 
         for (short i= y + VIEW_RANGE ; i >= 0 ; i--)
             for (short j = x - VIEW_RANGE; j <= x + VIEW_RANGE + TANK_SIZE ; j++)
@@ -1934,10 +1926,10 @@ void Enemy::checkNearbyArea(Wall ** wall, Enemy ** enemy, Player * player)
         break;
     }
     }
-    this -> checkForBase(wall,enemy);
+    this -> CheckForBase(wall,enemy);
 }
 
-bool Enemy::checkPlayerFuture(short direction, Player *player, short moves)
+bool Enemy::CheckPlayerFuture(short direction, Player *player, short moves)
 {
     switch(direction)
     {
@@ -1946,9 +1938,9 @@ bool Enemy::checkPlayerFuture(short direction, Player *player, short moves)
         if(x + 2 > BATTLEFIELD_WIDTH)
             return false;
 
-        if(player -> getActive())
+        if(player -> GetActive())
         {
-            if(x + (moves*2) >= player -> getX()-OBSTACLE_SIZE+MARGIN_SIZE && x + (moves*2) <=player -> getX()+OBSTACLE_SIZE-MARGIN_SIZE && y >= player -> getY()-OBSTACLE_SIZE+MARGIN_SIZE && y<= player -> getY()+OBSTACLE_SIZE-MARGIN_SIZE)
+            if(x + (moves*2) >= player -> GetX()-OBSTACLE_SIZE+MARGIN_SIZE && x + (moves*2) <=player -> GetX()+OBSTACLE_SIZE-MARGIN_SIZE && y >= player -> GetY()-OBSTACLE_SIZE+MARGIN_SIZE && y<= player -> GetY()+OBSTACLE_SIZE-MARGIN_SIZE)
                 return true;
             else
                 return false;
@@ -1961,9 +1953,9 @@ bool Enemy::checkPlayerFuture(short direction, Player *player, short moves)
         if(x - TANK_SPEED < 0)
             return false;
 
-        if(player->getActive())
+        if(player->GetActive())
         {
-            if(x - (moves*2) >= player -> getX()-OBSTACLE_SIZE+MARGIN_SIZE && x - (moves*2)<=player -> getX()+OBSTACLE_SIZE-MARGIN_SIZE && y >= player -> getY()-OBSTACLE_SIZE+MARGIN_SIZE && y<= player -> getY()+OBSTACLE_SIZE-MARGIN_SIZE)
+            if(x - (moves*2) >= player -> GetX()-OBSTACLE_SIZE+MARGIN_SIZE && x - (moves*2)<=player -> GetX()+OBSTACLE_SIZE-MARGIN_SIZE && y >= player -> GetY()-OBSTACLE_SIZE+MARGIN_SIZE && y<= player -> GetY()+OBSTACLE_SIZE-MARGIN_SIZE)
                 return true;
             else
                 return false;
@@ -1977,9 +1969,9 @@ bool Enemy::checkPlayerFuture(short direction, Player *player, short moves)
         if(y + (moves*2) > BATTLEFIELD_HEIGHT)
             return false;
 
-        if(player->getActive())
+        if(player->GetActive())
         {
-            if(x >= player -> getX()-OBSTACLE_SIZE+MARGIN_SIZE && x <=player -> getX()+OBSTACLE_SIZE-MARGIN_SIZE && y + (moves*2) >= player -> getY()-OBSTACLE_SIZE+MARGIN_SIZE && y + (moves*2)<= player -> getY()+OBSTACLE_SIZE-MARGIN_SIZE)
+            if(x >= player -> GetX()-OBSTACLE_SIZE+MARGIN_SIZE && x <=player -> GetX()+OBSTACLE_SIZE-MARGIN_SIZE && y + (moves*2) >= player -> GetY()-OBSTACLE_SIZE+MARGIN_SIZE && y + (moves*2)<= player -> GetY()+OBSTACLE_SIZE-MARGIN_SIZE)
                 return true;
             else
                 return false;
@@ -1993,9 +1985,9 @@ bool Enemy::checkPlayerFuture(short direction, Player *player, short moves)
         if(y - (moves*2) < 0)
             return false;
 
-        if(player->getActive())
+        if(player->GetActive())
         {
-            if(x >= player -> getX()-OBSTACLE_SIZE+MARGIN_SIZE && x <=player -> getX()+OBSTACLE_SIZE-MARGIN_SIZE && y - (moves*2) >= player -> getY()-OBSTACLE_SIZE+MARGIN_SIZE && y - (moves*2)<= player -> getY()+OBSTACLE_SIZE-MARGIN_SIZE)
+            if(x >= player -> GetX()-OBSTACLE_SIZE+MARGIN_SIZE && x <=player -> GetX()+OBSTACLE_SIZE-MARGIN_SIZE && y - (moves*2) >= player -> GetY()-OBSTACLE_SIZE+MARGIN_SIZE && y - (moves*2)<= player -> GetY()+OBSTACLE_SIZE-MARGIN_SIZE)
                 return true;
             else
                 return false;
@@ -2008,174 +2000,174 @@ bool Enemy::checkPlayerFuture(short direction, Player *player, short moves)
     return true;
 }
 
-void Enemy::checkDestination(Wall ** wall)
+void Enemy::CheckDestination(Wall ** wall)
 {
     if (Enemy::isPlayer[destinationX][destinationY] > 1)
     {
-        if(!this -> searchForDirection())
+        if(!this -> SearchForDirection())
             ClearPlayerArray(wall);
     }
 }
 
-void Enemy::fightCoord(Player *player, Wall ** wall, Enemy **enemy)
+void Enemy::FightCoord(Player *player, Wall ** wall, Enemy **enemy)
 {
     switch(direction)
     {
     case 0 ... 1:
     {
-        if(player -> getY() > y)
+        if(player -> GetY() > y)
         {
             attack = true;
             bool mozna = true;
             std::string route;
-            if(player -> getY() + TANK_SIZE > BATTLEFIELD_HEIGHT)
+            if(player -> GetY() + TANK_SIZE > BATTLEFIELD_HEIGHT)
                 mozna = false;
 
             if(mozna)
             {
-                destinationY = player -> getY() + TANK_SIZE;
-                destinationX = player -> getX();
+                destinationY = player -> GetY() + TANK_SIZE;
+                destinationX = player -> GetX();
                 route = FindPath(enemy, wall, player, id, false, true);
             }
 
             if(mozna == true && route.at(0) != '5')
             {
                 directionCounter = 0;
-                tempDirection = this-> enemyPilot(enemy, wall, player, true);
+                tempDirection = this-> EnemyPilot(enemy, wall, player, true);
             }
             else
             {
                 mozna = true;
-                if(player -> getY() - TANK_SIZE < 0)
+                if(player -> GetY() - TANK_SIZE < 0)
                     mozna = false;
 
                 if(mozna)
                 {
-                    destinationX = player -> getX();
-                    destinationY = player -> getY() - TANK_SIZE;
+                    destinationX = player -> GetX();
+                    destinationY = player -> GetY() - TANK_SIZE;
                     route = FindPath(enemy, wall, player, id, false, true);
                 }
                 if(mozna && route.at(0) != '5')
                 {
                     directionCounter = 0;
-                    tempDirection = this-> enemyPilot(enemy, wall, player, true);
+                    tempDirection = this-> EnemyPilot(enemy, wall, player, true);
                 }
                 else
                 {
                     mozna = true;
-                    if(player -> getX() + TANK_SIZE > BATTLEFIELD_WIDTH)
+                    if(player -> GetX() + TANK_SIZE > BATTLEFIELD_WIDTH)
                         mozna = false;
 
                     if(mozna)
                     {
-                        destinationX = player -> getX() + TANK_SIZE;
-                        destinationY = player -> getY();
+                        destinationX = player -> GetX() + TANK_SIZE;
+                        destinationY = player -> GetY();
                         route = FindPath(enemy, wall, player, id, false, true);
                     }
                     if(mozna && route.at(0) != '5')
                     {
                         directionCounter = 0;
-                        tempDirection = this-> enemyPilot(enemy, wall, player, true);
+                        tempDirection = this-> EnemyPilot(enemy, wall, player, true);
                     }
                     else
                     {
                         mozna = true;
-                        if(player -> getX() - TANK_SIZE > 0)
+                        if(player -> GetX() - TANK_SIZE > 0)
                             mozna = false;
 
                         if(mozna)
                         {
-                            destinationX = player -> getX() - TANK_SIZE;
-                            destinationY = player -> getY();
+                            destinationX = player -> GetX() - TANK_SIZE;
+                            destinationY = player -> GetY();
                             route = FindPath(enemy, wall, player, id, false, true);
                         }
                         if(mozna && route.at(0) != '5')
                         {
                             directionCounter = 0;
-                            tempDirection = this-> enemyPilot(enemy, wall, player, true);
+                            tempDirection = this-> EnemyPilot(enemy, wall, player, true);
                         }
                         else
                         {
-                            enemy[id] -> setStop(true);
+                            enemy[id] -> SetStop(true);
                             tempDirection = 5;
                         }
                     }
                 }
             }
         }
-        else if (player -> getY() < y)
+        else if (player -> GetY() < y)
         {
             attack = true;
             bool mozna = true;
             std::string route;
-            if(player -> getY() - TANK_SIZE < 0)
+            if(player -> GetY() - TANK_SIZE < 0)
                 mozna = false;
 
             if(mozna)
             {
-                destinationY = player -> getY() - TANK_SIZE;
-                destinationX = player -> getX();
+                destinationY = player -> GetY() - TANK_SIZE;
+                destinationX = player -> GetX();
                 route = FindPath(enemy, wall, player, id, false, true);
             }
             if(mozna && route.at(0) != '5')
             {
                 directionCounter = 0;
-                tempDirection = this-> enemyPilot(enemy, wall, player, true);
+                tempDirection = this-> EnemyPilot(enemy, wall, player, true);
             }
             else
             {
                 mozna = true;
-                if(player -> getY() + TANK_SIZE > BATTLEFIELD_HEIGHT)
+                if(player -> GetY() + TANK_SIZE > BATTLEFIELD_HEIGHT)
                     mozna = false;
 
                 if(mozna)
                 {
-                    destinationX = player -> getX();
-                    destinationY = player -> getY() + TANK_SIZE;
+                    destinationX = player -> GetX();
+                    destinationY = player -> GetY() + TANK_SIZE;
                     route = FindPath(enemy, wall, player, id, false, true);
                 }
                 if(mozna && route.at(0) != '5')
                 {
                     directionCounter = 0;
-                    tempDirection = this-> enemyPilot(enemy, wall, player, true);
+                    tempDirection = this-> EnemyPilot(enemy, wall, player, true);
                 }
                 else
                 {
                     mozna = true;
-                    if(player -> getX() + TANK_SIZE > BATTLEFIELD_WIDTH)
+                    if(player -> GetX() + TANK_SIZE > BATTLEFIELD_WIDTH)
                         mozna = false;
 
                     if(mozna)
                     {
-                        destinationX = player -> getX() + TANK_SIZE;
-                        destinationY = player -> getY();
+                        destinationX = player -> GetX() + TANK_SIZE;
+                        destinationY = player -> GetY();
                         route = FindPath(enemy, wall, player, id, false, true);
                     }
                     if(mozna && route.at(0) != '5')
                     {
                         directionCounter = 0;
-                        tempDirection = this-> enemyPilot(enemy, wall, player, true);
+                        tempDirection = this-> EnemyPilot(enemy, wall, player, true);
                     }
                     else
                     {
                         mozna = true;
-                        if(player -> getX() - TANK_SIZE < 0)
+                        if(player -> GetX() - TANK_SIZE < 0)
                             mozna = false;
 
                         if(mozna)
                         {
-                            destinationX = player -> getX() - TANK_SIZE;
-                            destinationY = player -> getY();
+                            destinationX = player -> GetX() - TANK_SIZE;
+                            destinationY = player -> GetY();
                             route = FindPath(enemy, wall, player, id, false, true);
                         }
                         if(mozna && route.at(0) != '5')
                         {
                             directionCounter = 0;
-                            tempDirection = this-> enemyPilot(enemy, wall, player, true);
+                            tempDirection = this-> EnemyPilot(enemy, wall, player, true);
                         }
                         else
                         {
-                            enemy[id] -> setStop(true);
+                            enemy[id] -> SetStop(true);
                             tempDirection = 5;
                         }
                     }
@@ -2186,160 +2178,160 @@ void Enemy::fightCoord(Player *player, Wall ** wall, Enemy **enemy)
     }
     case 2 ... 3:
     {
-        if(player -> getX() > x)
+        if(player -> GetX() > x)
         {
             attack = true;
             bool mozna = true;
             std::string route;
-            if(player -> getX() + TANK_SIZE > BATTLEFIELD_WIDTH)
+            if(player -> GetX() + TANK_SIZE > BATTLEFIELD_WIDTH)
                 mozna = false;
 
             if(mozna)
             {
-                destinationX = player -> getX() + TANK_SIZE;
-                destinationY = player -> getY();
+                destinationX = player -> GetX() + TANK_SIZE;
+                destinationY = player -> GetY();
                 route = FindPath(enemy, wall, player, id, false, true);
             }
 
             if(mozna && route.at(0) != '5')
             {
                 directionCounter = 0;
-                tempDirection = this-> enemyPilot(enemy, wall, player, true);
+                tempDirection = this-> EnemyPilot(enemy, wall, player, true);
             }
             else
             {
                 mozna = true;
-                if(player -> getX() - TANK_SIZE < 0)
+                if(player -> GetX() - TANK_SIZE < 0)
                     mozna = false;
 
                 if(mozna)
                 {
-                    destinationX = player -> getX() - TANK_SIZE;
-                    destinationY = player -> getY();
+                    destinationX = player -> GetX() - TANK_SIZE;
+                    destinationY = player -> GetY();
                     route = FindPath(enemy, wall, player, id, false, true);
                 }
                 if(route.at(0) != '5' && mozna)
                 {
                     directionCounter = 0;
-                    tempDirection = this-> enemyPilot(enemy, wall, player, true);
+                    tempDirection = this-> EnemyPilot(enemy, wall, player, true);
                 }
                 else
                 {
                     mozna = true;
-                    if(player -> getY() + TANK_SIZE > BATTLEFIELD_HEIGHT)
+                    if(player -> GetY() + TANK_SIZE > BATTLEFIELD_HEIGHT)
                         mozna = false;
 
                     if(mozna)
                     {
-                        destinationX = player -> getX();
-                        destinationY = player -> getY() + TANK_SIZE;
+                        destinationX = player -> GetX();
+                        destinationY = player -> GetY() + TANK_SIZE;
                         route = FindPath(enemy, wall, player, id, false, true);
                     }
                     if(mozna && route.at(0) != '5')
                     {
                         directionCounter = 0;
-                        tempDirection = this-> enemyPilot(enemy, wall, player, true);
+                        tempDirection = this-> EnemyPilot(enemy, wall, player, true);
                     }
                     else
                     {
                         mozna = true;
-                        if(player -> getY() - TANK_SIZE < 0)
+                        if(player -> GetY() - TANK_SIZE < 0)
                             mozna = false;
 
                         if(mozna)
                         {
-                            destinationX = player -> getX();
-                            destinationY = player -> getY() - TANK_SIZE;
+                            destinationX = player -> GetX();
+                            destinationY = player -> GetY() - TANK_SIZE;
                             route = FindPath(enemy, wall, player, id, false, true);
                         }
                         if(mozna && route.at(0) != '5')
                         {
                             directionCounter = 0;
-                            tempDirection = this-> enemyPilot(enemy, wall, player, true);
+                            tempDirection = this-> EnemyPilot(enemy, wall, player, true);
                         }
                         else
                         {
-                            enemy[id] -> setStop(true);
+                            enemy[id] -> SetStop(true);
                             tempDirection = 5;
                         }
                     }
                 }
             }
         }
-        else if (player -> getX() < x)
+        else if (player -> GetX() < x)
         {
 
             attack = true;
             bool mozna = true;
             std::string route;
-            if(player -> getX() - TANK_SIZE < 0)
+            if(player -> GetX() - TANK_SIZE < 0)
                 mozna = false;
 
             if(mozna)
             {
-                destinationX = player -> getX() - TANK_SIZE;
-                destinationY = player -> getY();
+                destinationX = player -> GetX() - TANK_SIZE;
+                destinationY = player -> GetY();
                 route = FindPath(enemy, wall, player, id, false, true);
             }
             if(mozna && route.at(0) != '5')
             {
                 directionCounter = 0;
-                tempDirection = this-> enemyPilot(enemy, wall, player, true);
+                tempDirection = this-> EnemyPilot(enemy, wall, player, true);
             }
             else
             {
                 mozna = true;
-                if(player -> getX() + TANK_SIZE > BATTLEFIELD_WIDTH)
+                if(player -> GetX() + TANK_SIZE > BATTLEFIELD_WIDTH)
                     mozna = false;
 
                 if(mozna)
                 {
-                    destinationX = player -> getX() + TANK_SIZE;
-                    destinationY = player -> getY();
+                    destinationX = player -> GetX() + TANK_SIZE;
+                    destinationY = player -> GetY();
                     route = FindPath(enemy, wall, player, id, false, true);
                 }
                 if(mozna && route.at(0) != '5')
                 {
                     directionCounter = 0;
-                    tempDirection = this-> enemyPilot(enemy, wall, player, true);
+                    tempDirection = this-> EnemyPilot(enemy, wall, player, true);
                 }
                 else
                 {
                     mozna = true;
-                    if(player -> getY() + TANK_SIZE > BATTLEFIELD_HEIGHT)
+                    if(player -> GetY() + TANK_SIZE > BATTLEFIELD_HEIGHT)
                         mozna = false;
 
                     if(mozna)
                     {
-                        destinationX = player -> getX();
-                        destinationY = player -> getY() + TANK_SIZE;
+                        destinationX = player -> GetX();
+                        destinationY = player -> GetY() + TANK_SIZE;
                         route = FindPath(enemy, wall, player, id, false, true);
                     }
                     if(mozna && route.at(0) != '5')
                     {
                         directionCounter = 0;
-                        tempDirection = this-> enemyPilot(enemy, wall, player, true);
+                        tempDirection = this-> EnemyPilot(enemy, wall, player, true);
                     }
                     else
                     {
                         mozna = true;
-                        if(player -> getY() - TANK_SIZE < 0)
+                        if(player -> GetY() - TANK_SIZE < 0)
                             mozna = false;
 
                         if(mozna)
                         {
-                            destinationX = player -> getX();
-                            destinationY = player -> getY() - TANK_SIZE;
+                            destinationX = player -> GetX();
+                            destinationY = player -> GetY() - TANK_SIZE;
                             route = FindPath(enemy, wall, player, id, false, true);
                         }
                         if(mozna && route.at(0) != '5')
                         {
                             directionCounter = 0;
-                            tempDirection = this-> enemyPilot(enemy, wall, player, true);
+                            tempDirection = this-> EnemyPilot(enemy, wall, player, true);
                         }
                         else
                         {
-                            enemy[id] -> setStop(true);
+                            enemy[id] -> SetStop(true);
                             tempDirection = 5;
                         }
                     }
@@ -2351,7 +2343,7 @@ void Enemy::fightCoord(Player *player, Wall ** wall, Enemy **enemy)
     }
 }
 
-void SetTarget(Enemy **enemy, Player *player)
+void SetTarGet(Enemy **enemy, Player *player)
 {
     short enemyAlive = CheckEnemyAlive(enemy);
 
@@ -2373,7 +2365,7 @@ void SetTarget(Enemy **enemy, Player *player)
                 {
                     for(short j=0 ; j < ENEMIES ; j++)
                     {
-                        if(!enemy[j] -> getDead())
+                        if(!enemy[j] -> GetDead())
                         {
                             Enemy::attackBase[j] = false;
                             break;
@@ -2384,7 +2376,7 @@ void SetTarget(Enemy **enemy, Player *player)
                 {
                     for(short j=0 ; j < ENEMIES ; j++)
                     {
-                        if(!enemy[j] -> getDead())
+                        if(!enemy[j] -> GetDead())
                         {
                             Enemy::attackBase[j] = true;
                             break;
@@ -2395,9 +2387,9 @@ void SetTarget(Enemy **enemy, Player *player)
                 {
                     for(short j=0 ; j < ENEMIES ; j++)
                     {
-                        if(!enemy[j] -> getDead() && !enemy[j] -> getAttack())
+                        if(!enemy[j] -> GetDead() && !enemy[j] -> GetAttack())
                         {
-                            if(player -> getLife() < 2)
+                            if(player -> GetLife() < 2)
                                 Enemy::attackBase[j] = false;
                             else
                                 Enemy::attackBase[j] = true;
@@ -2415,7 +2407,7 @@ void SetTarget(Enemy **enemy, Player *player)
                     bool tempSet = false;
                     for(short j=0 ; j < ENEMIES ; j++)
                     {
-                        if(!enemy[j] -> getDead())
+                        if(!enemy[j] -> GetDead())
                         {
                             if(!tempSet)
                             {
@@ -2432,7 +2424,7 @@ void SetTarget(Enemy **enemy, Player *player)
                     bool tempSet = false;
                     for(short j=0 ; j < ENEMIES ; j++)
                     {
-                        if(!enemy[j] -> getDead())
+                        if(!enemy[j] -> GetDead())
                         {
                             if(!tempSet)
                             {
@@ -2450,7 +2442,7 @@ void SetTarget(Enemy **enemy, Player *player)
                     bool tempSet = false;
                     for(short j=0 ; j < ENEMIES ; j++)
                     {
-                        if(!enemy[j] -> getDead())
+                        if(!enemy[j] -> GetDead())
                         {
                             if(!tempSet)
                             {
@@ -2470,7 +2462,7 @@ void SetTarget(Enemy **enemy, Player *player)
     }
 }
 
-short Enemy::enemyPilot(Enemy **enemy, Wall **wall, Player *player, bool fight)
+short Enemy::EnemyPilot(Enemy **enemy, Wall **wall, Player *player, bool fight)
 {
     std::string route;
     if(!fight)
@@ -2481,26 +2473,26 @@ short Enemy::enemyPilot(Enemy **enemy, Wall **wall, Player *player, bool fight)
     wallAtPath = false;
     if(route.at(0) == '0')
     {
-        tempDestinationY = (enemy[id] -> getY()/TANK_SIZE) * TANK_SIZE;
-        tempDestinationX = (enemy[id] -> getX()/TANK_SIZE + 1) * TANK_SIZE;
+        tempDestinationY = (enemy[id] -> GetY()/TANK_SIZE) * TANK_SIZE;
+        tempDestinationX = (enemy[id] -> GetX()/TANK_SIZE + 1) * TANK_SIZE;
         return 0;
     }
     else if(route.at(0) == '1')
     {
-        tempDestinationY = (enemy[id] -> getY()/TANK_SIZE + 1) * TANK_SIZE;
-        tempDestinationX = (enemy[id] -> getX()/TANK_SIZE) * TANK_SIZE;
+        tempDestinationY = (enemy[id] -> GetY()/TANK_SIZE + 1) * TANK_SIZE;
+        tempDestinationX = (enemy[id] -> GetX()/TANK_SIZE) * TANK_SIZE;
         return 2;
     }
     else if(route.at(0) == '2')
     {
-        tempDestinationY = (enemy[id] -> getY()/TANK_SIZE) * TANK_SIZE;
-        tempDestinationX = (enemy[id] -> getX()/TANK_SIZE - 1)*TANK_SIZE;
+        tempDestinationY = (enemy[id] -> GetY()/TANK_SIZE) * TANK_SIZE;
+        tempDestinationX = (enemy[id] -> GetX()/TANK_SIZE - 1)*TANK_SIZE;
         return 1;
     }
     else if(route.at(0) == '3')
     {
-        tempDestinationY = (enemy[id] -> getY()/TANK_SIZE - 1)*TANK_SIZE;
-        tempDestinationX = (enemy[id] -> getX() /TANK_SIZE) * TANK_SIZE;
+        tempDestinationY = (enemy[id] -> GetY()/TANK_SIZE - 1)*TANK_SIZE;
+        tempDestinationX = (enemy[id] -> GetX() /TANK_SIZE) * TANK_SIZE;
         return 3;
     }
     else
@@ -2514,27 +2506,27 @@ short Enemy::enemyPilot(Enemy **enemy, Wall **wall, Player *player, bool fight)
         wallAtPath = true;
         if(route.at(0) == '0')
         {
-            tempDestinationY = (enemy[id] -> getY()/TANK_SIZE) * TANK_SIZE;
-            tempDestinationX = (enemy[id] -> getX()/TANK_SIZE + 1) * TANK_SIZE;
+            tempDestinationY = (enemy[id] -> GetY()/TANK_SIZE) * TANK_SIZE;
+            tempDestinationX = (enemy[id] -> GetX()/TANK_SIZE + 1) * TANK_SIZE;
             return 0;
         }
 
         else if(route.at(0) == '1')
         {
-            tempDestinationY = (enemy[id] -> getY()/TANK_SIZE + 1) * TANK_SIZE;
-            tempDestinationX = (enemy[id] -> getX()/TANK_SIZE) * TANK_SIZE;
+            tempDestinationY = (enemy[id] -> GetY()/TANK_SIZE + 1) * TANK_SIZE;
+            tempDestinationX = (enemy[id] -> GetX()/TANK_SIZE) * TANK_SIZE;
             return 2;
         }
         else if(route.at(0) == '2')
         {
-            tempDestinationY = (enemy[id] -> getY()/TANK_SIZE) * TANK_SIZE;
-            tempDestinationX = (enemy[id] -> getX()/TANK_SIZE - 1)*TANK_SIZE;
+            tempDestinationY = (enemy[id] -> GetY()/TANK_SIZE) * TANK_SIZE;
+            tempDestinationX = (enemy[id] -> GetX()/TANK_SIZE - 1)*TANK_SIZE;
             return 1;
         }
         else if(route.at(0) == '3')
         {
-            tempDestinationY = (enemy[id] -> getY()/TANK_SIZE - 1)*TANK_SIZE;
-            tempDestinationX = (enemy[id] -> getX() /TANK_SIZE) * TANK_SIZE;
+            tempDestinationY = (enemy[id] -> GetY()/TANK_SIZE - 1)*TANK_SIZE;
+            tempDestinationX = (enemy[id] -> GetX() /TANK_SIZE) * TANK_SIZE;
             return 3;
         }
     }
@@ -2548,38 +2540,38 @@ short Enemy::enemyPilot(Enemy **enemy, Wall **wall, Player *player, bool fight)
 3 - up
 */
 
-void  Enemy::moveCorrection(Wall **wall, Player *player, Enemy **enemy, Bonus **bonus)
+void  Enemy::MoveCorrection(Wall **wall, Player *player, Enemy **enemy, Bonus **bonus)
 {
     short howMuch=0;
     if(x % TANK_SIZE != 0 && tempDirection > 1)
     {
         howMuch = x % TANK_SIZE ;
-        if(howMuch <= 25 && this -> checkDirection(1, wall, enemy, player, 1))
+        if(howMuch <= 25 && this -> CheckDirection(1, wall, enemy, player, 1))
         {
             x -= 1;
         }
-        else if (howMuch > 25 && this -> checkDirection(0, wall, enemy, player, 1))
+        else if (howMuch > 25 && this -> CheckDirection(0, wall, enemy, player, 1))
         {
             x += 1;
         }
-        this -> checkCollision(wall, player, enemy, bonus);
+        this -> CheckCollision(wall, player, enemy, bonus);
     }
     else if(y % TANK_SIZE != 0 && tempDirection < 2)
     {
         howMuch = y % TANK_SIZE ;
-        if(howMuch <= 25 && this -> checkDirection(3, wall, enemy, player, 1))
+        if(howMuch <= 25 && this -> CheckDirection(3, wall, enemy, player, 1))
         {
             y -= 1;
         }
-        else if (howMuch > 25 && this -> checkDirection(2, wall, enemy, player, 1))
+        else if (howMuch > 25 && this -> CheckDirection(2, wall, enemy, player, 1))
         {
             y += 1;
         }
-        this -> checkCollision(wall, player, enemy, bonus);
+        this -> CheckCollision(wall, player, enemy, bonus);
     }
 }
 
-void Enemy::moveAI(Wall **wall, Player *player, Enemy **enemy, Bonus **bonus)
+void Enemy::MoveAI(Wall **wall, Player *player, Enemy **enemy, Bonus **bonus)
 {
     short collisionWith=0;
     switch(tempDirection)
@@ -2594,7 +2586,7 @@ void Enemy::moveAI(Wall **wall, Player *player, Enemy **enemy, Bonus **bonus)
         if(x > BATTLEFIELD_WIDTH)
             x = tempX;
 
-        collisionWith = this -> checkCollision(wall, player, enemy, bonus);
+        collisionWith = this -> CheckCollision(wall, player, enemy, bonus);
 
         if(collisionWith > 0)
             colision = true;
@@ -2607,39 +2599,39 @@ void Enemy::moveAI(Wall **wall, Player *player, Enemy **enemy, Bonus **bonus)
             if(y % TANK_SIZE != 0 )
             {
                 howMuch = y % TANK_SIZE ;
-                if(howMuch <= 25 && this -> checkDirection(3, wall, enemy, player, 1))
+                if(howMuch <= 25 && this -> CheckDirection(3, wall, enemy, player, 1))
                     y -= 2;
-                else if (howMuch > 25 && this -> checkDirection(2, wall, enemy, player, 1))
+                else if (howMuch > 25 && this -> CheckDirection(2, wall, enemy, player, 1))
                     y += 2;
 
-                this -> checkCollision(wall, player, enemy, bonus);
+                this -> CheckCollision(wall, player, enemy, bonus);
             }
 
             if (collisionWith == 3) //destroyable wall
             {
-                if(this -> checkAimWall(wall, enemy))
+                if(this -> CheckAimWall(wall, enemy))
                 {
-                    targetAhead = true;
+                    tarGetAhead = true;
                     stop = true;
                 }
             }
         }
         else if (collisionWith == 4) //player
         {
-            if(this -> checkAimPlayer(player, enemy, wall))
+            if(this -> CheckAimPlayer(player, enemy, wall))
             {
                 attack = false;
-                targetAhead = true;
+                tarGetAhead = true;
             }
             else
                 attack = true;
         }
         else
         {
-            if(this -> checkAimPlayer(player, enemy, wall))
-                targetAhead = true;
-            else if(this -> checkAimWall(wall, enemy))
-                targetAhead = true;
+            if(this -> CheckAimPlayer(player, enemy, wall))
+                tarGetAhead = true;
+            else if(this -> CheckAimWall(wall, enemy))
+                tarGetAhead = true;
         }
 
         break;
@@ -2653,7 +2645,7 @@ void Enemy::moveAI(Wall **wall, Player *player, Enemy **enemy, Bonus **bonus)
         if(x < 0)
             x = tempX;
 
-        collisionWith = this -> checkCollision(wall, player, enemy, bonus);
+        collisionWith = this -> CheckCollision(wall, player, enemy, bonus);
 
         if(collisionWith > 0)
             colision = true;
@@ -2667,38 +2659,38 @@ void Enemy::moveAI(Wall **wall, Player *player, Enemy **enemy, Bonus **bonus)
             if(y % TANK_SIZE != 0 )
             {
                 howMuch = y % TANK_SIZE ;
-                if(howMuch <= 25 && this -> checkDirection(3, wall, enemy, player, 1))
+                if(howMuch <= 25 && this -> CheckDirection(3, wall, enemy, player, 1))
                     y -= 2;
-                else if (howMuch > 25 && this -> checkDirection(2, wall, enemy, player, 1))
+                else if (howMuch > 25 && this -> CheckDirection(2, wall, enemy, player, 1))
                     y += 2;
 
-                this -> checkCollision(wall, player, enemy, bonus);
+                this -> CheckCollision(wall, player, enemy, bonus);
             }
             if (collisionWith == 3) //destroyable wall
             {
-                if(this -> checkAimWall(wall, enemy))
+                if(this -> CheckAimWall(wall, enemy))
                 {
-                    targetAhead = true;
+                    tarGetAhead = true;
                 }
             }
         }
         else if (collisionWith == 4) //player
         {
-            if(this -> checkAimPlayer(player, enemy, wall))
+            if(this -> CheckAimPlayer(player, enemy, wall))
             {
                 attack =false;
-                targetAhead = true;
+                tarGetAhead = true;
             }
             else
                 attack = true;
         }
         else
         {
-            if(this -> checkAimPlayer(player, enemy, wall))
-                targetAhead = true;
+            if(this -> CheckAimPlayer(player, enemy, wall))
+                tarGetAhead = true;
 
-            else if(this -> checkAimWall(wall, enemy))
-                targetAhead = true;
+            else if(this -> CheckAimWall(wall, enemy))
+                tarGetAhead = true;
 
         }
         break;
@@ -2712,7 +2704,7 @@ void Enemy::moveAI(Wall **wall, Player *player, Enemy **enemy, Bonus **bonus)
         if(y > BATTLEFIELD_HEIGHT)
             y = tempY;
 
-        collisionWith = this -> checkCollision(wall, player, enemy, bonus);
+        collisionWith = this -> CheckCollision(wall, player, enemy, bonus);
 
         if(collisionWith > 0)
             colision = true;
@@ -2725,39 +2717,39 @@ void Enemy::moveAI(Wall **wall, Player *player, Enemy **enemy, Bonus **bonus)
             if(x % TANK_SIZE != 0)
             {
                 howMuch = x % TANK_SIZE ;
-                if(howMuch <= 25 && this -> checkDirection(1, wall, enemy, player, 1))
+                if(howMuch <= 25 && this -> CheckDirection(1, wall, enemy, player, 1))
                     x -= 2;
-                else if (howMuch > 25 && this -> checkDirection(0, wall, enemy, player, 1))
+                else if (howMuch > 25 && this -> CheckDirection(0, wall, enemy, player, 1))
                     x += 2;
 
-                this -> checkCollision(wall, player, enemy, bonus);
+                this -> CheckCollision(wall, player, enemy, bonus);
             }
             if (collisionWith == 3) //destroyable wall
             {
-                if(this -> checkAimWall(wall, enemy))
+                if(this -> CheckAimWall(wall, enemy))
                 {
-                    targetAhead = true;
+                    tarGetAhead = true;
                 }
             }
         }
         else if (collisionWith == 4) //player
         {
 
-            if(this -> checkAimPlayer(player, enemy, wall))
+            if(this -> CheckAimPlayer(player, enemy, wall))
             {
                 attack =false;
-                targetAhead = true;
+                tarGetAhead = true;
             }
             else
                 attack = true;
         }
         else
         {
-            if(this -> checkAimPlayer(player, enemy, wall))
-                targetAhead = true;
+            if(this -> CheckAimPlayer(player, enemy, wall))
+                tarGetAhead = true;
 
-            else if(this -> checkAimWall(wall, enemy))
-                targetAhead = true;
+            else if(this -> CheckAimWall(wall, enemy))
+                tarGetAhead = true;
         }
         break;
     }
@@ -2771,7 +2763,7 @@ void Enemy::moveAI(Wall **wall, Player *player, Enemy **enemy, Bonus **bonus)
             y = tempY;
 
 
-        collisionWith = this -> checkCollision(wall, player, enemy, bonus);
+        collisionWith = this -> CheckCollision(wall, player, enemy, bonus);
 
         if(collisionWith > 0)
             colision = true;
@@ -2784,80 +2776,80 @@ void Enemy::moveAI(Wall **wall, Player *player, Enemy **enemy, Bonus **bonus)
             if(x % TANK_SIZE != 0)
             {
                 howMuch = x % TANK_SIZE ;
-                if(howMuch <= 25 && this -> checkDirection(1, wall, enemy, player, 1))
+                if(howMuch <= 25 && this -> CheckDirection(1, wall, enemy, player, 1))
                     x -= 2;
-                else if (howMuch > 25 && this -> checkDirection(0, wall, enemy, player, 1))
+                else if (howMuch > 25 && this -> CheckDirection(0, wall, enemy, player, 1))
                     x += 2;
 
-                this -> checkCollision(wall, player, enemy, bonus);
+                this -> CheckCollision(wall, player, enemy, bonus);
             }
             if (collisionWith == 3) //destroyable wall
             {
-                if(this -> checkAimWall(wall, enemy))
+                if(this -> CheckAimWall(wall, enemy))
                 {
-                    targetAhead = true;
+                    tarGetAhead = true;
                 }
             }
         }
         else if (collisionWith == 4) //player
         {
-            if(this -> checkAimPlayer(player, enemy, wall))
+            if(this -> CheckAimPlayer(player, enemy, wall))
             {
                 attack =false;
-                targetAhead = true;
+                tarGetAhead = true;
             }
             else
                 attack = true;
         }
         else
         {
-            if(this -> checkAimPlayer(player, enemy, wall))
-                targetAhead = true;
+            if(this -> CheckAimPlayer(player, enemy, wall))
+                tarGetAhead = true;
 
-            else if(this -> checkAimWall(wall, enemy))
-                targetAhead = true;
+            else if(this -> CheckAimWall(wall, enemy))
+                tarGetAhead = true;
         }
         break;
     }
     }
 }
 
-void Enemy::enemyAI(Wall **wall, Enemy **enemy, Player *player, Bonus **bonus, Rocket **rocket)
+void Enemy::EnemyAI(Wall **wall, Enemy **enemy, Player *player, Bonus **bonus, Rocket **rocket)
 {
     if(!dead && !gameover)
     {
         stop = false;
-        targetAhead = false;
+        tarGetAhead = false;
 
         short enemyAlive = CheckEnemyAlive(enemy);
-        if(enemyAlive == 1 && ((player -> getLife() > 1 && gameMode != 2) || (enemies - enemiesKilled - enemyAlive > 0 && player -> getLife() > 1 && enemiesAtOnce > 1) || (Enemy::hasBase && Wall::baseExist && wall[Wall::baseID] -> getLife() > 1 )) && !attack)
+        if(enemyAlive == 1 && ((player -> GetLife() > 1 && gameMode != 2) || (enemies - enemiesKilled - enemyAlive > 0 && player -> GetLife() > 1 && enemiesAtOnce > 1) || (Enemy::hasBase && Wall::baseExist && wall[Wall::baseID] -> GetLife() > 1 )) && !attack)
         {
             stop = true;
-            if(this -> checkAimPlayer(player, enemy, wall))
-                targetAhead = true;
-            else if(Enemy::hasBase && this -> checkAimBase(wall, Wall::baseID, enemy))
-                targetAhead = true;
+            if(this -> CheckAimPlayer(player, enemy, wall))
+                tarGetAhead = true;
+            else if(Enemy::hasBase && this -> CheckAimBase(wall, Wall::baseID, enemy))
+                tarGetAhead = true;
 
             short tempDirectionAI = direction;
 
             direction = 0;
-            if(this -> checkAimPlayer(player, enemy, wall))
-                targetAhead = true;
+            if(this -> CheckAimPlayer(player, enemy, wall))
+                tarGetAhead = true;
             else
             {
                 direction = 1;
-                if(this -> checkAimPlayer(player, enemy, wall))
-                    targetAhead = true;
+                if(this -> CheckAimPlayer(player, enemy, wall))
+                    tarGetAhead = true;
                 else
                 {
                     direction = 2;
-                    if(this -> checkAimPlayer(player, enemy, wall))
-                        targetAhead = true;
+                    if(this -> CheckAimPlayer(player, enemy, wall))
+                        tarGetAhead = true;
                     else
                     {
                         direction = 3;
-                        if(this -> checkAimPlayer(player, enemy, wall))
-                            targetAhead = true;
+                        if(this -> CheckAimPlayer(player, enemy, wall))
+                            tarGetAhead = true;
                         else
                             direction = tempDirectionAI;
                     }
@@ -2872,26 +2864,26 @@ void Enemy::enemyAI(Wall **wall, Enemy **enemy, Player *player, Bonus **bonus, R
             if(attack == true)
                 attack = false;
 
-            this -> checkNearbyArea(wall, enemy, player);
+            this -> CheckNearbyArea(wall, enemy, player);
 
-            if(Enemy::hasPlayer == true && this -> checkAimPlayer(player, enemy, wall))
+            if(Enemy::hasPlayer == true && this -> CheckAimPlayer(player, enemy, wall))
             {
-                targetAhead = true;
-                if(direction > 1 && abs(player -> getY() - y) < 76)
+                tarGetAhead = true;
+                if(direction > 1 && abs(player -> GetY() - y) < 76)
                     stop = true;
-                else if(direction < 2 && abs(player -> getX() - x) < 76)
+                else if(direction < 2 && abs(player -> GetX() - x) < 76)
                     stop = true;
                 else if(canShoot)
                     stop = true;
             }
-            else if(this -> checkAimWall(wall, enemy))
+            else if(this -> CheckAimWall(wall, enemy))
             {
-                targetAhead = true;
+                tarGetAhead = true;
                 if(wallAtPath)
                 {
-                    if(direction > 1 && abs(wall[wallID] -> getY() - y) < 76)
+                    if(direction > 1 && abs(wall[wallID] -> GetY() - y) < 76)
                         stop = true;
-                    else if(direction < 2 && abs(wall[wallID] -> getX() - x) < 76)
+                    else if(direction < 2 && abs(wall[wallID] -> GetX() - x) < 76)
                         stop = true;
                     else if(colision || canShoot)
                         stop = true;
@@ -2902,9 +2894,9 @@ void Enemy::enemyAI(Wall **wall, Enemy **enemy, Player *player, Bonus **bonus, R
             {
                 if(!firstmovement)
                 {
-                    if(this -> searchForDirection())
+                    if(this -> SearchForDirection())
                     {
-                        tempDirection = this -> enemyPilot(enemy, wall, player, false);
+                        tempDirection = this -> EnemyPilot(enemy, wall, player, false);
                         if(tempDirection == 5)
                         {
                             Enemy::isPlayer[destinationX][destinationY] = 4;
@@ -2920,8 +2912,8 @@ void Enemy::enemyAI(Wall **wall, Enemy **enemy, Player *player, Bonus **bonus, R
                 if(x == tempDestinationX && tempDestinationY == y)
                 {
                     directionCounter = 0;
-                    this -> checkDestination(wall);
-                    tempDirection = this -> enemyPilot(enemy, wall, player, false);
+                    this -> CheckDestination(wall);
+                    tempDirection = this -> EnemyPilot(enemy, wall, player, false);
                     if(tempDirection == 5)
                     {
                         stop = true;
@@ -2932,13 +2924,13 @@ void Enemy::enemyAI(Wall **wall, Enemy **enemy, Player *player, Bonus **bonus, R
                 {
                     directionCounter ++;
 
-                    this -> moveCorrection(wall, player, enemy, bonus);
+                    this -> MoveCorrection(wall, player, enemy, bonus);
 
                     if (directionCounter >= 26)
                     {
                         directionCounter = 0;
-                        this -> checkDestination(wall);
-                        tempDirection = this -> enemyPilot(enemy, wall, player, false);
+                        this -> CheckDestination(wall);
+                        tempDirection = this -> EnemyPilot(enemy, wall, player, false);
                         if(tempDirection == 5)
                         {
                             stop = true;
@@ -2950,15 +2942,15 @@ void Enemy::enemyAI(Wall **wall, Enemy **enemy, Player *player, Bonus **bonus, R
         }
         else if(Enemy::hasBase == true && Enemy::attackBase[id] == true)
         {
-            this -> checkNearbyArea(wall, enemy, player);
+            this -> CheckNearbyArea(wall, enemy, player);
             SetBaseCoord(enemy,wall, id);
 
-            if(Enemy::hasPlayer == true && this-> checkAimPlayer(player, enemy, wall))
+            if(Enemy::hasPlayer == true && this-> CheckAimPlayer(player, enemy, wall))
             {
-                targetAhead = true;
-                if(direction > 1 && abs(player -> getY() - y) < 76)
+                tarGetAhead = true;
+                if(direction > 1 && abs(player -> GetY() - y) < 76)
                     stop = true;
-                else if(direction < 2 && abs(player -> getX() - x) < 76)
+                else if(direction < 2 && abs(player -> GetX() - x) < 76)
                     stop = true;
                 else if(canShoot)
                     stop = true;
@@ -2966,26 +2958,26 @@ void Enemy::enemyAI(Wall **wall, Enemy **enemy, Player *player, Bonus **bonus, R
                 if(attack == true)
                     attack = false;
             }
-            else if(this -> checkAimWall(wall, enemy) && wallAtPath)
+            else if(this -> CheckAimWall(wall, enemy) && wallAtPath)
             {
-                targetAhead = true;
+                tarGetAhead = true;
                 if(wallAtPath)
                 {
-                    if(direction > 1 && abs(wall[wallID] -> getY() - y) < 76)
+                    if(direction > 1 && abs(wall[wallID] -> GetY() - y) < 76)
                         stop = true;
-                    else if(direction < 2 && abs(wall[wallID] -> getX() - x) < 76)
+                    else if(direction < 2 && abs(wall[wallID] -> GetX() - x) < 76)
                         stop = true;
                     else if(colision || canShoot)
                         stop = true;
                 }
             }
-            else if(this -> checkAimBase(wall, Wall::baseID, enemy))
+            else if(this -> CheckAimBase(wall, Wall::baseID, enemy))
             {
-                targetAhead = true;
+                tarGetAhead = true;
 
-                if(direction > 1 && abs(wall[Wall::baseID] -> getY() - y) < 76)
+                if(direction > 1 && abs(wall[Wall::baseID] -> GetY() - y) < 76)
                     stop = true;
-                else if(direction < 2 && abs(wall[Wall::baseID] -> getX() - x) < 76)
+                else if(direction < 2 && abs(wall[Wall::baseID] -> GetX() - x) < 76)
                     stop = true;
                 else if(colision || canShoot)
                     stop = true;
@@ -2995,7 +2987,7 @@ void Enemy::enemyAI(Wall **wall, Enemy **enemy, Player *player, Bonus **bonus, R
             {
                 if(!firstmovement)
                 {
-                    tempDirection = this -> enemyPilot(enemy, wall, player, false);
+                    tempDirection = this -> EnemyPilot(enemy, wall, player, false);
                     if(tempDirection == 5)
                         stop = true;
 
@@ -3006,7 +2998,7 @@ void Enemy::enemyAI(Wall **wall, Enemy **enemy, Player *player, Bonus **bonus, R
                 {
                     attack = false;
                     directionCounter = 0;
-                    tempDirection = this -> enemyPilot(enemy, wall, player, false);
+                    tempDirection = this -> EnemyPilot(enemy, wall, player, false);
 
                     if(tempDirection == 5)
                         stop = true;
@@ -3015,13 +3007,13 @@ void Enemy::enemyAI(Wall **wall, Enemy **enemy, Player *player, Bonus **bonus, R
                 {
                     directionCounter ++;
 
-                    this -> moveCorrection(wall, player, enemy, bonus);
+                    this -> MoveCorrection(wall, player, enemy, bonus);
 
                     if (directionCounter >= 26)
                     {
                         directionCounter = 0;
 
-                        tempDirection = this -> enemyPilot(enemy, wall, player, false);
+                        tempDirection = this -> EnemyPilot(enemy, wall, player, false);
                         if(tempDirection == 5)
                             stop = true;
                     }
@@ -3030,14 +3022,14 @@ void Enemy::enemyAI(Wall **wall, Enemy **enemy, Player *player, Bonus **bonus, R
         }
         else if(Enemy::hasPlayer == true)
         {
-            this -> checkNearbyArea(wall, enemy, player);
+            this -> CheckNearbyArea(wall, enemy, player);
 
-            if(this -> checkAimPlayer(player, enemy, wall))
+            if(this -> CheckAimPlayer(player, enemy, wall))
             {
-                targetAhead = true;
-                if(direction > 1 && abs(player -> getY() - y) < 76)
+                tarGetAhead = true;
+                if(direction > 1 && abs(player -> GetY() - y) < 76)
                     stop = true;
-                else if(direction < 2 && abs(player -> getX() - x) < 76)
+                else if(direction < 2 && abs(player -> GetX() - x) < 76)
                     stop = true;
                 else if(canShoot)
                     stop = true;
@@ -3045,14 +3037,14 @@ void Enemy::enemyAI(Wall **wall, Enemy **enemy, Player *player, Bonus **bonus, R
                 if(attack == true)
                     attack = false;
             }
-            else if(this -> checkAimWall(wall, enemy) && wallAtPath)
+            else if(this -> CheckAimWall(wall, enemy) && wallAtPath)
             {
-                targetAhead = true;
+                tarGetAhead = true;
                 if(wallAtPath)
                 {
-                    if(direction > 1 && abs(wall[wallID] -> getY() - y) < 76)
+                    if(direction > 1 && abs(wall[wallID] -> GetY() - y) < 76)
                         stop = true;
-                    else if(direction < 2 && abs(wall[wallID] -> getX() - x) < 76)
+                    else if(direction < 2 && abs(wall[wallID] -> GetX() - x) < 76)
                         stop = true;
                     else if(colision || canShoot)
                         stop = true;
@@ -3063,7 +3055,7 @@ void Enemy::enemyAI(Wall **wall, Enemy **enemy, Player *player, Bonus **bonus, R
             {
                 if(!firstmovement)
                 {
-                    tempDirection = this -> enemyPilot(enemy, wall, player, false);
+                    tempDirection = this -> EnemyPilot(enemy, wall, player, false);
                     if(tempDirection == 5)
                         stop = true;
 
@@ -3074,27 +3066,27 @@ void Enemy::enemyAI(Wall **wall, Enemy **enemy, Player *player, Bonus **bonus, R
                 {
                     attack = false;
                     directionCounter = 0;
-                    tempDirection = this -> enemyPilot(enemy, wall, player, false);
+                    tempDirection = this -> EnemyPilot(enemy, wall, player, false);
 
                     short kierunek = direction;
 
                     direction = 0;
-                    if(this -> checkAimPlayer(player, enemy, wall))
+                    if(this -> CheckAimPlayer(player, enemy, wall))
                         stop = true;
                     else
                     {
                         direction = 1;
-                        if(this -> checkAimPlayer(player, enemy, wall))
+                        if(this -> CheckAimPlayer(player, enemy, wall))
                             stop = true;
                         else
                         {
                             direction = 2;
-                            if(this -> checkAimPlayer(player, enemy, wall))
+                            if(this -> CheckAimPlayer(player, enemy, wall))
                                 stop = true;
                             else
                             {
                                 direction = 3;
-                                if(this -> checkAimPlayer(player, enemy, wall))
+                                if(this -> CheckAimPlayer(player, enemy, wall))
                                     stop = true;
                                 else
                                     direction = kierunek;
@@ -3104,13 +3096,13 @@ void Enemy::enemyAI(Wall **wall, Enemy **enemy, Player *player, Bonus **bonus, R
 
                     tempDirection = direction;
 
-                    if(abs(x - player -> getX()) < 112 || abs(y - player -> getY()) < 112)
+                    if(abs(x - player -> GetX()) < 112 || abs(y - player -> GetY()) < 112)
                         attack = true;
 
                     if(tempDirection == 5)
                     {
                         //No stop if enemy can't see player but he try to follow player
-                        if(abs(x - player -> getX()) > 112 || abs(y - player -> getY()) > 112)
+                        if(abs(x - player -> GetX()) > 112 || abs(y - player -> GetY()) > 112)
                         {
                             switch(Enemy::playerDirection)
                             {
@@ -3155,19 +3147,19 @@ void Enemy::enemyAI(Wall **wall, Enemy **enemy, Player *player, Bonus **bonus, R
                                 Enemy::lostPlayerTimer++;
                         }
                         else
-                            this -> fightCoord(player, wall, enemy);
+                            this -> FightCoord(player, wall, enemy);
                     }
                 }
                 else
                 {
                     directionCounter++;
 
-                    bool canMove = this -> checkPlayerFuture(tempDirection, player, 2);
+                    bool canMove = this -> CheckPlayerFuture(tempDirection, player, 2);
                     if(canMove == true)
-                        this -> fightCoord(player, wall, enemy);
+                        this -> FightCoord(player, wall, enemy);
 
                     short howNeed=0;
-                    if(x % TANK_SIZE != 0 && tempDirection > 1 && !canMove && this -> checkPlayerFuture(tempDirection, player, 1))
+                    if(x % TANK_SIZE != 0 && tempDirection > 1 && !canMove && this -> CheckPlayerFuture(tempDirection, player, 1))
                     {
                         howNeed = x % TANK_SIZE ;
                         if(howNeed <= 25)
@@ -3175,9 +3167,9 @@ void Enemy::enemyAI(Wall **wall, Enemy **enemy, Player *player, Bonus **bonus, R
                         else
                             x += 1;
 
-                        this -> checkCollision(wall, player, enemy, bonus);
+                        this -> CheckCollision(wall, player, enemy, bonus);
                     }
-                    else if(y % TANK_SIZE != 0 && tempDirection <2 && !canMove && this -> checkPlayerFuture(tempDirection, player, 1))
+                    else if(y % TANK_SIZE != 0 && tempDirection <2 && !canMove && this -> CheckPlayerFuture(tempDirection, player, 1))
                     {
                         howNeed = y % TANK_SIZE ;
                         if(howNeed <= 25)
@@ -3185,7 +3177,7 @@ void Enemy::enemyAI(Wall **wall, Enemy **enemy, Player *player, Bonus **bonus, R
                         else
                             y += 1;
 
-                        this -> checkCollision(wall, player, enemy, bonus);
+                        this -> CheckCollision(wall, player, enemy, bonus);
                     }
 
                     if(canMove == false)
@@ -3198,7 +3190,7 @@ void Enemy::enemyAI(Wall **wall, Enemy **enemy, Player *player, Bonus **bonus, R
                             else
                                 x += 1;
 
-                            this -> checkCollision(wall, player, enemy, bonus);
+                            this -> CheckCollision(wall, player, enemy, bonus);
                         }
                         else if(y % TANK_SIZE != 0 && tempDirection <2)
                         {
@@ -3208,7 +3200,7 @@ void Enemy::enemyAI(Wall **wall, Enemy **enemy, Player *player, Bonus **bonus, R
                             else
                                 y += 1;
 
-                            this -> checkCollision(wall, player, enemy, bonus);
+                            this -> CheckCollision(wall, player, enemy, bonus);
                         }
                     }
 
@@ -3216,33 +3208,33 @@ void Enemy::enemyAI(Wall **wall, Enemy **enemy, Player *player, Bonus **bonus, R
                     {
                         directionCounter = 0;
 
-                        tempDirection = this -> enemyPilot(enemy, wall, player, false);
+                        tempDirection = this -> EnemyPilot(enemy, wall, player, false);
                         if(tempDirection == 5)
                             stop = true;
                     }
                 }
             }
         }
-        else if(!player -> getActive())
+        else if(!player -> GetActive())
         {
             if(directionCounter == 0)
-                tempDirection = this -> enemyPilot(enemy, wall, player, false);
+                tempDirection = this -> EnemyPilot(enemy, wall, player, false);
 
-            this -> moveCorrection(wall, player, enemy, bonus);
+            this -> MoveCorrection(wall, player, enemy, bonus);
 
             directionCounter ++;
 
             if (directionCounter >= 35)
                 directionCounter = 0;
 
-            if(this -> checkAimWall(wall, enemy))
-                targetAhead = true;
+            if(this -> CheckAimWall(wall, enemy))
+                tarGetAhead = true;
         }
 
         if(!stop)
-            this -> moveAI(wall, player, enemy, bonus);
+            this -> MoveAI(wall, player, enemy, bonus);
 
-        if(canShoot && targetAhead)
-            this -> shoot(rocket);
+        if(canShoot && tarGetAhead)
+            this -> Shoot(rocket);
     }
 }

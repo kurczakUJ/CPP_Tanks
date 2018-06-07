@@ -27,26 +27,26 @@ public:
     static short baseID;
     static bool baseExist;
 
-    short getX();
-    void setX( short _x);
+    short GetX();
+    void SetX( short _x);
 
-    short getY();
-    void setY( short _y);
+    short GetY();
+    void SetY( short _y);
 
-    short getLife();
-    void setLife( short _life);
+    short GetLife();
+    void SetLife( short _life);
 
-    bool getDestroyable();
-    void setDestroyable( bool _destroyable);
+    bool GetDestroyable();
+    void SetDestroyable( bool _destroyable);
 
-    bool getVisible();
-    void setVisible( bool _visible);
+    bool GetVisible();
+    void SetVisible( bool _visible);
 
-    bool getBase();
-    void setBase( bool _base);
+    bool GetBase();
+    void SetBase( bool _base);
 
-    bool checkPlace(Wall **wall, Player * player, Enemy **enemy);
-    void create(Wall ** wall, Player * player, Enemy ** enemy, short _x, short _y, bool _destroyable, short _life, bool _base);
+    bool CheckPlace(Wall **wall, Player * player, Enemy **enemy);
+    void Create(Wall ** wall, Player * player, Enemy ** enemy, short _x, short _y, bool _destroyable, short _life, bool _base);
 
 };
 

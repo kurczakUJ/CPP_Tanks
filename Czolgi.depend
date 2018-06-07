@@ -11324,7 +11324,7 @@
 	<cstdlib>
 	<string>
 
-1479483146 source:d:\agh\2 stopien\cpp\cpp_tanks\allegroconfig.cpp
+1528385558 source:d:\agh\2 stopien\cpp\cpp_tanks\allegroconfig.cpp
 	"allegroconfig.hpp"
 	<allegro5/allegro.h>
 	<allegro5/allegro_audio.h>
@@ -11346,34 +11346,34 @@
 
 1479215683 d:\agh\2 stopien\cpp\cpp_tanks\allegroconfig.hpp
 
-1516126024 d:\agh\2 stopien\cpp\cpp_tanks\config.hpp
+1527532113 d:\agh\2 stopien\cpp\cpp_tanks\config.hpp
 
-1516125404 d:\agh\2 stopien\cpp\cpp_tanks\player.hpp
+1528309556 d:\agh\2 stopien\cpp\cpp_tanks\player.hpp
 	"wall.hpp"
 	"bonus.hpp"
 
-1513023368 d:\agh\2 stopien\cpp\cpp_tanks\wall.hpp
+1528309149 d:\agh\2 stopien\cpp\cpp_tanks\wall.hpp
 	<stdint.h>
 
-1479821822 d:\agh\2 stopien\cpp\cpp_tanks\bonus.hpp
+1528309119 d:\agh\2 stopien\cpp\cpp_tanks\bonus.hpp
 	"explosion.hpp"
 
-1479821807 d:\agh\2 stopien\cpp\cpp_tanks\explosion.hpp
+1528309594 d:\agh\2 stopien\cpp\cpp_tanks\explosion.hpp
 	"wall.hpp"
 
-1515334573 d:\agh\2 stopien\cpp\cpp_tanks\enemy.hpp
+1528309775 d:\agh\2 stopien\cpp\cpp_tanks\enemy.hpp
 	"player.hpp"
 	"rocket.hpp"
 	"config.hpp"
 	<cstring>
 	<stdint.h>
 
-1515335238 d:\agh\2 stopien\cpp\cpp_tanks\rocket.hpp
+1528309216 d:\agh\2 stopien\cpp\cpp_tanks\rocket.hpp
 	"wall.hpp"
 	"player.hpp"
 	"config.hpp"
 
-1513019462 source:d:\agh\2 stopien\cpp\cpp_tanks\astar.cpp
+1528308726 source:d:\agh\2 stopien\cpp\cpp_tanks\astar.cpp
 	<iostream>
 	<iomanip>
 	<queue>
@@ -11387,7 +11387,7 @@
 	"wall.hpp"
 	"config.hpp"
 
-1479476315 source:d:\agh\2 stopien\cpp\cpp_tanks\bonus.cpp
+1528385610 source:d:\agh\2 stopien\cpp\cpp_tanks\bonus.cpp
 	"bonus.hpp"
 	"config.hpp"
 	<allegro5/allegro.h>
@@ -11408,7 +11408,7 @@
 	<allegro5/allegro_font.h>
 	<allegro5/allegro_ttf.h>
 
-1516126001 source:d:\agh\2 stopien\cpp\cpp_tanks\enemy.cpp
+1528311192 source:d:\agh\2 stopien\cpp\cpp_tanks\enemy.cpp
 	"enemy.hpp"
 	"config.hpp"
 	"allegroconfig.hpp"
@@ -11421,11 +11421,11 @@
 1513019469 d:\agh\2 stopien\cpp\cpp_tanks\astar.hpp
 	<string>
 
-1479470816 source:d:\agh\2 stopien\cpp\cpp_tanks\explosion.cpp
+1528385502 source:d:\agh\2 stopien\cpp\cpp_tanks\explosion.cpp
 	"explosion.hpp"
 	"config.hpp"
 
-1517949923 source:d:\agh\2 stopien\cpp\cpp_tanks\main.cpp
+1528385687 source:d:\agh\2 stopien\cpp\cpp_tanks\main.cpp
 	"bonus.hpp"
 	"explosion.hpp"
 	"wall.hpp"
@@ -11444,7 +11444,7 @@
 1515335238 d:\agh\2 stopien\cpp\cpp_tanks\menu.hpp
 	"player.hpp"
 
-1516126035 source:d:\agh\2 stopien\cpp\cpp_tanks\player.cpp
+1528385409 source:d:\agh\2 stopien\cpp\cpp_tanks\player.cpp
 	"player.hpp"
 	"main.hpp"
 	"config.hpp"
@@ -11452,7 +11452,7 @@
 	"allegroconfig.hpp"
 	<stdio.h>
 
-1515335238 source:d:\agh\2 stopien\cpp\cpp_tanks\rocket.cpp
+1528385305 source:d:\agh\2 stopien\cpp\cpp_tanks\rocket.cpp
 	"rocket.hpp"
 	"config.hpp"
 	<allegro5/allegro.h>
@@ -11465,7 +11465,7 @@
 	"wall.hpp"
 	"main.hpp"
 
-1516126038 source:d:\agh\2 stopien\cpp\cpp_tanks\wall.cpp
+1528385033 source:d:\agh\2 stopien\cpp\cpp_tanks\wall.cpp
 	"wall.hpp"
 	"main.hpp"
 	"config.hpp"
@@ -11474,4 +11474,22 @@
 	"enemy.hpp"
 	<cstdlib>
 	<cstdio>
+
+1528385435 source:d:\agh\2 stopien\cpp\cpp_tanks\menu.cpp
+	"allegroconfig.hpp"
+	<allegro5/allegro.h>
+	<allegro5/allegro_audio.h>
+	<allegro5/allegro_acodec.h>
+	<allegro5/allegro_windows.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<stdio.h>
+	<string>
+	"config.hpp"
+	"menu.hpp"
+	"main.hpp"
+	"allegroconfig.hpp"
 

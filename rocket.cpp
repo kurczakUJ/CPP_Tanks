@@ -18,67 +18,67 @@ extern short enemiesKilled;
 extern bool youDied;
 extern bool baseDestroyed;
 
-short Rocket::getX()
+short Rocket::GetX()
 {
     return x;
 };
 
-void Rocket::setX(short _x)
+void Rocket::SetX(short _x)
 {
     x = _x;
 };
 
-short Rocket::getY()
+short Rocket::GetY()
 {
     return y;
 };
 
-void Rocket::setY(short _y)
+void Rocket::SetY(short _y)
 {
     y = _y;
 };
 
-short Rocket::getDirection()
+short Rocket::GetDirection()
 {
     return direction;
 };
 
-void Rocket::setDirection(short _direction)
+void Rocket::SetDirection(short _direction)
 {
     direction = _direction;
 };
 
-bool Rocket::getTeam()
+bool Rocket::GetTeam()
 {
     return team;
 };
 
-void Rocket::setTeam( bool _team)
+void Rocket::SetTeam( bool _team)
 {
     team = _team;
 };
 
-bool Rocket::getVisible()
+bool Rocket::GetVisible()
 {
     return visible;
 };
 
-void Rocket::setVisible( bool _visible)
+void Rocket::SetVisible( bool _visible)
 {
     visible = _visible;
 };
 
-short Rocket::getSpeed()
+short Rocket::GetSpeed()
 {
     return speed;
 };
 
-void Rocket::setSpeed( short _speed)
+void Rocket::SetSpeed( short _speed)
 {
     speed = _speed;
 };
 
-void Rocket::rocketOff()
+void Rocket::RocketOff()
 {
     if(team == true) //player
     {
@@ -94,41 +94,44 @@ void Rocket::rocketOff()
     }
 };
 
-void Rocket::createSmallExplosion(Explosion ** explosion)
+void Rocket::CreateSmallExplosion(Explosion ** explosion)
 {
     short choice=GiveExplosionID(explosion);
-    explosion[choice] -> setX(x);
-    explosion[choice] -> setY(y);
+    explosion[choice] -> SetX(x);
+    explosion[choice] -> SetY(y);
+
     if(direction == 2)
-        explosion[choice] -> setX(x-5);
+        explosion[choice] -> SetX(x-5);
     else if(direction == 3)
-        explosion[choice] -> setX(x-10);
+        explosion[choice] -> SetX(x-10);
     else if (direction == 1 || direction == 0)
-        explosion[choice] -> setY(y-5);
+        explosion[choice] -> SetY(y-5);
 
-    explosion[choice] -> setSmall(true);
-    explosion[choice] -> setVisible(true);
+    explosion[choice] -> SetSmall(true);
+    explosion[choice] -> SetVisible(true);
 
-    explosion[choice] -> setLife(SMALL_EXPLOSION_TIME);
-    explosion[choice] -> createExplosion();
+    explosion[choice] -> SetLife(SMALL_EXPLOSION_TIME);
+    explosion[choice] -> CreateExplosion();
     al_play_sample(sound[4], 1.0, 0.0,1.0,ALLEGRO_PLAYMODE_ONCE,NULL);
 }
 
-void Rocket::createBigExplosion(Explosion ** explosion, short _x, short _y)
+void Rocket::CreateBigExplosion(Explosion ** explosion, short _x, short _y)
 {
     short choice=GiveExplosionID(explosion);
-    explosion[choice] -> setX(_x);
-    explosion[choice] -> setY(_y);
-    explosion[choice] -> setSmall(false);
-    explosion[choice] -> setVisible(true);
-    explosion[choice] -> setLife(BIG_EXPLOSION_TIME);
-    explosion[choice] -> createExplosion();
+    explosion[choice] -> SetX(_x);
+    explosion[choice] -> SetY(_y);
+    explosion[choice] -> SetSmall(false);
+    explosion[choice] -> SetVisible(true);
+    explosion[choice] -> SetLife(BIG_EXPLOSION_TIME);
+    explosion[choice] -> CreateExplosion();
     al_play_sample(sound[2], 1.0, 0.0,1.0,ALLEGRO_PLAYMODE_ONCE,NULL);
 }
 
-void Rocket::move(Rocket ** rocket, Wall ** sciany, Player *player, Enemy ** enemy, Explosion ** explosion, Bonus ** bonus)
+void Rocket::Move(Rocket ** rocket, Wall ** sciany, Player *player, Enemy ** enemy, Explosion ** explosion, Bonus ** bonus)
 {
-    this -> checkColision(rocket, sciany, player, enemy, explosion, bonus);
+    this -> CheckColision(rocket, sciany, player, enemy, explosion, bonus);
+
+    bool rocketOff = false;
 
     if(visible && !gameover)
     {
@@ -139,11 +142,7 @@ void Rocket::move(Rocket ** rocket, Wall ** sciany, Player *player, Enemy ** ene
             x += speed;
 
             if(x > REAL_BATTLEFIELD_WIDTH)
-            {
-                visible = false;
-                this -> rocketOff();
-                this -> createSmallExplosion(explosion);
-            }
+                rocketOff = true;
 
             break;
         }
@@ -152,11 +151,8 @@ void Rocket::move(Rocket ** rocket, Wall ** sciany, Player *player, Enemy ** ene
             x -= speed;
 
             if(x < 0)
-            {
-                visible = false;
-                this -> rocketOff();
-                this -> createSmallExplosion(explosion);
-            }
+                rocketOff = true;
+
             break;
         }
         case 2:
@@ -164,11 +160,8 @@ void Rocket::move(Rocket ** rocket, Wall ** sciany, Player *player, Enemy ** ene
             y += speed;
 
             if(y > REAL_BATTLEFIELD_HEIGHT)
-            {
-                visible = false;
-                this -> rocketOff();
-                this -> createSmallExplosion(explosion);
-            }
+                rocketOff = true;
+
             break;
         }
         case 3:
@@ -176,168 +169,169 @@ void Rocket::move(Rocket ** rocket, Wall ** sciany, Player *player, Enemy ** ene
             y -= speed;
 
             if(y < 0)
-            {
-                visible = false;
-                this -> rocketOff();
-                this -> createSmallExplosion(explosion);
-            }
+                rocketOff = true;
+
             break;
         }
         }
 
-        this -> checkColision(rocket, sciany, player, enemy, explosion, bonus);
+        if(rocketOff)
+        {
+            visible = false;
+            this -> RocketOff();
+            this -> CreateSmallExplosion(explosion);
+        }
+
+        this -> CheckColision(rocket, sciany, player, enemy, explosion, bonus);
     }
 };
 
-void Rocket::shoot(Player * player)
+void Rocket::Shoot(Player * player)
 {
     Player::ammoTimer = 0;
 
-    switch(player -> getDirection())
+    switch(player -> GetDirection())
     {
     case 0:
     {
-        x = player -> getX() + 51;
-        y = player -> getY() + 21;
+        x = player -> GetX() + 51;
+        y = player -> GetY() + 21;
         direction = 0;
         break; //right
     }
     case 1:
     {
-        x = player -> getX() - 16;
-        y = player -> getY() + 21;
+        x = player -> GetX() - 16;
+        y = player -> GetY() + 21;
         direction = 1;
         break; //left
     }
     case 2:
     {
-        x = player -> getX() + 21;
-        y = player -> getY() + 60;
+        x = player -> GetX() + 21;
+        y = player -> GetY() + 60;
         direction = 2;
         break; //down
     }
     case 3:
     {
-        x = player -> getX() + 29;
-        y = player -> getY() - 14;
+        x = player -> GetX() + 29;
+        y = player -> GetY() - 14;
         direction = 3;
         break; //up
     }
     }
+
     Rocket::rocketsCounter[0]++;
     visible = true;
     team = true;
-    speed = player -> getAmmoSpeed();
+    speed = player -> GetAmmoSpeed();
 
     al_play_sample(sound[0], 0.7, 0.0,1.0,ALLEGRO_PLAYMODE_ONCE,NULL);
 };
 
-void Rocket::hitWall(Wall ** sciany, short choice)
+void Rocket::HitWall(Wall ** sciany, short choice)
 {
     visible = false;
-    this -> rocketOff();
-    if(sciany[choice] -> getDestroyable())
+    this -> RocketOff();
+    if(sciany[choice] -> GetDestroyable())
     {
-        sciany[choice] -> setLife(sciany[choice] -> getLife() - 1);
-        if(sciany[choice] -> getLife() == 0)
-            sciany[choice] -> setVisible(false);
+        sciany[choice] -> SetLife(sciany[choice] -> GetLife() - 1);
+        if(sciany[choice] -> GetLife() == 0)
+            sciany[choice] -> SetVisible(false);
     }
 }
 
-void Rocket::hitPlayer(Player * player)
+void Rocket::HitPlayer(Player * player)
 {
     visible = false;
-    player -> setLife(player -> getLife() - 1);
+    player -> SetLife(player -> GetLife() - 1);
 
     //simulate damage
-    if(player -> getShoots() > 1)
-        player -> setShoots(player -> getShoots() - 1);
-    else if(player -> getAmmoSpeed() > AMMO_SPEED - 1)
-        player -> setAmmoSpeed(player -> getAmmoSpeed() - 1);
-    else if(player -> getAmmoTimer() < 60)
-        player -> setAmmoSpeed(player -> getAmmoSpeed() + 10);
+    if(player -> GetShoots() > 1)
+        player -> SetShoots(player -> GetShoots() - 1);
+    else if(player -> GetAmmoSpeed() > AMMO_SPEED - 1)
+        player -> SetAmmoSpeed(player -> GetAmmoSpeed() - 1);
+    else if(player -> GetAmmoTimer() < 60)
+        player -> SetAmmoSpeed(player -> GetAmmoSpeed() + 10);
 
-    this -> rocketOff();
+    this -> RocketOff();
 }
 
-void Rocket::hitEnemy(Enemy ** enemy, Player * player, short choice)
+void Rocket::HitEnemy(Enemy ** enemy, Player * player, short choice)
 {
     visible = false;
-    enemy[choice] -> setLife(enemy[choice] -> getLife() - 1);
+    enemy[choice] -> SetLife(enemy[choice] -> GetLife() - 1);
 
-    if(enemy[choice] -> getLife() == 0 )
+    if(enemy[choice] -> GetLife() == 0 )
     {
-        enemy[choice] -> setDead(true);
-        enemy[choice] -> setRespawnDelayTimer(1); //1 to start counting
-        if(this -> getTeam())
+        enemy[choice] -> SetDead(true);
+        enemy[choice] -> SetRespawnDelayTimer(1); //1 to start counting
+        if(this -> GetTeam())
         {
-            player -> setPoints(player -> getPoints() +((enemy[choice] -> getDifficulty()+1) * POINTS_FOR_KILL ));
-            player -> setKills(player -> getKills() + 1);
+            player -> SetPoints(player -> GetPoints() +((enemy[choice] -> GetDifficulty()+1) * POINTS_FOR_KILL ));
+            player -> SetKills(player -> GetKills() + 1);
         }
     }
-    this -> rocketOff();
+
+    this -> RocketOff();
 }
 
-void Rocket::hitRocket(Rocket ** rocket, short choice)
+void Rocket::HitRocket(Rocket ** rocket, short choice)
 {
     visible = false;
-    rocket[choice] -> setVisible(false);
-    this -> rocketOff();
-    rocket[choice] -> rocketOff();
+    rocket[choice] -> SetVisible(false);
+    this -> RocketOff();
+    rocket[choice] -> RocketOff();
 }
 
-void Rocket::checkColision(Rocket ** rocket, Wall ** sciany, Player *player, Enemy ** enemy, Explosion ** explosion, Bonus ** bonus)
+void Rocket::CheckColision(Rocket ** rocket, Wall ** sciany, Player *player, Enemy ** enemy, Explosion ** explosion, Bonus ** bonus)
 {
-    bool hit=false;//only one hit
-    for (short i=0; i < OBSTACLES && !hit; i++)
+    bool hit=false; //only one Hit
+    for (short i=0; i < OBSTACLES; i++)
     {
-        if(sciany[i] -> getVisible())
+        if(sciany[i] -> GetVisible())
         {
             switch(direction)
             {
             case 0:
             {
-                if(x + ROCKET_X >= sciany[i] -> getX() && x <= sciany[i] -> getX() + OBSTACLE_SIZE  && y >= sciany[i] -> getY() - ROCKET_Y  && y <= sciany[i] -> getY() +OBSTACLE_SIZE)
-                {
-                    this -> hitWall(sciany, i);
+                if(x + ROCKET_X >= sciany[i] -> GetX() && x <= sciany[i] -> GetX() + OBSTACLE_SIZE  && y >= sciany[i] -> GetY() - ROCKET_Y  && y <= sciany[i] -> GetY() +OBSTACLE_SIZE)
                     hit=true;
-                }
+
                 break;
             }
             case 1:
             {
-                if(x >= sciany[i] -> getX() && x <= sciany[i] -> getX() +OBSTACLE_SIZE && y >= sciany[i] -> getY() - ROCKET_Y  && y <= sciany[i] -> getY() +OBSTACLE_SIZE)
-                {
+                if(x >= sciany[i] -> GetX() && x <= sciany[i] -> GetX() +OBSTACLE_SIZE && y >= sciany[i] -> GetY() - ROCKET_Y  && y <= sciany[i] -> GetY() +OBSTACLE_SIZE)
                     hit=true;
-                    this -> hitWall(sciany, i);
-                }
+
                 break;
             }
             case 2:
             {
-                if(x >= sciany[i] -> getX() - ROCKET_Y && x <= sciany[i] -> getX() + OBSTACLE_SIZE && y + ROCKET_X >= sciany[i] -> getY() && y + ROCKET_X <= sciany[i] -> getY() +OBSTACLE_SIZE)
-                {
+                if(x >= sciany[i] -> GetX() - ROCKET_Y && x <= sciany[i] -> GetX() + OBSTACLE_SIZE && y + ROCKET_X >= sciany[i] -> GetY() && y + ROCKET_X <= sciany[i] -> GetY() +OBSTACLE_SIZE)
                     hit=true;
-                    this -> hitWall(sciany, i);
-                }
+
                 break;
             }
             case 3:
             {
-                if(x + ROCKET_Y >= sciany[i] -> getX() && x - ROCKET_Y <= sciany[i] -> getX() + OBSTACLE_SIZE && y <= sciany[i] -> getY() + OBSTACLE_SIZE && y >= sciany[i] -> getY())
-                {
+                if(x + ROCKET_Y >= sciany[i] -> GetX() && x - ROCKET_Y <= sciany[i] -> GetX() + OBSTACLE_SIZE && y <= sciany[i] -> GetY() + OBSTACLE_SIZE && y >= sciany[i] -> GetY())
                     hit=true;
-                    this -> hitWall(sciany, i);
-                }
+
                 break;
             }
             }
 
-            if(!sciany[i] -> getVisible())
-            {
-                this -> createBigExplosion(explosion, sciany[i] -> getX(), sciany[i] -> getY());
+            if(hit)
+                this -> HitWall(sciany, i);
 
-                if(sciany[i] -> getBase())
+            if(!sciany[i] -> GetVisible())
+            {
+                this -> CreateBigExplosion(explosion, sciany[i] -> GetX(), sciany[i] -> GetY());
+
+                if(sciany[i] -> GetBase())
                 {
                     if(!baseDestroyed && !youDied)
                         baseDestroyed = true;
@@ -348,126 +342,120 @@ void Rocket::checkColision(Rocket ** rocket, Wall ** sciany, Player *player, Ene
 
                 ModeGuardian();
             }
-            else if(hit && sciany[i] -> getVisible())
-                this -> createSmallExplosion(explosion);
+            else if(hit && sciany[i] -> GetVisible())
+                this -> CreateSmallExplosion(explosion);
+
+            if(hit)
+                return;
         }
     }
 
-    if(player -> getActive() && !hit)
+    if(player -> GetActive())
     {
         switch(direction)
         {
         case 0:
         {
-            if(x + ROCKET_X >= player -> getX() && x <= player -> getX() + TANK_SIZE  && y >= player -> getY() - ROCKET_Y  && y <= player -> getY() +TANK_SIZE)
-            {
+            if(x + ROCKET_X >= player -> GetX() && x <= player -> GetX() + TANK_SIZE  && y >= player -> GetY() - ROCKET_Y  && y <= player -> GetY() +TANK_SIZE)
                 hit=true;
-                this -> hitPlayer(player);
-            }
+
             break;
         }
         case 1:
         {
-            if(x >= player -> getX() && x <= player -> getX() +TANK_SIZE && y >= player -> getY() - ROCKET_Y  && y <= player -> getY() +TANK_SIZE)
-            {
+            if(x >= player -> GetX() && x <= player -> GetX() +TANK_SIZE && y >= player -> GetY() - ROCKET_Y  && y <= player -> GetY() +TANK_SIZE)
                 hit=true;
-                this -> hitPlayer(player);
-            }
+
             break;
         }
         case 2:
         {
-            if(x >= player -> getX() - ROCKET_Y && x <= player -> getX() + TANK_SIZE && y + ROCKET_X >= player -> getY() && y + ROCKET_X <= player -> getY() +TANK_SIZE)
-            {
+            if(x >= player -> GetX() - ROCKET_Y && x <= player -> GetX() + TANK_SIZE && y + ROCKET_X >= player -> GetY() && y + ROCKET_X <= player -> GetY() +TANK_SIZE)
                 hit=true;
-                this -> hitPlayer(player);
-            }
+
             break;
         }
         case 3:
         {
-            if(x + ROCKET_Y >= player -> getX() && x - ROCKET_Y <= player -> getX() + TANK_SIZE && y <= player -> getY() + TANK_SIZE && y >= player -> getY())
-            {
+            if(x + ROCKET_Y >= player -> GetX() && x - ROCKET_Y <= player -> GetX() + TANK_SIZE && y <= player -> GetY() + TANK_SIZE && y >= player -> GetY())
                 hit=true;
-                this -> hitPlayer(player);
-            }
+
             break;
         }
         }
 
         if(hit)
         {
-            if(player -> getLife() == 0)
+            this -> HitPlayer(player);
+
+            if(player -> GetLife() == 0)
             {
-                this -> createBigExplosion(explosion, player -> getX(), player -> getY());
+                this -> CreateBigExplosion(explosion, player -> GetX(), player -> GetY());
                 if(!youDied && !youDied)
                     youDied = true;
 
-                player -> setActive(false);
+                player -> SetActive(false);
                 Enemy::hasPlayer = false;
                 ClearPlayerArray(sciany);
             }
-            else if(player -> getLife() != 0)
+            else if(player -> GetLife() != 0)
             {
-                this -> createSmallExplosion(explosion);
+                this -> CreateSmallExplosion(explosion);
             }
+
+            return;
         }
     }
 
-    for(short h = 0; h < ENEMIES && !hit; h++)
+    for(short h = 0; h < ENEMIES; h++)
     {
-        if(!enemy[h] -> getDead())
+        if(!enemy[h] -> GetDead())
         {
             switch(direction)
             {
             case 0:
             {
-                if(x + ROCKET_X >= enemy[h] -> getX() && x <= enemy[h] -> getX() + TANK_SIZE  && y >= enemy[h] -> getY() - ROCKET_Y  && y <= enemy[h] -> getY() +TANK_SIZE)
-                {
+                if(x + ROCKET_X >= enemy[h] -> GetX() && x <= enemy[h] -> GetX() + TANK_SIZE  && y >= enemy[h] -> GetY() - ROCKET_Y  && y <= enemy[h] -> GetY() +TANK_SIZE)
                     hit=true;
-                    this -> hitEnemy(enemy, player, h);
-                }
+
                 break;
             }
             case 1:
             {
-                if(x >= enemy[h] -> getX() && x <= enemy[h] -> getX() +TANK_SIZE && y >= enemy[h] -> getY() - ROCKET_Y  && y <= enemy[h] -> getY() +TANK_SIZE)
-                {
+                if(x >= enemy[h] -> GetX() && x <= enemy[h] -> GetX() +TANK_SIZE && y >= enemy[h] -> GetY() - ROCKET_Y  && y <= enemy[h] -> GetY() +TANK_SIZE)
                     hit=true;
-                    this -> hitEnemy(enemy, player, h);
-                }
+
                 break;
             }
             case 2:
             {
-                if(x >= enemy[h] -> getX() - ROCKET_Y && x <= enemy[h] -> getX() + TANK_SIZE && y + ROCKET_X >= enemy[h] -> getY() && y + ROCKET_X <= enemy[h] -> getY() +TANK_SIZE)
-                {
+                if(x >= enemy[h] -> GetX() - ROCKET_Y && x <= enemy[h] -> GetX() + TANK_SIZE && y + ROCKET_X >= enemy[h] -> GetY() && y + ROCKET_X <= enemy[h] -> GetY() +TANK_SIZE)
                     hit=true;
-                    this -> hitEnemy(enemy, player, h);
-                }
+
                 break;
             }
             case 3:
             {
-                if(x + ROCKET_Y >= enemy[h] -> getX() && x - ROCKET_Y <= enemy[h] -> getX() + TANK_SIZE && y <= enemy[h] -> getY() + TANK_SIZE && y >= enemy[h] -> getY())
-                {
+                if(x + ROCKET_Y >= enemy[h] -> GetX() && x - ROCKET_Y <= enemy[h] -> GetX() + TANK_SIZE && y <= enemy[h] -> GetY() + TANK_SIZE && y >= enemy[h] -> GetY())
                     hit=true;
-                    this -> hitEnemy(enemy, player, h);
-                }
+
                 break;
             }
             }
 
-            if(enemy[h] -> getDead())
+            if(hit)
+                this -> HitEnemy(enemy, player, h);
+
+            if(enemy[h] -> GetDead())
             {
-                this -> createBigExplosion(explosion, enemy[h] -> getX(), enemy[h] -> getY());
+                this -> CreateBigExplosion(explosion, enemy[h] -> GetX(), enemy[h] -> GetY());
 
                 if(rand()%100 < BONUS_CHANCE)
                 {
                     short choice=GiveBonusID(bonus);
-                    bonus[choice] -> setX(enemy[h] -> getX());
-                    bonus[choice] -> setY(enemy[h] -> getY());
-                    bonus[choice] -> setVisible(true);
+                    bonus[choice] -> SetX(enemy[h] -> GetX());
+                    bonus[choice] -> SetY(enemy[h] -> GetY());
+                    bonus[choice] -> SetVisible(true);
                 }
 
                 if(gameMode == 2)
@@ -475,33 +463,36 @@ void Rocket::checkColision(Rocket ** rocket, Wall ** sciany, Player *player, Ene
 
                 ModeGuardian();
             }
-            else if(hit && !enemy[h] -> getDead())
+            else if(hit && !enemy[h] -> GetDead())
             {
-                this -> createSmallExplosion(explosion);
+                this -> CreateSmallExplosion(explosion);
 
-                short playerDirection = 0; //turn around if enemy get hitted by rocket
+                short playerDirection = 0; //turn around if enemy Get Hitted by rocket
 
                 if (direction == 1 || direction == 3)
                     playerDirection = direction - 1;
                 else if(direction == 0 || direction == 2)
                     playerDirection = direction + 1;
 
-                if(enemy[h] -> getDirection() != playerDirection)
+                if(enemy[h] -> GetDirection() != playerDirection)
                 {
-                    enemy[h] -> setTempDirection(playerDirection);
-                    enemy[h] -> setDirection(playerDirection);
-                    enemy[h] -> setDirectionCounter(1);
-                    enemy[h] -> setTargetAhead(true);
+                    enemy[h] -> SetTempDirection(playerDirection);
+                    enemy[h] -> SetDirection(playerDirection);
+                    enemy[h] -> SetDirectionCounter(1);
+                    enemy[h] -> SetTarGetAhead(true);
                 }
                 else
-                    enemy[h] -> setTargetAhead(true);
+                    enemy[h] -> SetTarGetAhead(true);
             }
+
+            if(hit)
+                return;
         }
     }
 
-    for(short h = 0; h < ROCKETS && !hit; h++)
+    for(short h = 0; h < ROCKETS; h++)
     {
-        if(rocket[h] -> getVisible() && rocket[h] != this && rocket[h] -> getX() > 0 && rocket[h] -> getY() > 0)
+        if(rocket[h] -> GetVisible() && rocket[h] != this && rocket[h] -> GetX() > 0 && rocket[h] -> GetY() > 0)
         {
             switch(direction)
             {
@@ -510,113 +501,91 @@ void Rocket::checkColision(Rocket ** rocket, Wall ** sciany, Player *player, Ene
                 //1 horizontal rocket
                 //2 vertical rocket
 
-                if(rocket[h] -> getDirection() < 2)
+                if(rocket[h] -> GetDirection() < 2)
                 {
-                    if(x + ROCKET_X >= rocket[h] -> getX()  && x + ROCKET_X <= rocket[h] -> getX() + ROCKET_X )
-                        if((y >= rocket[h] -> getY() && y <= rocket[h] -> getY() + ROCKET_Y) || (y <= rocket[h] -> getY() && y + ROCKET_Y >= rocket[h] -> getY()))
-                        {
+                    if(x + ROCKET_X >= rocket[h] -> GetX()  && x + ROCKET_X <= rocket[h] -> GetX() + ROCKET_X )
+                        if((y >= rocket[h] -> GetY() && y <= rocket[h] -> GetY() + ROCKET_Y) || (y <= rocket[h] -> GetY() && y + ROCKET_Y >= rocket[h] -> GetY()))
                             hit=true;
-                            this -> hitRocket(rocket, h);
-                        }
                 }
                 else
                 {
-                    if(x + ROCKET_X >= rocket[h] -> getX()  && x + ROCKET_X <= rocket[h] -> getX() + ROCKET_Y )
-                        if((y >= rocket[h] -> getY() && y <= rocket[h] -> getY() + ROCKET_X) || (y <= rocket[h] -> getY() && y + ROCKET_Y >= rocket[h] -> getY()))
-                        {
+                    if(x + ROCKET_X >= rocket[h] -> GetX()  && x + ROCKET_X <= rocket[h] -> GetX() + ROCKET_Y )
+                        if((y >= rocket[h] -> GetY() && y <= rocket[h] -> GetY() + ROCKET_X) || (y <= rocket[h] -> GetY() && y + ROCKET_Y >= rocket[h] -> GetY()))
                             hit=true;
-                            this -> hitRocket(rocket, h);
-                        }
                 }
 
                 break;
             }
             case 1:
             {
-                if(rocket[h] -> getDirection() < 2)
+                if(rocket[h] -> GetDirection() < 2)
                 {
-                    if(x + ROCKET_X <= rocket[h] -> getX() + ROCKET_X && x >= rocket[h] -> getX() )
-                        if((y >= rocket[h] -> getY() && y <= rocket[h] -> getY() + ROCKET_Y) || (y <= rocket[h] -> getY() && y + ROCKET_Y >= rocket[h] -> getY()))
-                        {
+                    if(x + ROCKET_X <= rocket[h] -> GetX() + ROCKET_X && x >= rocket[h] -> GetX() )
+                        if((y >= rocket[h] -> GetY() && y <= rocket[h] -> GetY() + ROCKET_Y) || (y <= rocket[h] -> GetY() && y + ROCKET_Y >= rocket[h] -> GetY()))
                             hit=true;
-                            this -> hitRocket(rocket, h);
-                        }
                 }
                 else
                 {
-                    if(x <= rocket[h] -> getX() + ROCKET_Y && x >= rocket[h] -> getX())
-                        if((y >= rocket[h] -> getY() && y <= rocket[h] -> getY() + ROCKET_X) || (y <= rocket[h] -> getY() && y + ROCKET_Y >= rocket[h] -> getY()))
-                        {
+                    if(x <= rocket[h] -> GetX() + ROCKET_Y && x >= rocket[h] -> GetX())
+                        if((y >= rocket[h] -> GetY() && y <= rocket[h] -> GetY() + ROCKET_X) || (y <= rocket[h] -> GetY() && y + ROCKET_Y >= rocket[h] -> GetY()))
                             hit=true;
-                            this -> hitRocket(rocket, h);
-                        }
                 }
                 break;
             }
             case 2:
             {
-                if(rocket[h] -> getDirection() < 2)
+                if(rocket[h] -> GetDirection() < 2)
                 {
-                    if(y + ROCKET_X >= rocket[h] -> getY()  && y + ROCKET_X <= rocket[h] -> getY() + ROCKET_Y )
-                        if((x >= rocket[h] -> getX() && x <= rocket[h] -> getX() + ROCKET_X) || (x <= rocket[h] -> getX() && x + ROCKET_Y >= rocket[h] -> getX()))
-                        {
+                    if(y + ROCKET_X >= rocket[h] -> GetY()  && y + ROCKET_X <= rocket[h] -> GetY() + ROCKET_Y )
+                        if((x >= rocket[h] -> GetX() && x <= rocket[h] -> GetX() + ROCKET_X) || (x <= rocket[h] -> GetX() && x + ROCKET_Y >= rocket[h] -> GetX()))
                             hit=true;
-                            this -> hitRocket(rocket, h);
-                        }
                 }
                 else
                 {
-                    if(y + ROCKET_X >= rocket[h] -> getY()  && y + ROCKET_X <= rocket[h] -> getY() + ROCKET_X )
-                        if((x >= rocket[h] -> getX() && x <= rocket[h] -> getX() + ROCKET_Y) || (x <= rocket[h] -> getX() && x + ROCKET_Y >= rocket[h] -> getX()))
-                        {
+                    if(y + ROCKET_X >= rocket[h] -> GetY()  && y + ROCKET_X <= rocket[h] -> GetY() + ROCKET_X )
+                        if((x >= rocket[h] -> GetX() && x <= rocket[h] -> GetX() + ROCKET_Y) || (x <= rocket[h] -> GetX() && x + ROCKET_Y >= rocket[h] -> GetX()))
                             hit=true;
-                            this -> hitRocket(rocket, h);
-                        }
                 }
                 break;
             }
             case 3:
             {
-                if(rocket[h] -> getDirection() < 2)
+                if(rocket[h] -> GetDirection() < 2)
                 {
-                    if(y <= rocket[h] -> getY() + ROCKET_Y && y >= rocket[h] -> getY() )
-                        if((x >= rocket[h] -> getX() && x <= rocket[h] -> getX() + ROCKET_X) || (x <= rocket[h] -> getX() && x + ROCKET_Y >= rocket[h] -> getX()))
-                        {
+                    if(y <= rocket[h] -> GetY() + ROCKET_Y && y >= rocket[h] -> GetY() )
+                        if((x >= rocket[h] -> GetX() && x <= rocket[h] -> GetX() + ROCKET_X) || (x <= rocket[h] -> GetX() && x + ROCKET_Y >= rocket[h] -> GetX()))
                             hit=true;
-                            this -> hitRocket(rocket, h);
-                        }
                 }
                 else
                 {
-                    if(y + ROCKET_X <= rocket[h] -> getY()  && y >= rocket[h] -> getY() )
-                        if((x >= rocket[h] -> getX() && x <= rocket[h] -> getX() + ROCKET_Y) || (x <= rocket[h] -> getX() && x + ROCKET_Y >= rocket[h] -> getX()))
-                        {
+                    if(y + ROCKET_X <= rocket[h] -> GetY()  && y >= rocket[h] -> GetY() )
+                        if((x >= rocket[h] -> GetX() && x <= rocket[h] -> GetX() + ROCKET_Y) || (x <= rocket[h] -> GetX() && x + ROCKET_Y >= rocket[h] -> GetX()))
                             hit=true;
-                            this -> hitRocket(rocket, h);
-                        }
                 }
                 break;
             }
             }
 
             if(hit)
-                this -> createSmallExplosion(explosion);
+            {
+                this -> HitRocket(rocket, h);
+                this -> CreateSmallExplosion(explosion);
+                return;
+            }
         }
     }
 };
 
 short GiveRocketID(Rocket **rocket)
 {
-    short temp=0;
     for(short i=0; i<ROCKETS; i++)
     {
-        if(!rocket[i]->getVisible())
+        if(!rocket[i]->GetVisible())
         {
-            temp=i;
-            break;
+            return i;
         }
     }
-    return temp;
+    return 0;
 };
 
 void ClearRocket(Rocket ** rocket)
@@ -625,12 +594,12 @@ void ClearRocket(Rocket ** rocket)
 
     for(short i=0; i<ROCKETS; i++)
     {
-        rocket[i] -> setX(0);
-        rocket[i] -> setY(0);
-        rocket[i] -> setDirection(0);
-        rocket[i] -> setVisible(false);
-        rocket[i] -> setTeam(true);
-        rocket[i] -> setSpeed(0);
+        rocket[i] -> SetX(0);
+        rocket[i] -> SetY(0);
+        rocket[i] -> SetDirection(0);
+        rocket[i] -> SetVisible(false);
+        rocket[i] -> SetTeam(true);
+        rocket[i] -> SetSpeed(0);
     }
 
     Rocket::rocketsCounter[0] = 0;

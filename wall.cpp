@@ -10,62 +10,62 @@
 
 extern ALLEGRO_CONFIG* iniFile;
 
-short Wall::getX()
+short Wall::GetX()
 {
     return x;
 };
 
-void Wall::setX( short _x)
+void Wall::SetX( short _x)
 {
     x = _x;
 };
 
-short Wall::getY()
+short Wall::GetY()
 {
     return y;
 };
 
-void Wall::setY( short _y)
+void Wall::SetY( short _y)
 {
     y = _y;
 };
 
-bool Wall::getDestroyable()
+bool Wall::GetDestroyable()
 {
     return destroyable;
 };
 
-void Wall::setDestroyable( bool _destroyable)
+void Wall::SetDestroyable( bool _destroyable)
 {
     destroyable = _destroyable;
 };
 
-bool Wall::getVisible()
+bool Wall::GetVisible()
 {
     return visible;
 };
 
-void Wall::setVisible( bool _visible)
+void Wall::SetVisible( bool _visible)
 {
     visible = _visible;
 };
 
-bool Wall::getBase()
+bool Wall::GetBase()
 {
     return base;
 };
 
-void Wall::setBase( bool _base)
+void Wall::SetBase( bool _base)
 {
     base = _base;
 };
 
-short Wall::getLife()
+short Wall::GetLife()
 {
     return life;
 };
 
-void Wall::setLife( short _life)
+void Wall::SetLife( short _life)
 {
     life = _life;
 };
@@ -76,10 +76,10 @@ void SetBaseID(Wall ** wall)
     {
         for(short i=0; i < OBSTACLES; i++)
         {
-            if(wall[i]->getBase())
+            if(wall[i]->GetBase())
             {
                 Wall::baseID = i;
-                break;
+                return;
             }
         }
     }
@@ -89,13 +89,14 @@ void ClearWall(Wall ** wall)
 {
     for(short i=0; i < OBSTACLES; i++)
     {
-        wall[i] -> setX(0);
-        wall[i] -> setY(0);
-        wall[i] -> setDestroyable(true);
-        wall[i] -> setLife(0);
-        wall[i] -> setBase(false);
-        wall[i] -> setVisible(false);
+        wall[i] -> SetX(0);
+        wall[i] -> SetY(0);
+        wall[i] -> SetDestroyable(true);
+        wall[i] -> SetLife(0);
+        wall[i] -> SetBase(false);
+        wall[i] -> SetVisible(false);
     }
+
     Wall::baseExist = false;
     Wall::baseID = 0;
     Wall::respawnTimer = 0;
@@ -125,24 +126,25 @@ void WallCampaingInitialize(Wall **wall, Player * player, Enemy ** enemy, short 
     {
         sprintf(message, "wallNR%i", g + 1);
         choice = GiveWallID(wall);
-        wall[choice] -> setDestroyable(atoi(al_get_config_value(iniFile, message, "destroyable")));
-        wall[choice] -> setLife(atoi(al_get_config_value(iniFile, message, "life")));
-        wall[choice] -> setX(atoi(al_get_config_value(iniFile, message, "x")));
-        wall[choice] -> setY(atoi(al_get_config_value(iniFile, message, "y")));
-        wall[choice] -> setBase(atoi(al_get_config_value(iniFile, message, "base")));
+        wall[choice] -> SetDestroyable(atoi(al_get_config_value(iniFile, message, "destroyable")));
+        wall[choice] -> SetLife(atoi(al_get_config_value(iniFile, message, "life")));
+        wall[choice] -> SetX(atoi(al_get_config_value(iniFile, message, "x")));
+        wall[choice] -> SetY(atoi(al_get_config_value(iniFile, message, "y")));
+        wall[choice] -> SetBase(atoi(al_get_config_value(iniFile, message, "base")));
         if(!respawn)
-            wall[choice] -> setVisible(true);
+            wall[choice] -> SetVisible(true);
         else
         {
-            bool collision = wall[choice] -> checkPlace(wall, player, enemy);
+            bool collision = wall[choice] -> CheckPlace(wall, player, enemy);
             if(collision)
-                wall[choice] -> setVisible(true);
+                wall[choice] -> SetVisible(true);
         }
     }
+
     al_destroy_config(iniFile);
 }
 
-void Wall::create(Wall ** wall, Player * player, Enemy ** enemy, short _x, short _y, bool _destroyable, short _life, bool _base)
+void Wall::Create(Wall ** wall, Player * player, Enemy ** enemy, short _x, short _y, bool _destroyable, short _life, bool _base)
 {
     x = (_x/50)* 50;
     y = (_y/50)* 50;
@@ -162,7 +164,7 @@ void Wall::create(Wall ** wall, Player * player, Enemy ** enemy, short _x, short
 
     while(1)
     {
-        if(this -> checkPlace(wall,player,enemy))
+        if(this -> CheckPlace(wall,player,enemy))
             break;
 
         x = ((rand()%(BATTLEFIELD_WIDTH - 50))/50)* 50;
@@ -172,59 +174,48 @@ void Wall::create(Wall ** wall, Player * player, Enemy ** enemy, short _x, short
     visible = true;
 };
 
-bool Wall::checkPlace(Wall **wall, Player * player, Enemy **enemy)
+bool Wall::CheckPlace(Wall **wall, Player * player, Enemy **enemy)
 {
-    bool collision=false; //if wall has collision with another object we can return false
     for (short i=0; i<OBSTACLES ; i++)
     {
-        if(wall[i]->getVisible() && this != wall[i])
+        if(wall[i]->GetVisible() && this != wall[i])
         {
-            if(x > wall[i] -> getX() - OBSTACLE_SIZE && x < wall[i] -> getX() + OBSTACLE_SIZE )
-                if(y + OBSTACLE_SIZE > wall[i] -> getY() && y < wall[i] -> getY() + OBSTACLE_SIZE )
-                {
-                    collision = true;
-                    break;
-                }
-        }
-    }
-    if(player->getActive() && !collision)
-    {
-        if(x > player -> getX() - OBSTACLE_SIZE && x < player -> getX() + TANK_SIZE)
-            if(y + TANK_SIZE > player -> getY() && y < player -> getY() + TANK_SIZE )
-                collision = true;
-    }
-
-
-    for(short j=0; j<ENEMIES && !collision; j++)
-    {
-        if(!enemy[j] -> getDead())
-        {
-            if(x > enemy[j] -> getX() - OBSTACLE_SIZE && x < enemy[j] -> getX() + TANK_SIZE)
-                if(y + TANK_SIZE > enemy[j] -> getY() && y < enemy[j] -> getY() + TANK_SIZE)
-                {
-                    collision = true;
-                    break;
-                }
+            if(x > wall[i] -> GetX() - OBSTACLE_SIZE && x < wall[i] -> GetX() + OBSTACLE_SIZE )
+                if(y + OBSTACLE_SIZE > wall[i] -> GetY() && y < wall[i] -> GetY() + OBSTACLE_SIZE )
+                    return false;
         }
     }
 
-    if (collision)
-        return false;
-    else
-        return true;
+    if(player->GetActive())
+    {
+        if(x > player -> GetX() - OBSTACLE_SIZE && x < player -> GetX() + TANK_SIZE)
+            if(y + TANK_SIZE > player -> GetY() && y < player -> GetY() + TANK_SIZE )
+                return false;
+    }
+
+
+    for(short j=0; j<ENEMIES; j++)
+    {
+        if(!enemy[j] -> GetDead())
+        {
+            if(x > enemy[j] -> GetX() - OBSTACLE_SIZE && x < enemy[j] -> GetX() + TANK_SIZE)
+                if(y + TANK_SIZE > enemy[j] -> GetY() && y < enemy[j] -> GetY() + TANK_SIZE)
+                    return false;
+        }
+    }
+
+    return true;
 };
+
 short GiveWallID(Wall **wall)
 {
-    short temp=0;
     for(short i=0; i<OBSTACLES; i++)
     {
-        if(!wall[i]->getVisible())
-        {
-            temp=i;
-            break;
-        }
+        if(!wall[i]->GetVisible())
+            return i;
     }
-    return temp;
+
+    return 0;
 };
 
 short CheckExistsWalls(Wall **wall)
@@ -232,11 +223,10 @@ short CheckExistsWalls(Wall **wall)
     short temp=0;
     for(short i=0; i<OBSTACLES; i++)
     {
-        if(wall[i]->getVisible())
-        {
+        if(wall[i]->GetVisible())
             temp++;
-        }
     }
+
     return temp;
 }
 
@@ -244,11 +234,11 @@ void SetImmortallWallsVisible(Wall **wall)
 {
     for (short i=0; i<OBSTACLES ; i++)
     {
-        if(wall[i]->getVisible() && wall[i]->getDestroyable() == false)
+        if(wall[i]->GetVisible() && wall[i]->GetDestroyable() == false)
         {
-            for(short j = wall[i] -> getY() ; j <= wall[i] -> getY() + OBSTACLE_SIZE; j++)
+            for(short j = wall[i] -> GetY() ; j <= wall[i] -> GetY() + OBSTACLE_SIZE; j++)
             {
-                for(short k = wall[i] -> getX() ; k <= wall[i] -> getX() + OBSTACLE_SIZE; k++)
+                for(short k = wall[i] -> GetX() ; k <= wall[i] -> GetX() + OBSTACLE_SIZE; k++)
                 {
                     if(k < 0 || j < 0)
                         continue;

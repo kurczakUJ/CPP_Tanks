@@ -16,28 +16,28 @@ public:
         animationHeight(0),
         animationWidth(0)		{}
 
-    short getX();
-    void setX( short _x);
+    short GetX();
+    void SetX( short _x);
 
-    short getY();
-    void setY( short _y);
+    short GetY();
+    void SetY( short _y);
 
-    short getLife();
-    void setLife( short _life);
+    short GetLife();
+    void SetLife( short _life);
 
-    short getAnimationHeight();
-    void setAnimationHeight( short _animationHeight);
+    short GetAnimationHeight();
+    void SetAnimationHeight( short _animationHeight);
 
-    short getAnimationWidth();
-    void setAnimationWidth( short _animationWidth);
+    short GetAnimationWidth();
+    void SetAnimationWidth( short _animationWidth);
 
-    bool getVisible();
-    void setVisible( bool _visible);
+    bool GetVisible();
+    void SetVisible( bool _visible);
 
-    bool getSmall();
-    void setSmall( bool _smallExplosion);
+    bool GetSmall();
+    void SetSmall( bool _smallExplosion);
 
-    void createExplosion();
+    void CreateExplosion();
 
 };
 

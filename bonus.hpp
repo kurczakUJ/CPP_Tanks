@@ -8,14 +8,14 @@ class Enemy;
 class Bonus : public Wall
 {
 public:
-    short getX();
-    void setX( short _x);
+    short GetX();
+    void SetX( short _x);
 
-    short getY();
-    void setY( short _y);
+    short GetY();
+    void SetY( short _y);
 
-    bool getVisible();
-    void setVisible( bool _visible);
+    bool GetVisible();
+    void SetVisible( bool _visible);
 };
 
 short GiveBonusID(Bonus ** bonus);

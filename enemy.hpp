@@ -19,7 +19,7 @@ private:
     short tempDestinationX;
     short tempDestinationY;
     bool canShoot;
-    bool targetAhead;
+    bool tarGetAhead;
     short ammoTimer;
     short ammoDelay;
     short respawnDelayTimer;
@@ -40,7 +40,7 @@ public:
         tempDestinationX(0),
         tempDestinationY(0),
         canShoot(true),
-        targetAhead(false),
+        tarGetAhead(false),
         ammoTimer(0),
         ammoDelay(0),
         respawnDelayTimer(0),
@@ -63,106 +63,106 @@ public:
     static bool attackBase[3];
     static short lostPlayerTimer;
 
-    short getX();
-    void setX(short _x);
+    short GetX();
+    void SetX(short _x);
 
-    short getY();
-    void setY( short _y);
+    short GetY();
+    void SetY( short _y);
 
-    short getTempX();
-    void setTempX( short _tempX);
+    short GetTempX();
+    void SetTempX( short _tempX);
 
-    short getTempY();
-    void setTempY( short _tempY);
+    short GetTempY();
+    void SetTempY( short _tempY);
 
-    short getDirection();
-    void setDirection( short _direction);
+    short GetDirection();
+    void SetDirection( short _direction);
 
-    short getLife();
-    void setLife( short _life);
+    short GetLife();
+    void SetLife( short _life);
 
-    bool getDead();
-    void setDead( bool _dead);
+    bool GetDead();
+    void SetDead( bool _dead);
 
-    short getWallID();
-    void setWallID( short _wallID);
+    short GetWallID();
+    void SetWallID( short _wallID);
 
-    bool getFirstmovement();
-    void setFirstmovement( bool _firstmovement);
+    bool GetFirstmovement();
+    void SetFirstmovement( bool _firstmovement);
 
-    bool getColision();
-    void setColision( bool _colision);
+    bool GetColision();
+    void SetColision( bool _colision);
 
-    bool getCanShoot();
-    void setCanShoot( bool _canShoot);
+    bool GetCanShoot();
+    void SetCanShoot( bool _canShoot);
 
-    short getAmmoSpeed();
-    void setAmmoSpeed( short _ammoSpeed);
+    short GetAmmoSpeed();
+    void SetAmmoSpeed( short _ammoSpeed);
 
-    short getTempDirection();
-    void setTempDirection( short _tempDirection);
+    short GetTempDirection();
+    void SetTempDirection( short _tempDirection);
 
-    short getDirectionCounter();
-    void setDirectionCounter( short _directionCounter);
+    short GetDirectionCounter();
+    void SetDirectionCounter( short _directionCounter);
 
-    short getDestinationX();
-    void setDestinationX(short _destinationX);
+    short GetDestinationX();
+    void SetDestinationX(short _destinationX);
 
-    short getDestinationY();
-    void setDestinationY( short _destinationY);
+    short GetDestinationY();
+    void SetDestinationY( short _destinationY);
 
-    short getTempDestinationX();
-    void setTempDestinationX(short _tempDestinationX);
+    short GetTempDestinationX();
+    void SetTempDestinationX(short _tempDestinationX);
 
-    short getTempDestinationY();
-    void setTempDestinationY( short _tempDestinationY);
+    short GetTempDestinationY();
+    void SetTempDestinationY( short _tempDestinationY);
 
-    bool getTargetAhead();
-    void setTargetAhead( bool _targetAhead);
+    bool GetTarGetAhead();
+    void SetTarGetAhead( bool _tarGetAhead);
 
-    short getAmmoTimer();
-    void setAmmoTimer( short _ammoTimer);
+    short GetAmmoTimer();
+    void SetAmmoTimer( short _ammoTimer);
 
-    short getAmmoDelay();
-    void setAmmoDelay( short _ammoDelay);
+    short GetAmmoDelay();
+    void SetAmmoDelay( short _ammoDelay);
 
-    short getRespawnDelayTimer();
-    void setRespawnDelayTimer( short _respawnDelayTimer);
+    short GetRespawnDelayTimer();
+    void SetRespawnDelayTimer( short _respawnDelayTimer);
 
-    short getDifficulty();
-    void setDifficulty( short _difficulty);
+    short GetDifficulty();
+    void SetDifficulty( short _difficulty);
 
-    bool getStop();
-    void setStop( bool _stop);
+    bool GetStop();
+    void SetStop( bool _stop);
 
-    bool getWallAtPath();
-    void setWallAtPath( bool _wallAtPath);
+    bool GetWallAtPath();
+    void SetWallAtPath( bool _wallAtPath);
 
-    bool getAttack();
-    void setAttack( bool _attack);
+    bool GetAttack();
+    void SetAttack( bool _attack);
 
-    void setPlayerCoord(Enemy **enemy, Player * player);
-    void checkPlace(Wall **wall, Player * player, Enemy **enemy);
-    short checkCollision(Wall **wall, Player * player, Enemy **enemy, Bonus **bonus);
-    void spawn(short _x, short _y, short _life, short _ammoSpeed, short _direction, short _ammoDelay, short _difficulty, Wall **wall, Player * player, Enemy **enemy);
-    bool checkAimWall(Wall **wall, Enemy ** enemy);
-    bool checkAimImmortallWall(Wall **wall, short _x, short _y);
-    bool checkAimPlayer(Player *player, Enemy ** enemy, Wall ** wall);
-    bool checkAimBase(Wall **wall, short id, Enemy ** enemy);
-    bool checkAimEnemy(Enemy **enemy, short _x, short _y);
-    bool searchForDirection();
-    void checkForBase(Wall ** wall, Enemy ** enemy);
-    void checkForPlayer(Player *player, Enemy **enemy);
-    bool checkDirection(short direction, Wall ** wall, Enemy ** enemy, Player *player, short moves);
-    void shoot(Rocket ** rocket);
-    void checkNearbyArea(Wall ** wall, Enemy ** enemy, Player * player);
-    bool checkPlayerFuture(short direction, Player *player, short moves);
-    void checkDestination(Wall ** wall);
-    void fightCoord(Player *player, Wall ** wall, Enemy **enemy);
-    short enemyPilot(Enemy **enemy, Wall **wall, Player *player, bool fight);
-    void moveCorrection(Wall **wall, Player *player, Enemy **enemy, Bonus **bonus);
-    void moveAI(Wall **wall, Player *player, Enemy **enemy, Bonus **bonus);
-    void enemyAI(Wall **wall, Enemy **enemy, Player *player, Bonus **bonus, Rocket **rocket);
+    void SetPlayerCoord(Enemy **enemy, Player * player);
+    void CheckPlace(Wall **wall, Player * player, Enemy **enemy);
+    short CheckCollision(Wall **wall, Player * player, Enemy **enemy, Bonus **bonus);
+    void Spawn(short _x, short _y, short _life, short _ammoSpeed, short _direction, short _ammoDelay, short _difficulty, Wall **wall, Player * player, Enemy **enemy);
+    bool CheckAimWall(Wall **wall, Enemy ** enemy);
+    bool CheckAimImmortallWall(Wall **wall, short _x, short _y);
+    bool CheckAimPlayer(Player *player, Enemy ** enemy, Wall ** wall);
+    bool CheckAimBase(Wall **wall, short id, Enemy ** enemy);
+    bool CheckAimEnemy(Enemy **enemy, short _x, short _y);
+    bool SearchForDirection();
+    void CheckForBase(Wall ** wall, Enemy ** enemy);
+    void CheckForPlayer(Player *player, Enemy **enemy);
+    bool CheckDirection(short direction, Wall ** wall, Enemy ** enemy, Player *player, short moves);
+    void Shoot(Rocket ** rocket);
+    void CheckNearbyArea(Wall ** wall, Enemy ** enemy, Player * player);
+    bool CheckPlayerFuture(short direction, Player *player, short moves);
+    void CheckDestination(Wall ** wall);
+    void FightCoord(Player *player, Wall ** wall, Enemy **enemy);
+    short EnemyPilot(Enemy **enemy, Wall **wall, Player *player, bool fight);
+    void MoveCorrection(Wall **wall, Player *player, Enemy **enemy, Bonus **bonus);
+    void MoveAI(Wall **wall, Player *player, Enemy **enemy, Bonus **bonus);
+    void EnemyAI(Wall **wall, Enemy **enemy, Player *player, Bonus **bonus, Rocket **rocket);
 };
 
 short GiveEnemyID(Enemy **enemy);
@@ -173,6 +173,6 @@ short CheckEnemyAlive(Enemy **enemy);
 void SetBaseCoord(Enemy ** enemy, Wall **wall, short choice);
 void EnemycampaingInitialize(Enemy ** enemy, short currentLevel, Wall **wall, Player *player);
 void EnemyCampaignDrop(Enemy ** enemy, short currentLevel, Wall **wall, Player *player);
-void SetTarget(Enemy **enemy, Player *player);
+void SetTarGet(Enemy **enemy, Player *player);
 
 #endif

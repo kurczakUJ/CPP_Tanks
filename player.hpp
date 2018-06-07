@@ -47,49 +47,49 @@ public:
 
     static unsigned short ammoTimer;
 
-    short getX();
-    void setX(short _x);
+    short GetX();
+    void SetX(short _x);
 
-    short getY();
-    void setY( short _y);
+    short GetY();
+    void SetY( short _y);
 
-    short getTempX();
-    void setTempX( short _tempX);
+    short GetTempX();
+    void SetTempX( short _tempX);
 
-    short getTempY();
-    void setTempY( short _tempY);
+    short GetTempY();
+    void SetTempY( short _tempY);
 
-    short getDirection();
-    void setDirection( short _direction);
+    short GetDirection();
+    void SetDirection( short _direction);
 
-    short getLife();
-    void setLife( short _life);
+    short GetLife();
+    void SetLife( short _life);
 
-    short getKills();
-    void setKills( short _kills);
+    short GetKills();
+    void SetKills( short _kills);
 
-    int getPoints();
-    void setPoints(int _points);
+    int GetPoints();
+    void SetPoints(int _points);
 
-    bool getActive();
-    void setActive( bool _active);
+    bool GetActive();
+    void SetActive( bool _active);
 
-    short getShoots();
-    void setShoots( short _shoots);
+    short GetShoots();
+    void SetShoots( short _shoots);
 
-    short getAmmoSpeed();
-    void setAmmoSpeed( short _ammoSpeed);
+    short GetAmmoSpeed();
+    void SetAmmoSpeed( short _ammoSpeed);
 
-    short getAmmoTimer();
-    void setAmmoTimer( short _ammoTimerDelay);
+    short GetAmmoTimer();
+    void SetAmmoTimer( short _ammoTimerDelay);
 
-    void initialize(short _x, short _y, short _life, short _shoots, short _direction, short _ammoSpeed, int _points, short _kills, short _ammoTimerDelay);
-    void campaingInitialize(short _currentLevel);
-    void move(short _where);
+    void Initialize(short _x, short _y, short _life, short _shoots, short _direction, short _ammoSpeed, int _points, short _kills, short _ammoTimerDelay);
+    void CampaingInitialize(short _currentLevel);
+    void Move(short _where);
 
-    void clear();
+    void Clear();
 
-    void checkColision(Wall **wall, Enemy **enemy, Bonus **bonus);
+    void CheckColision(Wall **wall, Enemy **enemy, Bonus **bonus);
 };
 
 #endif

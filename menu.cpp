@@ -62,9 +62,9 @@ void Menu()
     {
         ALLEGRO_TIMEOUT timeout;
         al_init_timeout(&timeout, 0.05);
-        bool get_event = al_wait_for_event_until(EventQueue, &Event, &timeout);
+        bool Get_event = al_wait_for_event_until(EventQueue, &Event, &timeout);
 
-        if(get_event)
+        if(Get_event)
         {
             if(Event.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN)
             {
@@ -108,7 +108,6 @@ void Menu()
                     break;
                 }
             }
-
             else if(Event.keyboard.keycode == ALLEGRO_KEY_ESCAPE)
             {
                 al_destroy_event_queue(EventQueue);
@@ -139,9 +138,9 @@ void HighscoreMenu()
         ALLEGRO_TIMEOUT timeout;
         al_init_timeout(&timeout, 0.05);
 
-        bool get_event = al_wait_for_event_until(EventQueue, &Event, &timeout);
+        bool Get_event = al_wait_for_event_until(EventQueue, &Event, &timeout);
 
-        if(get_event)
+        if(Get_event)
         {
             if(Event.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN)
             {
@@ -314,10 +313,10 @@ void HighscoreSave(short mode, Player * player)
     {
         sprintf(numberX, "number%i", i+ 1);
         sprintf(nick, "nick%i", i+ 1);
-        if(player -> getPoints() > highscore[mode][i])
+        if(player -> GetPoints() > highscore[mode][i])
         {
             InputNick();
-            sprintf(points, "%i",player -> getPoints());
+            sprintf(points, "%i",player -> GetPoints());
             al_set_config_value(iniFile, type, numberX, points);
             al_set_config_value(iniFile, type, nick, nick);
             for(short y=i; y < 9; y++)
@@ -370,9 +369,9 @@ void HighscoreDisplay(short mode)
         ALLEGRO_TIMEOUT timeout;
         al_init_timeout(&timeout, 0.03);
 
-        bool get_event = al_wait_for_event_until(EventQueue, &Event, &timeout);
+        bool Get_event = al_wait_for_event_until(EventQueue, &Event, &timeout);
 
-        if(get_event)
+        if(Get_event)
         {
             if(Event.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN)
             {

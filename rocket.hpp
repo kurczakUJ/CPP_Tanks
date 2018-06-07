@@ -22,34 +22,34 @@ public:
 
     static short rocketsCounter[2];
 
-    short getX();
-    void setX( short _x);
+    short GetX();
+    void SetX( short _x);
 
-    short getY();
-    void setY( short _y);
+    short GetY();
+    void SetY( short _y);
 
-    short getDirection();
-    void setDirection( short _direction);
+    short GetDirection();
+    void SetDirection( short _direction);
 
-    bool getTeam();
-    void setTeam( bool _team);
+    bool GetTeam();
+    void SetTeam( bool _team);
 
-    bool getVisible();
-    void setVisible( bool _visible);
+    bool GetVisible();
+    void SetVisible( bool _visible);
 
-    short getSpeed();
-    void setSpeed( short _speed);
+    short GetSpeed();
+    void SetSpeed( short _speed);
 
-    void rocketOff();
-    void checkColision(Rocket ** rocket, Wall ** sciany, Player *player, Enemy ** enemy, Explosion ** explosion, Bonus ** bonus);
-    void move(Rocket ** rocket, Wall ** sciany, Player *player, Enemy ** enemy, Explosion ** explosion, Bonus ** bonus);
-    void shoot(Player * player);
-    void createSmallExplosion(Explosion ** explosion);
-    void createBigExplosion(Explosion ** explosion, short _x, short _y);
-    void hitWall(Wall ** sciany, short choice);
-    void hitPlayer(Player * player);
-    void hitEnemy(Enemy ** enemy, Player * player, short choice);
-    void hitRocket(Rocket ** rocket, short choice);
+    void RocketOff();
+    void CheckColision(Rocket ** rocket, Wall ** sciany, Player *player, Enemy ** enemy, Explosion ** explosion, Bonus ** bonus);
+    void Move(Rocket ** rocket, Wall ** sciany, Player *player, Enemy ** enemy, Explosion ** explosion, Bonus ** bonus);
+    void Shoot(Player * player);
+    void CreateSmallExplosion(Explosion ** explosion);
+    void CreateBigExplosion(Explosion ** explosion, short _x, short _y);
+    void HitWall(Wall ** sciany, short choice);
+    void HitPlayer(Player * player);
+    void HitEnemy(Enemy ** enemy, Player * player, short choice);
+    void HitRocket(Rocket ** rocket, short choice);
 };
 
 short GiveRocketID(Rocket **rocket);

@@ -1,74 +1,77 @@
 #include "explosion.hpp"
 #include "config.hpp"
 
-short Explosion::getX()
+short Explosion::GetX()
 {
     return x;
 };
 
-void Explosion::setX( short _x)
+void Explosion::SetX( short _x)
 {
     x = _x;
 };
 
-short Explosion::getY()
+short Explosion::GetY()
 {
     return y;
 };
-void Explosion::setY( short _y)
+
+void Explosion::SetY( short _y)
 {
     y = _y;
 };
 
-short Explosion::getAnimationHeight()
+short Explosion::GetAnimationHeight()
 {
     return animationHeight;
 };
-void Explosion::setAnimationHeight( short _animationHeight)
+
+void Explosion::SetAnimationHeight( short _animationHeight)
 {
     animationHeight = _animationHeight;
 };
 
-short Explosion::getAnimationWidth()
+short Explosion::GetAnimationWidth()
 {
     return animationWidth;
 };
-void Explosion::setAnimationWidth( short _animationWidth)
+
+void Explosion::SetAnimationWidth( short _animationWidth)
 {
     animationWidth = _animationWidth;
 };
 
-bool Explosion::getVisible()
+bool Explosion::GetVisible()
 {
     return visible;
 };
 
-void Explosion::setVisible( bool _visible)
+void Explosion::SetVisible( bool _visible)
 {
     visible = _visible;
 };
 
-short Explosion::getLife()
+short Explosion::GetLife()
 {
     return life;
 };
 
-void Explosion::setLife( short _life)
+void Explosion::SetLife( short _life)
 {
     life = _life;
 };
 
-bool Explosion::getSmall()
+bool Explosion::GetSmall()
 {
     return smallExplosion;
 };
 
-void Explosion::setSmall( bool _smallExplosion)
+void Explosion::SetSmall( bool _smallExplosion)
 {
     smallExplosion = _smallExplosion;
 };
 
-void Explosion::createExplosion()
+void Explosion::CreateExplosion()
 {
     if(visible)
     {
@@ -81,28 +84,24 @@ void Explosion::createExplosion()
 
 short GiveExplosionID(Explosion **explosion)
 {
-    short countExplosions=0;
     for(short i=0; i<EXPLOSIONS; i++)
     {
-        if(!explosion[i] -> getVisible())
-        {
-            countExplosions=i;
-            break;
-        }
+        if(!explosion[i] -> GetVisible())
+            return i;
     }
-    return countExplosions;
+    return 0;
 };
 
 void ClearExplosion(Explosion **explosion)
 {
     for(short i=0; i<EXPLOSIONS; i++)
     {
-        explosion[i] -> setX(0);
-        explosion[i] -> setY(0);
-        explosion[i] -> setVisible(false);
-        explosion[i] -> setAnimationHeight(0);
-        explosion[i] -> setAnimationWidth(0);
-        explosion[i] -> setLife(0);
-        explosion[i] -> setSmall(false);
+        explosion[i] -> SetX(0);
+        explosion[i] -> SetY(0);
+        explosion[i] -> SetVisible(false);
+        explosion[i] -> SetAnimationHeight(0);
+        explosion[i] -> SetAnimationWidth(0);
+        explosion[i] -> SetLife(0);
+        explosion[i] -> SetSmall(false);
     }
 }

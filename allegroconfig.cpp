@@ -280,29 +280,19 @@ void ShowError(char *name, short option)
 void ClearMemory()
 {
     for (short i = 0; i < BONUSES; i++)
-    {
         delete bonus[i];
-    }
 
     for (short i = 0; i < EXPLOSIONS; i++)
-    {
         delete explosion[i];
-    }
 
     for (short i = 0; i < OBSTACLES; i++)
-    {
         delete wall[i];
-    }
 
     for (short i = 0; i < ROCKETS; i++)
-    {
         delete rocket[i];
-    }
 
     for (short i = 0; i < ENEMIES; i++)
-    {
         delete enemy[i];
-    }
 
     delete[] rocket;
     delete[] enemy;

@@ -9,127 +9,127 @@
 extern ALLEGRO_CONFIG* iniFile;
 extern Player * playerCampaign;
 
-short Player::getX()
+short Player::GetX()
 {
     return x;
 };
 
-void Player::setX(short _x)
+void Player::SetX(short _x)
 {
     x = _x;
 };
 
-short Player::getTempX()
+short Player::GetTempX()
 {
     return tempX;
 };
 
-void Player::setTempX( short _tempX)
+void Player::SetTempX( short _tempX)
 {
     tempX = _tempX;
 };
 
-short Player::getY()
+short Player::GetY()
 {
     return y;
 };
 
-void Player::setY( short _y)
+void Player::SetY( short _y)
 {
     y = _y;
 };
 
-short Player::getTempY()
+short Player::GetTempY()
 {
     return tempY;
 };
 
-void Player::setTempY( short _tempY)
+void Player::SetTempY( short _tempY)
 {
     tempY = _tempY;
 };
 
-short Player::getDirection()
+short Player::GetDirection()
 {
     return direction;
 };
 
-void Player::setDirection( short _direction)
+void Player::SetDirection( short _direction)
 {
     direction = _direction;
 };
 
-short Player::getLife()
+short Player::GetLife()
 {
     return life;
 };
 
-void Player::setLife(short _life)
+void Player::SetLife(short _life)
 {
     life = _life;
 };
 
-int Player::getPoints()
+int Player::GetPoints()
 {
     return points;
 };
 
-void Player::setPoints(int _points)
+void Player::SetPoints(int _points)
 {
     points = _points;
 };
 
-short Player::getKills()
+short Player::GetKills()
 {
     return kills;
 };
 
-void Player::setKills(short _kills)
+void Player::SetKills(short _kills)
 {
     kills = _kills;
 };
 
-bool Player::getActive()
+bool Player::GetActive()
 {
     return active;
 };
 
-void Player::setActive( bool _active)
+void Player::SetActive( bool _active)
 {
     active = _active;
 };
 
-short Player::getShoots()
+short Player::GetShoots()
 {
     return shoots;
 };
 
-void Player::setShoots( short _shoots)
+void Player::SetShoots( short _shoots)
 {
     shoots = _shoots;
 };
 
-short Player::getAmmoSpeed()
+short Player::GetAmmoSpeed()
 {
     return ammoSpeed;
 };
 
-void Player::setAmmoSpeed( short _ammoSpeed)
+void Player::SetAmmoSpeed( short _ammoSpeed)
 {
     ammoSpeed = _ammoSpeed;
 };
 
-short Player::getAmmoTimer()
+short Player::GetAmmoTimer()
 {
     return ammoTimerDelay;
 };
 
-void Player::setAmmoTimer( short _ammoTimerDelay)
+void Player::SetAmmoTimer( short _ammoTimerDelay)
 {
     ammoTimerDelay = _ammoTimerDelay;
 };
 
-void Player::initialize(short _x, short _y, short _life, short _shoots, short _direction, short _ammoSpeed, int _points, short _kills, short _ammoTimerDelay)
+void Player::Initialize(short _x, short _y, short _life, short _shoots, short _direction, short _ammoSpeed, int _points, short _kills, short _ammoTimerDelay)
 {
     x = _x/50 * 50;
     tempX = x;
@@ -145,7 +145,7 @@ void Player::initialize(short _x, short _y, short _life, short _shoots, short _d
     ammoTimerDelay = _ammoTimerDelay;
 };
 
-void Player::campaingInitialize(short _currentLevel)
+void Player::CampaingInitialize(short _currentLevel)
 {
     char levelName[15];
     sprintf(levelName, "level%i.tank", _currentLevel);
@@ -180,7 +180,7 @@ void Player::campaingInitialize(short _currentLevel)
     al_destroy_config(iniFile);
 }
 
-void Player::clear()
+void Player::Clear()
 {
     x = 0;
     tempX = 0;
@@ -197,7 +197,7 @@ void Player::clear()
     Player::ammoTimer = 0;
 };
 
-void Player::move(short _where)
+void Player::Move(short _where)
 {
     switch(_where)
     {
@@ -248,46 +248,42 @@ void Player::move(short _where)
     }
 };
 
-void Player::checkColision(Wall **wall, Enemy **enemy, Bonus **bonus)
+void Player::CheckColision(Wall **wall, Enemy **enemy, Bonus **bonus)
 {
-    bool collision = false;//only can collide with one thing, so if player has collision we can leave function
-
     for (short i=0; i < OBSTACLES ; i++)
     {
-        if(wall[i] -> getVisible())
+        if(wall[i] -> GetVisible())
         {
-            if(x >= wall[i] -> getX() - OBSTACLE_SIZE + MARGIN_SIZE && x <= wall[i] -> getX() + OBSTACLE_SIZE - MARGIN_SIZE && y >= wall[i]->getY()-OBSTACLE_SIZE+MARGIN_SIZE && y<= wall[i]->getY()+OBSTACLE_SIZE-MARGIN_SIZE)
+            if(x >= wall[i] -> GetX() - OBSTACLE_SIZE + MARGIN_SIZE && x <= wall[i] -> GetX() + OBSTACLE_SIZE - MARGIN_SIZE && y >= wall[i]->GetY()-OBSTACLE_SIZE+MARGIN_SIZE && y<= wall[i]->GetY()+OBSTACLE_SIZE-MARGIN_SIZE)
             {
                 x = tempX;
                 y = tempY;
-                collision = true;
-                break;
+                return; //only can collide with one thing, so if player has collision we can leave function
             }
         }
     }
 
-    for(short g=0; g < ENEMIES && !collision; g++)
+    for(short g=0; g < ENEMIES; g++)
     {
-        if(!enemy[g] -> getDead())
+        if(!enemy[g] -> GetDead())
         {
-            if(x >= enemy[g] -> getX()-OBSTACLE_SIZE+MARGIN_SIZE && x<=enemy[g] -> getX()+OBSTACLE_SIZE-MARGIN_SIZE && y >= enemy[g] -> getY()-OBSTACLE_SIZE+MARGIN_SIZE && y<= enemy[g] -> getY()+OBSTACLE_SIZE-MARGIN_SIZE)
+            if(x >= enemy[g] -> GetX()-OBSTACLE_SIZE+MARGIN_SIZE && x<=enemy[g] -> GetX()+OBSTACLE_SIZE-MARGIN_SIZE && y >= enemy[g] -> GetY()-OBSTACLE_SIZE+MARGIN_SIZE && y<= enemy[g] -> GetY()+OBSTACLE_SIZE-MARGIN_SIZE)
             {
                 x = tempX;
                 y = tempY;
-                collision = true;
-                break;
+                return;
             }
         }
     }
-    for (short i=0; i < BONUSES && !collision ; i++)
+    for (short i=0; i < BONUSES; i++)
     {
-        if(bonus[i]->getVisible())
+        if(bonus[i]->GetVisible())
         {
-            if(x >= bonus[i]->getX()-OBSTACLE_SIZE+MARGIN_SIZE && x<=bonus[i]->getX()+OBSTACLE_SIZE-MARGIN_SIZE && y >= bonus[i]->getY()-OBSTACLE_SIZE+MARGIN_SIZE && y<= bonus[i]->getY()+OBSTACLE_SIZE-MARGIN_SIZE)
+            if(x >= bonus[i]->GetX()-OBSTACLE_SIZE+MARGIN_SIZE && x<=bonus[i]->GetX()+OBSTACLE_SIZE-MARGIN_SIZE && y >= bonus[i]->GetY()-OBSTACLE_SIZE+MARGIN_SIZE && y<= bonus[i]->GetY()+OBSTACLE_SIZE-MARGIN_SIZE)
             {
                 RandomBonus();
-                bonus[i] -> setVisible(false);
-                break;
+                bonus[i] -> SetVisible(false);
+                return;
             }
         }
     }

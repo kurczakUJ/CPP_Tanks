@@ -12,48 +12,45 @@ extern unsigned short gameMode;
 
 extern ALLEGRO_SAMPLE *sound[SOUNDS];
 
-short Bonus::getX()
+short Bonus::GetX()
 {
     return x;
 };
 
-void Bonus::setX( short _x)
+void Bonus::SetX( short _x)
 {
     x = _x;
 };
 
-short Bonus::getY()
+short Bonus::GetY()
 {
     return y;
 };
 
-void Bonus::setY( short _y)
+void Bonus::SetY( short _y)
 {
     y = _y;
 };
 
-bool Bonus::getVisible()
+bool Bonus::GetVisible()
 {
     return visible;
 };
 
-void Bonus::setVisible( bool _visible)
+void Bonus::SetVisible( bool _visible)
 {
     visible = _visible;
 };
 
 short GiveBonusID(Bonus ** bonus)
 {
-    short countBonuses = 0;
     for(short i=0; i < BONUSES; i++)
     {
-        if(!bonus[i] -> getVisible())
-        {
-            countBonuses = i;
-            break;
-        }
+        if(!bonus[i] -> GetVisible())
+            return i;
     }
-    return countBonuses;
+
+    return 0;
 };
 
 void Airstrike(Enemy ** enemy, Explosion ** explosion, Bonus ** bonus, Player *player)
@@ -62,34 +59,35 @@ void Airstrike(Enemy ** enemy, Explosion ** explosion, Bonus ** bonus, Player *p
 
     for(short i = 0; i < ENEMIES; i++)
     {
-        if(!enemy[i] -> getDead())
+        if(!enemy[i] -> GetDead())
         {
-            enemy[i] -> setDead(true);
-            enemy[i] -> setRespawnDelayTimer(1); //1 to start counting to respawn
+            enemy[i] -> SetDead(true);
+            enemy[i] -> SetRespawnDelayTimer(1); //1 to start counting to respawn
 
             short choice = GiveExplosionID(explosion);
-            explosion[choice] -> setX(enemy[i] -> getX());
-            explosion[choice] -> setY(enemy[i] -> getY());
-            explosion[choice] -> setSmall(false);
-            explosion[choice] -> setVisible(true);
-            explosion[choice] -> setLife(BIG_EXPLOSION_TIME);
-            explosion[choice] -> createExplosion();
+            explosion[choice] -> SetX(enemy[i] -> GetX());
+            explosion[choice] -> SetY(enemy[i] -> GetY());
+            explosion[choice] -> SetSmall(false);
+            explosion[choice] -> SetVisible(true);
+            explosion[choice] -> SetLife(BIG_EXPLOSION_TIME);
+            explosion[choice] -> CreateExplosion();
 
             if(rand()%100 <= BONUS_CHANCE)
             {
                 choice = GiveBonusID(bonus);
-                bonus[choice] -> setX(enemy[i] -> getX());
-                bonus[choice] -> setY(enemy[i] -> getY());
-                bonus[choice] -> setVisible(true);
+                bonus[choice] -> SetX(enemy[i] -> GetX());
+                bonus[choice] -> SetY(enemy[i] -> GetY());
+                bonus[choice] -> SetVisible(true);
             }
 
             if(gameMode == 2)
                 enemiesKilled++;
 
-            player -> setPoints(player -> getPoints() +((enemy[i] -> getDifficulty()+1) * POINTS_FOR_KILL ));
-            player -> setKills(player -> getKills() + 1);
+            player -> SetPoints(player -> GetPoints() +((enemy[i] -> GetDifficulty()+1) * POINTS_FOR_KILL ));
+            player -> SetKills(player -> GetKills() + 1);
         }
     }
+
     if(alive > 0)
     {
         al_play_sample(sound[1], 1.0, 0.0,1.0,ALLEGRO_PLAYMODE_ONCE,NULL);
@@ -101,8 +99,8 @@ void ClearBonus(Bonus ** bonus)
 {
     for(short i=0; i < BONUSES; i++)
     {
-        bonus[i] -> setX(0);
-        bonus[i] -> setY(0);
-        bonus[i] -> setVisible(false);
+        bonus[i] -> SetX(0);
+        bonus[i] -> SetY(0);
+        bonus[i] -> SetVisible(false);
     }
 }

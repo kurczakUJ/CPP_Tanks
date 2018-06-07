@@ -36,27 +36,27 @@ public:
         priority = _priority;
     }
 
-    short getX() const
+    short GetX() const
     {
         return xPosition;
     }
 
-    short getY() const
+    short GetY() const
     {
         return yPosition;
     }
 
-    short getLevel() const
+    short GetLevel() const
     {
         return level;
     }
 
-    short getPriority() const
+    short GetPriority() const
     {
         return priority;
     }
 
-    void updatePriority(const short & _xDestination, const short & _yDestination)
+    void UpdatePriority(const short & _xDestination, const short & _yDestination)
     {
         priority = level + estimate(_xDestination, _yDestination) * 10; //A*
     }
@@ -76,11 +76,11 @@ public:
 
 bool operator<(const Node & aNode, const Node & bNode) // Determine priority (in the priority queue)
 {
-    return aNode.getPriority() > bNode.getPriority();
+    return aNode.GetPriority() > bNode.GetPriority();
 }
 
 // A-star algorithm -> return string of direction digits
-string pathFind( const short & xStart, const short & yStart, const short & xFinish, const short & yFinish )
+string PathFind( const short & xStart, const short & yStart, const short & xFinish, const short & yFinish )
 {
     static priority_queue<Node> priorityQueue[2]; // list of open (not yet tried) nodes
     static short priorityQueueIndex; // priorityQueue index
@@ -91,7 +91,7 @@ string pathFind( const short & xStart, const short & yStart, const short & xFini
     char charDirection;
     priorityQueueIndex=0;
 
-    for(y=0; y < YSIZE; y++)// reset the Node maps
+    for(y=0; y < YSIZE; y++)// reSet the Node maps
     {
         for(x=0; x < XSIZE; x++)
         {
@@ -101,18 +101,18 @@ string pathFind( const short & xStart, const short & yStart, const short & xFini
     }
 
     node0 = new Node(xStart, yStart, 0, 0); // create start Node and push into list of open nodes
-    node0 -> updatePriority(xFinish, yFinish);
+    node0 -> UpdatePriority(xFinish, yFinish);
     priorityQueue[priorityQueueIndex].push(*node0);
-    openNodesMap[x][y] = node0 -> getPriority(); // mark it on open nodes map
+    openNodesMap[x][y] = node0 -> GetPriority(); // mark it on open nodes map
     delete node0; //clear memory
 
     while(!priorityQueue[priorityQueueIndex].empty()) // A* search
     {
-        // get the current Node with the highest priority from the list of open nodes
-        node0 = new Node( priorityQueue[priorityQueueIndex].top().getX(), priorityQueue[priorityQueueIndex].top().getY(), priorityQueue[priorityQueueIndex].top().getLevel(), priorityQueue[priorityQueueIndex].top().getPriority());
+        // Get the current Node with the highest priority from the list of open nodes
+        node0 = new Node( priorityQueue[priorityQueueIndex].top().GetX(), priorityQueue[priorityQueueIndex].top().GetY(), priorityQueue[priorityQueueIndex].top().GetLevel(), priorityQueue[priorityQueueIndex].top().GetPriority());
 
-        x = node0 -> getX();
-        y = node0 -> getY();
+        x = node0 -> GetX();
+        y = node0 -> GetY();
 
         priorityQueue[priorityQueueIndex].pop(); // remove the Node from the open list
         openNodesMap[x][y]=0;
@@ -145,23 +145,23 @@ string pathFind( const short & xStart, const short & yStart, const short & xFini
 
             if(!(xChange < 0 || xChange > XSIZE-1 || yChange < 0 || yChange > YSIZE-1 || map[xChange][yChange] == 1 || closedNodesMap[xChange][yChange] == 1))
             {
-                childNode = new Node( xChange, yChange, node0 -> getLevel(), node0 -> getPriority()); // generate a child Node
-                childNode -> updatePriority(xFinish, yFinish);
+                childNode = new Node( xChange, yChange, node0 -> GetLevel(), node0 -> GetPriority()); // generate a child Node
+                childNode -> UpdatePriority(xFinish, yFinish);
 
                 if(openNodesMap[xChange][yChange] == 0) // if it is not in the open list then add into that
                 {
-                    openNodesMap[xChange][yChange] = childNode -> getPriority();
+                    openNodesMap[xChange][yChange] = childNode -> GetPriority();
                     priorityQueue[priorityQueueIndex].push(*childNode);
                     delete childNode; //clear memory
                     directionMap[xChange][yChange] = (i + DIRECTIONS/2)%DIRECTIONS; // mark its parent Node direction
                 }
-                else if(openNodesMap[xChange][yChange] > childNode -> getPriority())
+                else if(openNodesMap[xChange][yChange] > childNode -> GetPriority())
                 {
-                    openNodesMap[xChange][yChange] = childNode -> getPriority();
+                    openNodesMap[xChange][yChange] = childNode -> GetPriority();
                     directionMap[xChange][yChange]=(i + DIRECTIONS/2)%DIRECTIONS; // update the parent direction info
 
                     // replace the Node by emptying one priorityQueue to the other one except the Node to be replaced will be ignored and the new Node will be pushed in instead
-                    while(!(priorityQueue[priorityQueueIndex].top().getX() == xChange && priorityQueue[priorityQueueIndex].top().getY() == yChange))
+                    while(!(priorityQueue[priorityQueueIndex].top().GetX() == xChange && priorityQueue[priorityQueueIndex].top().GetY() == yChange))
                     {
                         priorityQueue[1-priorityQueueIndex].push(priorityQueue[priorityQueueIndex].top());
                         priorityQueue[priorityQueueIndex].pop();
@@ -197,63 +197,63 @@ string FindPath(Enemy **enemy, Wall **wall, Player * player, short choice, bool 
             map[x][y] = 0;
     }
 
-    for (short i=0; i < OBSTACLES ; i++) // set nodes with obstacles
+    for (short i=0; i < OBSTACLES ; i++) // Set nodes with obstacles
     {
-        if(wall[i] -> getVisible())
+        if(wall[i] -> GetVisible())
         {
             if(onlyImmortal)
             {
-                if (!wall[i] -> getDestroyable())
-                    map[wall[i] -> getX() / 50][wall[i] -> getY() / 50] = 1;
+                if (!wall[i] -> GetDestroyable())
+                    map[wall[i] -> GetX() / 50][wall[i] -> GetY() / 50] = 1;
             }
 
             else
-                map[wall[i] -> getX() / 50][wall[i] -> getY() / 50] = 1;
+                map[wall[i] -> GetX() / 50][wall[i] -> GetY() / 50] = 1;
         }
     }
 
-    for (short i=0; i < ENEMIES ; i++) // set nodes with enemies
+    for (short i=0; i < ENEMIES ; i++) // Set nodes with enemies
     {
-        if(!enemy[i] -> getDead())
+        if(!enemy[i] -> GetDead())
         {
-            short x = enemy[i] -> getX()/50;
-            short y = enemy[i] -> getY()/50;
-            if(enemy[i] -> getX() % 50 > 45)
+            short x = enemy[i] -> GetX()/50;
+            short y = enemy[i] -> GetY()/50;
+            if(enemy[i] -> GetX() % 50 > 45)
                 x++;
-            if(enemy[i] -> getY() % 50 > 45)
+            if(enemy[i] -> GetY() % 50 > 45)
                 y++;
             map[x][y] = 1;
         }
 
     }
-    if(isPlayer) // set Node with player
+    if(isPlayer) // Set Node with player
     {
-        short x = player -> getX()/50;
-        short y = player -> getY()/50;
-        if(player-> getX() % 50 > 45)
+        short x = player -> GetX()/50;
+        short y = player -> GetY()/50;
+        if(player-> GetX() % 50 > 45)
             x++;
-        if(player -> getY() % 50 > 45)
+        if(player -> GetY() % 50 > 45)
             y++;
         map[x][y] = 1;
     }
 
-    short xStart = enemy[choice] -> getX()/50;
-    short yStart = enemy[choice] -> getY()/50;
+    short xStart = enemy[choice] -> GetX()/50;
+    short yStart = enemy[choice] -> GetY()/50;
 
-    if(enemy[choice] -> getX() % 50 > 45)
+    if(enemy[choice] -> GetX() % 50 > 45)
         xStart++;
-    if(enemy[choice] -> getY() % 50 > 45)
+    if(enemy[choice] -> GetY() % 50 > 45)
         yStart++;
 
-    short xFinish = enemy[choice] -> getDestinationX()/50;
-    short yFinish = enemy[choice] -> getDestinationY()/50;
+    short xFinish = enemy[choice] -> GetDestinationX()/50;
+    short yFinish = enemy[choice] -> GetDestinationY()/50;
 
-    if(enemy[choice] -> getDestinationX() % 50 > 45)
+    if(enemy[choice] -> GetDestinationX() % 50 > 45)
         xFinish++;
-    if(enemy[choice] -> getDestinationY() % 50 > 45)
+    if(enemy[choice] -> GetDestinationY() % 50 > 45)
         yFinish++;
 
-    string route=pathFind(xStart, yStart, xFinish, yFinish);
+    string route = PathFind(xStart, yStart, xFinish, yFinish);
     if(route == "")
         return "5"; //empty route
 
